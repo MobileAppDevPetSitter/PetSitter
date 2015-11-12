@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B2527621BF522CF00E15303 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527611BF522CF00E15303 /* LoginViewController.swift */; };
+		5B2527641BF5235B00E15303 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527631BF5235B00E15303 /* RegisterViewController.swift */; };
+		5B2527661BF523AC00E15303 /* AccessCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527651BF523AC00E15303 /* AccessCodeViewController.swift */; };
 		5B3D7E971BF40AA5000B292D /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */; };
 		64AC9C1E1BF2AD480049B64B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */; };
 		64AC9C231BF2AD480049B64B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AC9C211BF2AD480049B64B /* Main.storyboard */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B2527611BF522CF00E15303 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5B2527631BF5235B00E15303 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5B2527651BF523AC00E15303 /* AccessCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessCodeViewController.swift; sourceTree = "<group>"; };
 		5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		64AC9C1A1BF2AD480049B64B /* Critter Sitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Critter Sitter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +63,10 @@
 			isa = PBXGroup;
 			children = (
 				64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */,
+				5B2527611BF522CF00E15303 /* LoginViewController.swift */,
 				5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */,
+				5B2527651BF523AC00E15303 /* AccessCodeViewController.swift */,
+				5B2527631BF5235B00E15303 /* RegisterViewController.swift */,
 				64AC9C211BF2AD480049B64B /* Main.storyboard */,
 				64AC9C271BF2AD480049B64B /* Assets.xcassets */,
 				64AC9C291BF2AD480049B64B /* LaunchScreen.storyboard */,
@@ -139,8 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				64AC9C261BF2AD480049B64B /* Critter_Sitter.xcdatamodeld in Sources */,
+				5B2527661BF523AC00E15303 /* AccessCodeViewController.swift in Sources */,
+				5B2527641BF5235B00E15303 /* RegisterViewController.swift in Sources */,
 				5B3D7E971BF40AA5000B292D /* RootTableViewController.swift in Sources */,
 				64AC9C1E1BF2AD480049B64B /* AppDelegate.swift in Sources */,
+				5B2527621BF522CF00E15303 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
