@@ -10,6 +10,30 @@
 		5B2527621BF522CF00E15303 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527611BF522CF00E15303 /* LoginViewController.swift */; };
 		5B2527641BF5235B00E15303 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527631BF5235B00E15303 /* RegisterViewController.swift */; };
 		5B2527661BF523AC00E15303 /* AccessCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527651BF523AC00E15303 /* AccessCodeViewController.swift */; };
+		5B2527681BF9560C00E15303 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527671BF9560C00E15303 /* HomeViewController.swift */; };
+		5B25276A1BF956B500E15303 /* PetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527691BF956B500E15303 /* PetNameViewController.swift */; };
+		5B25276C1BF956DC00E15303 /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25276B1BF956DC00E15303 /* PetProfileViewController.swift */; };
+		5B2527701BF9575000E15303 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25276F1BF9575000E15303 /* NotificationsViewController.swift */; };
+		5B2527721BF9584B00E15303 /* PetBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527711BF9584B00E15303 /* PetBioViewController.swift */; };
+		5B2527741BF9585F00E15303 /* PetFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527731BF9585F00E15303 /* PetFoodViewController.swift */; };
+		5B2527761BF9586E00E15303 /* PetMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527751BF9586E00E15303 /* PetMedicineViewController.swift */; };
+		5B2527781BF9588200E15303 /* PetExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527771BF9588200E15303 /* PetExerciseViewController.swift */; };
+		5B25277A1BF9588F00E15303 /* PetBathroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527791BF9588F00E15303 /* PetBathroomViewController.swift */; };
+		5B25277C1BF958BA00E15303 /* PetVetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25277B1BF958BA00E15303 /* PetVetViewController.swift */; };
+		5B25277E1BF958CE00E15303 /* PetPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25277D1BF958CE00E15303 /* PetPhotoViewController.swift */; };
+		5B2527801BF958DB00E15303 /* PetOtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25277F1BF958DB00E15303 /* PetOtherViewController.swift */; };
+		5B2527821BF958F400E15303 /* PetEmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527811BF958F400E15303 /* PetEmergencyContactViewController.swift */; };
+		5B2527841BF9590800E15303 /* PetOwnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527831BF9590800E15303 /* PetOwnersViewController.swift */; };
+		5B2527861BF95B5200E15303 /* PetProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527851BF95B5200E15303 /* PetProfileEditViewController.swift */; };
+		5B2527881BF95B8C00E15303 /* SendPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527871BF95B8C00E15303 /* SendPetViewController.swift */; };
+		5B25278A1BF95B9D00E15303 /* DeletePetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527891BF95B9D00E15303 /* DeletePetViewController.swift */; };
+		5B25278C1BF95FB000E15303 /* PetProfileSecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25278B1BF95FB000E15303 /* PetProfileSecondaryViewController.swift */; };
+		5B25278E1BF9628D00E15303 /* PetSittingAddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25278D1BF9628D00E15303 /* PetSittingAddActivityViewController.swift */; };
+		5B2527901BF962AC00E15303 /* PetSittingViewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25278F1BF962AC00E15303 /* PetSittingViewActivityViewController.swift */; };
+		5B2527921BF965F200E15303 /* ActivityAddPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527911BF965F200E15303 /* ActivityAddPictureViewController.swift */; };
+		5B2527941BF9661C00E15303 /* ActivityAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527931BF9661C00E15303 /* ActivityAddEventViewController.swift */; };
+		5B2527961BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527951BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift */; };
+		5B2527981BF96AB600E15303 /* PetSittingAcceptRejectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527971BF96AB600E15303 /* PetSittingAcceptRejectViewController.swift */; };
 		5B3D7E971BF40AA5000B292D /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */; };
 		64AC9C1E1BF2AD480049B64B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */; };
 		64AC9C231BF2AD480049B64B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AC9C211BF2AD480049B64B /* Main.storyboard */; };
@@ -22,6 +46,30 @@
 		5B2527611BF522CF00E15303 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5B2527631BF5235B00E15303 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5B2527651BF523AC00E15303 /* AccessCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessCodeViewController.swift; sourceTree = "<group>"; };
+		5B2527671BF9560C00E15303 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5B2527691BF956B500E15303 /* PetNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetNameViewController.swift; sourceTree = "<group>"; };
+		5B25276B1BF956DC00E15303 /* PetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
+		5B25276F1BF9575000E15303 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		5B2527711BF9584B00E15303 /* PetBioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetBioViewController.swift; sourceTree = "<group>"; };
+		5B2527731BF9585F00E15303 /* PetFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetFoodViewController.swift; sourceTree = "<group>"; };
+		5B2527751BF9586E00E15303 /* PetMedicineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetMedicineViewController.swift; sourceTree = "<group>"; };
+		5B2527771BF9588200E15303 /* PetExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetExerciseViewController.swift; sourceTree = "<group>"; };
+		5B2527791BF9588F00E15303 /* PetBathroomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetBathroomViewController.swift; sourceTree = "<group>"; };
+		5B25277B1BF958BA00E15303 /* PetVetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetVetViewController.swift; sourceTree = "<group>"; };
+		5B25277D1BF958CE00E15303 /* PetPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetPhotoViewController.swift; sourceTree = "<group>"; };
+		5B25277F1BF958DB00E15303 /* PetOtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetOtherViewController.swift; sourceTree = "<group>"; };
+		5B2527811BF958F400E15303 /* PetEmergencyContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetEmergencyContactViewController.swift; sourceTree = "<group>"; };
+		5B2527831BF9590800E15303 /* PetOwnersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetOwnersViewController.swift; sourceTree = "<group>"; };
+		5B2527851BF95B5200E15303 /* PetProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileEditViewController.swift; sourceTree = "<group>"; };
+		5B2527871BF95B8C00E15303 /* SendPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendPetViewController.swift; sourceTree = "<group>"; };
+		5B2527891BF95B9D00E15303 /* DeletePetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletePetViewController.swift; sourceTree = "<group>"; };
+		5B25278B1BF95FB000E15303 /* PetProfileSecondaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileSecondaryViewController.swift; sourceTree = "<group>"; };
+		5B25278D1BF9628D00E15303 /* PetSittingAddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingAddActivityViewController.swift; sourceTree = "<group>"; };
+		5B25278F1BF962AC00E15303 /* PetSittingViewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingViewActivityViewController.swift; sourceTree = "<group>"; };
+		5B2527911BF965F200E15303 /* ActivityAddPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityAddPictureViewController.swift; sourceTree = "<group>"; };
+		5B2527931BF9661C00E15303 /* ActivityAddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityAddEventViewController.swift; sourceTree = "<group>"; };
+		5B2527951BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingViewActivitySecondaryViewController.swift; sourceTree = "<group>"; };
+		5B2527971BF96AB600E15303 /* PetSittingAcceptRejectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingAcceptRejectViewController.swift; sourceTree = "<group>"; };
 		5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		64AC9C1A1BF2AD480049B64B /* Critter Sitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Critter Sitter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +111,30 @@
 			isa = PBXGroup;
 			children = (
 				64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */,
+				5B2527671BF9560C00E15303 /* HomeViewController.swift */,
+				5B2527691BF956B500E15303 /* PetNameViewController.swift */,
+				5B25276B1BF956DC00E15303 /* PetProfileViewController.swift */,
+				5B2527711BF9584B00E15303 /* PetBioViewController.swift */,
+				5B2527731BF9585F00E15303 /* PetFoodViewController.swift */,
+				5B2527751BF9586E00E15303 /* PetMedicineViewController.swift */,
+				5B2527771BF9588200E15303 /* PetExerciseViewController.swift */,
+				5B2527791BF9588F00E15303 /* PetBathroomViewController.swift */,
+				5B25277B1BF958BA00E15303 /* PetVetViewController.swift */,
+				5B25277D1BF958CE00E15303 /* PetPhotoViewController.swift */,
+				5B25277F1BF958DB00E15303 /* PetOtherViewController.swift */,
+				5B2527811BF958F400E15303 /* PetEmergencyContactViewController.swift */,
+				5B2527831BF9590800E15303 /* PetOwnersViewController.swift */,
+				5B2527851BF95B5200E15303 /* PetProfileEditViewController.swift */,
+				5B2527871BF95B8C00E15303 /* SendPetViewController.swift */,
+				5B2527891BF95B9D00E15303 /* DeletePetViewController.swift */,
+				5B25278B1BF95FB000E15303 /* PetProfileSecondaryViewController.swift */,
+				5B25276F1BF9575000E15303 /* NotificationsViewController.swift */,
+				5B2527971BF96AB600E15303 /* PetSittingAcceptRejectViewController.swift */,
+				5B25278D1BF9628D00E15303 /* PetSittingAddActivityViewController.swift */,
+				5B25278F1BF962AC00E15303 /* PetSittingViewActivityViewController.swift */,
+				5B2527951BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift */,
+				5B2527911BF965F200E15303 /* ActivityAddPictureViewController.swift */,
+				5B2527931BF9661C00E15303 /* ActivityAddEventViewController.swift */,
 				5B2527611BF522CF00E15303 /* LoginViewController.swift */,
 				5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */,
 				5B2527651BF523AC00E15303 /* AccessCodeViewController.swift */,
@@ -147,12 +219,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B25277C1BF958BA00E15303 /* PetVetViewController.swift in Sources */,
+				5B2527761BF9586E00E15303 /* PetMedicineViewController.swift in Sources */,
+				5B2527841BF9590800E15303 /* PetOwnersViewController.swift in Sources */,
+				5B25278C1BF95FB000E15303 /* PetProfileSecondaryViewController.swift in Sources */,
+				5B25278A1BF95B9D00E15303 /* DeletePetViewController.swift in Sources */,
+				5B2527901BF962AC00E15303 /* PetSittingViewActivityViewController.swift in Sources */,
+				5B2527941BF9661C00E15303 /* ActivityAddEventViewController.swift in Sources */,
+				5B25278E1BF9628D00E15303 /* PetSittingAddActivityViewController.swift in Sources */,
 				64AC9C261BF2AD480049B64B /* Critter_Sitter.xcdatamodeld in Sources */,
+				5B2527921BF965F200E15303 /* ActivityAddPictureViewController.swift in Sources */,
+				5B2527861BF95B5200E15303 /* PetProfileEditViewController.swift in Sources */,
 				5B2527661BF523AC00E15303 /* AccessCodeViewController.swift in Sources */,
 				5B2527641BF5235B00E15303 /* RegisterViewController.swift in Sources */,
+				5B2527821BF958F400E15303 /* PetEmergencyContactViewController.swift in Sources */,
+				5B2527961BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift in Sources */,
+				5B2527881BF95B8C00E15303 /* SendPetViewController.swift in Sources */,
 				5B3D7E971BF40AA5000B292D /* RootTableViewController.swift in Sources */,
 				64AC9C1E1BF2AD480049B64B /* AppDelegate.swift in Sources */,
+				5B2527741BF9585F00E15303 /* PetFoodViewController.swift in Sources */,
+				5B2527781BF9588200E15303 /* PetExerciseViewController.swift in Sources */,
+				5B2527681BF9560C00E15303 /* HomeViewController.swift in Sources */,
+				5B25277E1BF958CE00E15303 /* PetPhotoViewController.swift in Sources */,
+				5B2527981BF96AB600E15303 /* PetSittingAcceptRejectViewController.swift in Sources */,
 				5B2527621BF522CF00E15303 /* LoginViewController.swift in Sources */,
+				5B2527701BF9575000E15303 /* NotificationsViewController.swift in Sources */,
+				5B25276C1BF956DC00E15303 /* PetProfileViewController.swift in Sources */,
+				5B25276A1BF956B500E15303 /* PetNameViewController.swift in Sources */,
+				5B25277A1BF9588F00E15303 /* PetBathroomViewController.swift in Sources */,
+				5B2527801BF958DB00E15303 /* PetOtherViewController.swift in Sources */,
+				5B2527721BF9584B00E15303 /* PetBioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
