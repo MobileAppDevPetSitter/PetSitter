@@ -40,6 +40,8 @@
 		64AC9C261BF2AD480049B64B /* Critter_Sitter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64AC9C241BF2AD480049B64B /* Critter_Sitter.xcdatamodeld */; };
 		64AC9C281BF2AD480049B64B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64AC9C271BF2AD480049B64B /* Assets.xcassets */; };
 		64AC9C2B1BF2AD480049B64B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AC9C291BF2AD480049B64B /* LaunchScreen.storyboard */; };
+		674BB8381C05360E00D974A1 /* PetProfileCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BB8371C05360E00D974A1 /* PetProfileCreationViewController.swift */; };
+		674BB83A1C0538CE00D974A1 /* PetProfileCreationContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BB8391C0538CE00D974A1 /* PetProfileCreationContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		64AC9C271BF2AD480049B64B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64AC9C2A1BF2AD480049B64B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64AC9C2C1BF2AD480049B64B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		674BB8371C05360E00D974A1 /* PetProfileCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileCreationViewController.swift; sourceTree = "<group>"; };
+		674BB8391C0538CE00D974A1 /* PetProfileCreationContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileCreationContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				5B2527671BF9560C00E15303 /* HomeViewController.swift */,
 				5B2527691BF956B500E15303 /* PetNameViewController.swift */,
 				5B25276B1BF956DC00E15303 /* PetProfileViewController.swift */,
+				674BB8371C05360E00D974A1 /* PetProfileCreationViewController.swift */,
+				674BB8391C0538CE00D974A1 /* PetProfileCreationContentViewController.swift */,
 				5B2527711BF9584B00E15303 /* PetBioViewController.swift */,
 				5B2527731BF9585F00E15303 /* PetFoodViewController.swift */,
 				5B2527751BF9586E00E15303 /* PetMedicineViewController.swift */,
@@ -233,8 +239,10 @@
 				5B2527661BF523AC00E15303 /* AccessCodeViewController.swift in Sources */,
 				5B2527641BF5235B00E15303 /* RegisterViewController.swift in Sources */,
 				5B2527821BF958F400E15303 /* PetEmergencyContactViewController.swift in Sources */,
+				674BB8381C05360E00D974A1 /* PetProfileCreationViewController.swift in Sources */,
 				5B2527961BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift in Sources */,
 				5B2527881BF95B8C00E15303 /* SendPetViewController.swift in Sources */,
+				674BB83A1C0538CE00D974A1 /* PetProfileCreationContentViewController.swift in Sources */,
 				5B3D7E971BF40AA5000B292D /* RootTableViewController.swift in Sources */,
 				64AC9C1E1BF2AD480049B64B /* AppDelegate.swift in Sources */,
 				5B2527741BF9585F00E15303 /* PetFoodViewController.swift in Sources */,
