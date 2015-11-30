@@ -188,8 +188,8 @@
                     </view>
                     <connections>
                         <segue destination="Q9j-OW-lAM" kind="show" id="NYl-MY-Mnr"/>
-                        <segue destination="DRC-ly-i8W" kind="show" id="Hs5-hj-XfD"/>
                         <segue destination="xvD-1L-2Wk" kind="show" id="oBd-Bb-E28"/>
+                        <segue destination="qx8-ld-w2B" kind="show" id="a8A-1E-AxG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Cp-Yy-2aP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -318,28 +318,6 @@
             </objects>
             <point key="canvasLocation" x="841" y="-816"/>
         </scene>
-        <!--Pet Sitting View Controller-->
-        <scene sceneID="q7k-W0-yG9">
-            <objects>
-                <viewController id="DRC-ly-i8W" customClass="PetSittingViewController" customModule="Critter_Sitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yZZ-Pd-m0n"/>
-                        <viewControllerLayoutGuide type="bottom" id="BRK-yr-87y"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="a8x-Q9-B5Q">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <segue destination="qx8-ld-w2B" kind="show" id="pbC-Pk-uCr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NRQ-Ki-sKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="127" y="-38"/>
-        </scene>
         <!--Pet Profile Secondary View Controller-->
         <scene sceneID="RRS-Sh-N4E">
             <objects>
@@ -351,8 +329,21 @@
                     <view key="view" contentMode="scaleToFill" id="R67-L6-Z0y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Profile w/ Minor Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6h-NO-Uiw">
+                                <rect key="frame" x="194" y="289" width="213" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C6h-NO-Uiw" firstAttribute="centerY" secondItem="R67-L6-Z0y" secondAttribute="centerY" id="oJl-kW-hfr"/>
+                            <constraint firstItem="C6h-NO-Uiw" firstAttribute="centerX" secondItem="R67-L6-Z0y" secondAttribute="centerX" id="xV9-D5-5hy"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="7aJ-qj-wUP" kind="show" id="FW6-cK-Bsa"/>
@@ -361,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iy9-hZ-LkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="194"/>
+            <point key="canvasLocation" x="495" y="-32"/>
         </scene>
         <!--Pet Sitting Add Activity View Controller-->
         <scene sceneID="lO0-Xf-Nrc">
@@ -374,8 +365,21 @@
                     <view key="view" contentMode="scaleToFill" id="4Wm-3U-Aci">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YJc-OH-byp">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YJc-OH-byp" firstAttribute="leading" secondItem="4Wm-3U-Aci" secondAttribute="leadingMargin" id="FFw-xP-L8n"/>
+                            <constraint firstItem="PY0-aW-XWN" firstAttribute="top" secondItem="YJc-OH-byp" secondAttribute="bottom" id="XFb-ip-Bfg"/>
+                            <constraint firstItem="YJc-OH-byp" firstAttribute="top" secondItem="Uoc-Pe-pnP" secondAttribute="bottom" id="apw-jt-6KG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YJc-OH-byp" secondAttribute="trailing" id="meH-cV-GpL"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="mxW-yX-cZQ" kind="show" id="rJ5-kc-4LD"/>
@@ -384,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnF-KG-Vk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1575" y="-147"/>
+            <point key="canvasLocation" x="1575" y="-383"/>
         </scene>
         <!--Activity Add Event View Controller-->
         <scene sceneID="a6i-73-mVF">
@@ -403,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="noq-h1-okF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2307" y="-461"/>
+            <point key="canvasLocation" x="2307" y="-935"/>
         </scene>
         <!--Activity Add Picture View Controller-->
         <scene sceneID="mdy-EY-Sx1">
@@ -422,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAX-QT-Ero" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2307" y="211"/>
+            <point key="canvasLocation" x="2307" y="143"/>
         </scene>
         <!--Pet Sitting View Activity Secondary View Controller-->
         <scene sceneID="kig-Ut-lQX">
