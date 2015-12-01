@@ -77,8 +77,8 @@ class AccessCodeViewController: UIViewController {
                             print("Could not save \(error), \(error.userInfo)")
                         }
                         
-                        
-                        self.performSegueWithIdentifier("homeSeque", sender:self)
+                        self.navigationController!.viewControllers = []
+                        self.performSegueWithIdentifier("HomeView", sender:self)
                     } else {
                         // Check for error message
                         if let errorMessage = response["message"] as? String {
