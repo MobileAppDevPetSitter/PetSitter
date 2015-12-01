@@ -29,23 +29,6 @@ class RegisterViewController: UIViewController {
         self.passwordInput.layer.borderColor = missingColor.CGColor
         self.pVerificationInput.layer.borderColor = missingColor.CGColor
         self.errorLabel.text = ""
-        
-        loadUser()
-        
-        if(user.count == 1) {
-        // Load saved user entities from core data
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        
-        managedContext.deleteObject(user[0])
-        
-        // Complete save and handle potential error
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save \(error), \(error.userInfo)")
-        }
-        }
     }
     override func viewDidAppear(animated: Bool) {
         
