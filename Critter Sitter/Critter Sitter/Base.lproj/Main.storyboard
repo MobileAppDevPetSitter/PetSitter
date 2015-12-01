@@ -245,7 +245,6 @@
                     </view>
                     <connections>
                         <segue destination="glJ-yE-Lha" kind="show" id="dtb-Xt-3jg"/>
-                        <segue destination="YP2-i9-e6H" kind="show" id="2v8-nT-1i8"/>
                         <segue destination="EnI-gZ-wGE" kind="show" id="h2Y-v8-Duo"/>
                     </connections>
                 </viewController>
@@ -290,25 +289,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZc-Li-JdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-13" y="1747"/>
-        </scene>
-        <!--Delete Pet View Controller-->
-        <scene sceneID="YLl-Rv-4f8">
-            <objects>
-                <viewController id="YP2-i9-e6H" customClass="DeletePetViewController" customModule="Critter_Sitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2Wu-mA-ZWN"/>
-                        <viewControllerLayoutGuide type="bottom" id="xKB-kX-Z5Z"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7Nm-4r-NZd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JRV-bR-Era" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="749" y="1747"/>
         </scene>
         <!--Notifications View Controller-->
         <scene sceneID="lcu-9V-alA">

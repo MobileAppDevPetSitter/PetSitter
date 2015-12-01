@@ -15,7 +15,6 @@
 		5B2527701BF9575000E15303 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25276F1BF9575000E15303 /* NotificationsViewController.swift */; };
 		5B2527861BF95B5200E15303 /* PetProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527851BF95B5200E15303 /* PetProfileEditViewController.swift */; };
 		5B2527881BF95B8C00E15303 /* SendPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527871BF95B8C00E15303 /* SendPetViewController.swift */; };
-		5B25278A1BF95B9D00E15303 /* DeletePetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527891BF95B9D00E15303 /* DeletePetViewController.swift */; };
 		5B25278C1BF95FB000E15303 /* PetProfileSecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25278B1BF95FB000E15303 /* PetProfileSecondaryViewController.swift */; };
 		5B25278E1BF9628D00E15303 /* PetSittingAddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25278D1BF9628D00E15303 /* PetSittingAddActivityViewController.swift */; };
 		5B2527901BF962AC00E15303 /* PetSittingViewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25278F1BF962AC00E15303 /* PetSittingViewActivityViewController.swift */; };
@@ -44,7 +43,6 @@
 		5B25276F1BF9575000E15303 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		5B2527851BF95B5200E15303 /* PetProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileEditViewController.swift; sourceTree = "<group>"; };
 		5B2527871BF95B8C00E15303 /* SendPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendPetViewController.swift; sourceTree = "<group>"; };
-		5B2527891BF95B9D00E15303 /* DeletePetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletePetViewController.swift; sourceTree = "<group>"; };
 		5B25278B1BF95FB000E15303 /* PetProfileSecondaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileSecondaryViewController.swift; sourceTree = "<group>"; };
 		5B25278D1BF9628D00E15303 /* PetSittingAddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingAddActivityViewController.swift; sourceTree = "<group>"; };
 		5B25278F1BF962AC00E15303 /* PetSittingViewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingViewActivityViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				674BB8391C0538CE00D974A1 /* PetProfileCreationContentViewController.swift */,
 				5B2527851BF95B5200E15303 /* PetProfileEditViewController.swift */,
 				5B2527871BF95B8C00E15303 /* SendPetViewController.swift */,
-				5B2527891BF95B9D00E15303 /* DeletePetViewController.swift */,
 				5B25278B1BF95FB000E15303 /* PetProfileSecondaryViewController.swift */,
 				5B25276F1BF9575000E15303 /* NotificationsViewController.swift */,
 				5B2527971BF96AB600E15303 /* PetSittingAcceptRejectViewController.swift */,
@@ -199,7 +196,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B25278C1BF95FB000E15303 /* PetProfileSecondaryViewController.swift in Sources */,
-				5B25278A1BF95B9D00E15303 /* DeletePetViewController.swift in Sources */,
 				5B2527901BF962AC00E15303 /* PetSittingViewActivityViewController.swift in Sources */,
 				5B2527941BF9661C00E15303 /* ActivityAddEventViewController.swift in Sources */,
 				5B25278E1BF9628D00E15303 /* PetSittingAddActivityViewController.swift in Sources */,
