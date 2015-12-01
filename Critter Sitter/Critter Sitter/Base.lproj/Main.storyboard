@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H9b-7y-jUv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X1S-wn-0n0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -16,7 +16,7 @@
                         <animations/>
                     </navigationBar>
                     <connections>
-                        <segue destination="lMx-UR-3t6" kind="show" id="6tp-Qj-IMF"/>
+                        <segue destination="lMx-UR-3t6" kind="relationship" relationship="rootViewController" id="aNt-PU-JNc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="am9-wS-qFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -60,6 +60,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccount:" destination="lMx-UR-3t6" eventType="touchUpInside" id="1Ab-8A-Nj7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXy-pj-gj9">
                                 <rect key="frame" x="210" y="503" width="180" height="30"/>
@@ -67,6 +70,9 @@
                                 <state key="normal" title="I Already Have an Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="AIw-K1-hCe" kind="show" id="f77-tF-k7o"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yE-oL-ve6">
                                 <rect key="frame" x="170" y="273" width="260" height="30"/>
@@ -74,6 +80,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzg-Sm-qVV">
+                                <rect key="frame" x="278" y="159" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -81,6 +93,7 @@
                             <constraint firstItem="xyT-Zl-K3v" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="C3N-YX-gXC"/>
                             <constraint firstItem="j10-tI-whw" firstAttribute="leading" secondItem="IpO-HD-tgy" secondAttribute="leadingMargin" constant="150" id="Ceb-t0-fJL"/>
                             <constraint firstItem="2yE-oL-ve6" firstAttribute="centerX" secondItem="Fwb-tO-Bqu" secondAttribute="centerX" id="DOW-Gz-w5u"/>
+                            <constraint firstItem="kzg-Sm-qVV" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="GUW-Wh-cxu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="j10-tI-whw" secondAttribute="trailing" constant="150" id="HBu-HB-Kae"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fwb-tO-Bqu" secondAttribute="trailing" constant="150" id="MI5-IM-vud"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2yE-oL-ve6" secondAttribute="trailing" constant="150" id="Mja-0d-PkA"/>
@@ -90,6 +103,7 @@
                             <constraint firstItem="2yE-oL-ve6" firstAttribute="top" secondItem="Fwb-tO-Bqu" secondAttribute="bottom" constant="20" id="hE6-MR-Pde"/>
                             <constraint firstItem="Fwb-tO-Bqu" firstAttribute="top" secondItem="BKQ-DJ-F8w" secondAttribute="bottom" constant="100" id="htn-N4-9d8"/>
                             <constraint firstItem="Fwb-tO-Bqu" firstAttribute="leading" secondItem="IpO-HD-tgy" secondAttribute="leadingMargin" constant="150" id="i3g-cS-KOw"/>
+                            <constraint firstItem="Fwb-tO-Bqu" firstAttribute="top" secondItem="kzg-Sm-qVV" secondAttribute="bottom" constant="43" id="iv8-B1-qKX"/>
                             <constraint firstItem="BKQ-DJ-F8w" firstAttribute="top" secondItem="0Gl-xW-MfS" secondAttribute="bottom" constant="30" id="kp2-Eg-HLr"/>
                             <constraint firstItem="aXy-pj-gj9" firstAttribute="centerX" secondItem="xyT-Zl-K3v" secondAttribute="centerX" id="okE-U1-9U3"/>
                             <constraint firstItem="j10-tI-whw" firstAttribute="top" secondItem="2yE-oL-ve6" secondAttribute="bottom" constant="20" id="sb1-xf-uTF"/>
@@ -98,9 +112,13 @@
                             <constraint firstItem="Fwb-tO-Bqu" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="xec-UC-KGu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ptt-Ez-nMj"/>
                     <connections>
-                        <segue destination="AIw-K1-hCe" kind="show" id="rzL-NM-x0E"/>
-                        <segue destination="sDT-zq-5hz" kind="show" id="JhI-HP-eAa"/>
+                        <outlet property="emailInput" destination="Fwb-tO-Bqu" id="X0t-QQ-0vm"/>
+                        <outlet property="errorLabel" destination="kzg-Sm-qVV" id="czz-bn-6hZ"/>
+                        <outlet property="pVerificationInput" destination="j10-tI-whw" id="DC6-pA-uwf"/>
+                        <outlet property="passwordInput" destination="2yE-oL-ve6" id="QKE-Ys-ylk"/>
+                        <segue destination="sDT-zq-5hz" kind="show" identifier="AccessView" id="JhI-HP-eAa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6M8-9H-sI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,6 +143,9 @@
                                 <state key="normal" title="Confirm Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmAccount:" destination="sDT-zq-5hz" eventType="touchUpInside" id="Z6K-aZ-2Ec"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Access Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zz-Ba-Mkq">
                                 <rect key="frame" x="199" y="94" width="203" height="29"/>
@@ -147,6 +168,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R29-0D-yYR">
+                                <rect key="frame" x="279" y="311" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -154,6 +181,8 @@
                             <constraint firstItem="1Zz-Ba-Mkq" firstAttribute="top" secondItem="KE1-9n-qQy" secondAttribute="bottom" constant="30" id="1IX-QK-qyL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="w5L-5N-jg6" secondAttribute="trailing" constant="100" id="1Oq-wk-udR"/>
                             <constraint firstItem="FFF-So-OM4" firstAttribute="centerX" secondItem="Sda-lr-MTq" secondAttribute="centerX" id="90g-6Q-7kf"/>
+                            <constraint firstItem="RgX-yb-6MW" firstAttribute="top" secondItem="R29-0D-yYR" secondAttribute="bottom" constant="38" id="Kx2-Sb-Bzv"/>
+                            <constraint firstItem="R29-0D-yYR" firstAttribute="centerX" secondItem="Sda-lr-MTq" secondAttribute="centerX" id="NQl-Me-f6v"/>
                             <constraint firstItem="w5L-5N-jg6" firstAttribute="leading" secondItem="Sda-lr-MTq" secondAttribute="leadingMargin" constant="100" id="U7q-2f-gQ8"/>
                             <constraint firstItem="RgX-yb-6MW" firstAttribute="centerX" secondItem="1Zz-Ba-Mkq" secondAttribute="centerX" id="Yba-0a-hUl"/>
                             <constraint firstItem="RgX-yb-6MW" firstAttribute="top" secondItem="w5L-5N-jg6" secondAttribute="bottom" constant="100" id="bzd-Dk-HcL"/>
@@ -165,6 +194,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="R29-0D-yYR" id="Hnb-e1-IMl"/>
+                        <outlet property="input" destination="RgX-yb-6MW" id="rks-BG-lY2"/>
                         <segue destination="ERl-Ug-VAl" kind="show" id="Op9-iC-k3V"/>
                     </connections>
                 </viewController>
@@ -795,6 +826,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h9a-R7-Dca"/>
+        <segue reference="Op9-iC-k3V"/>
     </inferredMetricsTieBreakers>
 </document>
