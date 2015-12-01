@@ -13,6 +13,7 @@ class AccessCodeViewController: UIViewController {
 
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var accountLabel: UILabel!
     
     var user: NSManagedObject?
     
@@ -25,6 +26,7 @@ class AccessCodeViewController: UIViewController {
         self.input.layer.borderColor = missingColor.CGColor
         self.input.layer.borderWidth = 0
         self.errorLabel.text = ""
+        self.accountLabel.text = user!.valueForKey("email") as! String
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,45 +49,56 @@ class AccessCodeViewController: UIViewController {
         // Create POST object
         let poster = Poster()
         var dataString = ""
-        var postString = ""
+        var postString = "http://discworld-js1h704o.cloudapp.net/test/code.php"
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
         
-        if let user = user {
-            // Construct data string for the post
-            dataString += "email=" + self.input.text! + "&code=" + self.input.text!
-            print(dataString)
+        // Construct data string for the post
+        dataString += "email=" + self.accountLabel.text! + "&code=" + self.input.text!
         
-            // Perform POST
-            poster.doPost(postString, dataString: dataString) {
-                (response, errorStr) -> Void in
-                if let errorString = errorStr {
-                    // Check the POST was successful
-                    self.errorLabel.text = errorString
-                    print(self.errorLabel.text)
-                } else {
-                    if let status = response["status"] as? String {
-                        if (status == "ok") {
-                            // Segue to the Access Code verification
-                            self.performSegueWithIdentifier("AccessView", sender:self);
-                        } else {
-                            // Check for error message
-                            if let errorMessage = response["message"] as? String {
-                                self.errorLabel.text = errorMessage
-                                print(errorMessage)
-                            } else {
-                                // Unknown error occurred
-                                self.errorLabel.text = "Unknown Error!"
-                            }
+        // Perform POST
+        poster.doPost(postString, dataString: dataString) {
+        (response, errorStr) -> Void in
+            if let errorString = errorStr {
+                // Check the POST was successful
+                self.errorLabel.text = errorString
+                print(self.errorLabel.text)
+            } else {
+                if let status = response["status"] as? String {
+                    if (status == "ok") {
+                        // Account activiated so update status and go to home page
+                        // Segue to the Home Page
+                        self.user!.setValue("LOGGEDIN", forKey: "status")
+                        
+                        // Complete save and handle potential error
+                        do {
+                            try managedContext.save()
+                        } catch let error as NSError {
+                            print("Could not save \(error), \(error.userInfo)")
                         }
+                        
+                        
+                        self.performSegueWithIdentifier("homeSeque", sender:self)
                     } else {
-                        // Unknown error occurred
-                        self.errorLabel.text = "Unknown Error!"
+                        // Check for error message
+                        if let errorMessage = response["message"] as? String {
+                            self.errorLabel.text = errorMessage
+                            print(errorMessage)
+                        } else {
+                            // Unknown error occurred
+                            self.errorLabel.text = "Unknown Error!"
+                        }
                     }
+                } else {
+                    // Unknown error occurred
+                    self.errorLabel.text = "Unknown Error!"
                 }
             }
-            
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    }
     /*
     // MARK: - Navigation
 

@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var pVerificationInput: UITextField!
     var user = [NSManagedObject]()
+    var loggedIn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +30,49 @@ class RegisterViewController: UIViewController {
         self.pVerificationInput.layer.borderColor = missingColor.CGColor
         self.errorLabel.text = ""
         
+        loadUser()
+        
+        if(user.count == 1) {
+        // Load saved user entities from core data
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        managedContext.deleteObject(user[0])
+        
+        // Complete save and handle potential error
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        }
     }
-
+    override func viewDidAppear(animated: Bool) {
+        
+        loadUser()
+        
+        if(user.count == 1) {
+            // User is logged in, check for status of account
+            var status : String = user[0].valueForKey("status") as! String
+            print(status)
+            if(status == "PENDING") {
+                self.performSegueWithIdentifier("AccessView", sender:self)
+            } else {
+                // Segue to home page
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func createAccount(sender: AnyObject) {
+        // Load saved user entities from core data
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
         var postString = "http://discworld-js1h704o.cloudapp.net/test/crittermail.php"
         var dataString = ""
         
@@ -75,9 +111,22 @@ class RegisterViewController: UIViewController {
             } else {
                 if let status = response["status"] as? String {
                     if (status == "ok") {
-
+                        // Create Core Data entity
+                        let entity = NSEntityDescription.entityForName("User", inManagedObjectContext: managedContext)
+                        let newUser = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+                        
+                        newUser.setValue(self.emailInput.text!, forKey: "email")
+                        newUser.setValue("PENDING", forKey: "status")
+                        
+                        // Complete save and handle potential error
+                        do {
+                            try managedContext.save()
+                        } catch let error as NSError {
+                            print("Could not save \(error), \(error.userInfo)")
+                        }
+                        
                         // Segue to the Access Code verification
-                        self.performSegueWithIdentifier("AccessView", sender:self);
+                        self.performSegueWithIdentifier("AccessView", sender:self)
                     } else {
                         // Check for error message
                         if let errorMessage = response["message"] as? String {
@@ -97,8 +146,13 @@ class RegisterViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "AccessView" {
-            // Don't need to do anything yet!
+        loadUser()
+        let destinationViewController = segue.destinationViewController
+        
+        if let accessViewController = destinationViewController as? AccessCodeViewController {
+            if (segue.identifier == "AccessView") {
+                accessViewController.user = user[0]
+            }
         }
     }
     
@@ -118,7 +172,7 @@ class RegisterViewController: UIViewController {
             } else {
                 print("Could not fetch user")
             }
-        } catch {
+        } catch _{
             return
         }
     }
