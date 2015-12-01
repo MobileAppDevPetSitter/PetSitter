@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1Q-Pp-Rlb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-616" y="-816"/>
+            <point key="canvasLocation" x="-598" y="-816"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="WaV-nF-IvN">
@@ -688,7 +688,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="oZB-13-ZU2"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -698,7 +697,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="USM-fw-uOR"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
