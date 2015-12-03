@@ -743,7 +743,7 @@
                         <outlet property="emailInput" destination="5PY-Tu-YqG" id="A2v-aI-P3X"/>
                         <outlet property="errorLabel" destination="hCL-6u-8xa" id="kpT-VZ-KEH"/>
                         <outlet property="passwordInput" destination="tum-Wu-4tH" id="bQc-Z9-NPq"/>
-                        <segue destination="ERl-Ug-VAl" kind="showDetail" action="showViewController:sender:" id="h9a-R7-Dca"/>
+                        <segue destination="ERl-Ug-VAl" kind="showDetail" identifier="HomeSegue" action="showViewController:sender:" id="h9a-R7-Dca"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WzA-Bt-sBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -827,6 +827,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Op9-iC-k3V"/>
+        <segue reference="h9a-R7-Dca"/>
     </inferredMetricsTieBreakers>
 </document>

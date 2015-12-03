@@ -89,6 +89,7 @@ class LoginViewController: UIViewController {
                         }
                         
                         // Segue to the Access Code verification
+                        self.navigationController!.viewControllers = []
                         self.performSegueWithIdentifier("HomeSegue", sender:self)
                     } else {
                         // Check for error message
@@ -117,9 +118,6 @@ class LoginViewController: UIViewController {
     }
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier! == "HomeSegue") {
-            self.navigationController!.viewControllers = []
-        }
     }
 
 }
