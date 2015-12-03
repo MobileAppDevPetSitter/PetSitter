@@ -19,8 +19,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Check for core data user
+
         
         // Red border for missing inputs
         let missingColor : UIColor = UIColor(red: 1, green: 0, blue:0, alpha: 1.0)
@@ -30,8 +29,8 @@ class RegisterViewController: UIViewController {
         self.pVerificationInput.layer.borderColor = missingColor.CGColor
         self.errorLabel.text = ""
     }
+    
     override func viewDidAppear(animated: Bool) {
-        
         loadUser()
         
         if(user.count == 1) {
@@ -132,9 +131,9 @@ class RegisterViewController: UIViewController {
         loadUser()
         let destinationViewController = segue.destinationViewController
         
-        if let accessViewController = destinationViewController as? AccessCodeViewController {
-            if (segue.identifier == "AccessView") {
-                accessViewController.user = user[0]
+        if (segue.identifier == "AccessView") {
+            if let accessViewController = destinationViewController as? AccessCodeViewController {
+                    accessViewController.user = user[0]
             }
         }
     }
