@@ -12,9 +12,7 @@ class PetProfileCreationContentViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var infoField: UITextField!
-    
-    @IBOutlet weak var bioField: UITextView!
+    @IBOutlet weak var infoField: UITextView!
     
     var pageIndex: Int!
     
@@ -27,22 +25,11 @@ class PetProfileCreationContentViewController: UIViewController {
         
         self.titleLabel.text = self.titleText
         
-        self.infoField.placeholder = self.placeHolderText
-        
-        if(self.pageIndex == 1){
+        if(self.pageIndex == 7){
             self.infoField.hidden = true
-            
-            self.bioField.hidden = false
-        }
-        else if(self.pageIndex == 7){
-            self.infoField.hidden = false
-            
-            self.bioField.hidden = false
         }
         else{
             self.infoField.hidden = false
-            
-            self.bioField.hidden = true
         }
         
     }
