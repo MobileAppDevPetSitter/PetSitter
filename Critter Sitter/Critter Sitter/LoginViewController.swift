@@ -118,6 +118,35 @@ class LoginViewController: UIViewController {
     }
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        loadUser()
+        let destinationViewController = segue.destinationViewController
+        
+        if (segue.identifier == "HomeSegue") {
+            if let homeViewController = destinationViewController as? HomeViewController {
+                homeViewController.user = user[0]
+            }
+        }
     }
 
+    
+    // Load core data user
+    func loadUser() {
+        // Load saved user entities from core data
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName:"User")
+        
+        do {
+            let fetchedResults =
+            try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            if let results = fetchedResults {
+                self.user = results
+            } else {
+                print("Could not fetch user")
+            }
+        } catch _{
+            return
+        }
+    }
 }

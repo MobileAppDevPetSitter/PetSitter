@@ -41,6 +41,7 @@ class RegisterViewController: UIViewController {
                 self.performSegueWithIdentifier("AccessView", sender:self)
             } else {
                 // Segue to home page
+                self.performSegueWithIdentifier("HomeSegue", sender:self)
             }
         }
     }
@@ -134,6 +135,10 @@ class RegisterViewController: UIViewController {
         if (segue.identifier == "AccessView") {
             if let accessViewController = destinationViewController as? AccessCodeViewController {
                     accessViewController.user = user[0]
+            }
+        } else if (segue.identifier == "HomeSegue") {
+            if let homeViewController = destinationViewController as? HomeViewController {
+                homeViewController.user = user[0]
             }
         }
     }
