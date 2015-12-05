@@ -14,6 +14,10 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
     var pageTitles: NSArray!
     var placeHolderText: NSArray!
     
+    @IBAction func save(sender: AnyObject) {
+        // pet profile saving function
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

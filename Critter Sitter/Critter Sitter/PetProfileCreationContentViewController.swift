@@ -32,13 +32,6 @@ class PetProfileCreationContentViewController: UIViewController {
         else{
             self.infoField.hidden = false
         }
-        
-        if(self.pageIndex == 10){
-            self.submitButton.hidden = false
-        }
-        else{
-            self.submitButton.hidden = true
-        }
 
     }
     

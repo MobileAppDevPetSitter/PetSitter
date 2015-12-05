@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H9b-7y-jUv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X1S-wn-0n0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -242,8 +242,22 @@
                     <view key="view" contentMode="scaleToFill" id="ged-XX-640">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEJ-gA-Fbg">
+                                <rect key="frame" x="234" y="285" width="133" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Pet Profile Creation"/>
+                                <connections>
+                                    <segue destination="H9b-7y-jUv" kind="show" id="ZwZ-Z0-G1Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MEJ-gA-Fbg" firstAttribute="centerY" secondItem="ged-XX-640" secondAttribute="centerY" id="Tfc-ZR-cHK"/>
+                            <constraint firstItem="MEJ-gA-Fbg" firstAttribute="centerX" secondItem="ged-XX-640" secondAttribute="centerX" id="ck8-js-Hk9"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="Q9j-OW-lAM" kind="show" id="NYl-MY-Mnr"/>
@@ -772,13 +786,27 @@
                     <view key="view" contentMode="scaleToFill" id="lFS-1J-s6V">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Cm-sW-I1S">
+                                <rect key="frame" x="246" y="565" width="108" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Save Pet Profile"/>
+                                <connections>
+                                    <action selector="save:" destination="H9b-7y-jUv" eventType="touchUpInside" id="I4o-r6-zbZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d8T-bN-hOs" firstAttribute="top" secondItem="5Cm-sW-I1S" secondAttribute="bottom" constant="5" id="9NT-5R-54n"/>
+                            <constraint firstItem="5Cm-sW-I1S" firstAttribute="centerX" secondItem="lFS-1J-s6V" secondAttribute="centerX" id="qDm-7C-95D"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8F-5Z-Jjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1679" y="811"/>
+            <point key="canvasLocation" x="-1121" y="749"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Kc0-G0-06H">
@@ -786,7 +814,7 @@
                 <pageViewController storyboardIdentifier="PetCreationPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="0DG-8a-jaV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxe-iv-A77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-958" y="811"/>
+            <point key="canvasLocation" x="-1121" y="1461"/>
         </scene>
         <!--Pet Profile Creation Content View Controller-->
         <scene sceneID="qKu-Tx-a3c">
@@ -818,37 +846,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJq-uT-N9C">
-                                <rect key="frame" x="252" y="490" width="97" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Submit Profile">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="submit:" destination="JAm-qA-mAu" eventType="touchUpInside" id="NjZ-wV-SL7"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.082352941176470587" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Xdt-za-OKx" firstAttribute="centerX" secondItem="Zf6-g9-PRi" secondAttribute="centerX" id="RIn-Fr-uBC"/>
-                            <constraint firstItem="lJq-uT-N9C" firstAttribute="top" secondItem="Xdt-za-OKx" secondAttribute="bottom" constant="150" id="Xwh-fF-8Le"/>
                             <constraint firstItem="1W6-Pe-ptD" firstAttribute="top" secondItem="2pF-CZ-YET" secondAttribute="bottom" constant="20" id="i1g-8O-v69"/>
                             <constraint firstItem="Xdt-za-OKx" firstAttribute="centerY" secondItem="Zf6-g9-PRi" secondAttribute="centerY" id="m58-XN-eiz"/>
                             <constraint firstItem="1W6-Pe-ptD" firstAttribute="centerX" secondItem="Zf6-g9-PRi" secondAttribute="centerX" id="rUH-Ri-4VY"/>
-                            <constraint firstItem="lJq-uT-N9C" firstAttribute="centerX" secondItem="Zf6-g9-PRi" secondAttribute="centerX" id="vMs-G9-6cs"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="infoField" destination="Xdt-za-OKx" id="hi8-5P-LL2"/>
-                        <outlet property="submitButton" destination="lJq-uT-N9C" id="b7a-Tv-9Tj"/>
                         <outlet property="titleLabel" destination="1W6-Pe-ptD" id="hOx-G9-GPA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRy-Aa-KkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-958" y="1539"/>
+            <point key="canvasLocation" x="-1121" y="2145"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
