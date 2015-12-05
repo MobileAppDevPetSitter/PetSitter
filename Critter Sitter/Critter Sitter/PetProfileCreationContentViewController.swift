@@ -11,8 +11,9 @@ import UIKit
 class PetProfileCreationContentViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var infoField: UITextView!
+    @IBOutlet weak var submitButton: UIButton!
+    
     
     var pageIndex: Int!
     
@@ -32,11 +33,22 @@ class PetProfileCreationContentViewController: UIViewController {
             self.infoField.hidden = false
         }
         
+        if(self.pageIndex == 10){
+            self.submitButton.hidden = false
+        }
+        else{
+            self.submitButton.hidden = true
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func submit(sender: AnyObject) {
+        
     }
     
     
