@@ -12,8 +12,6 @@ class PetProfileCreationContentViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoField: UITextView!
-    @IBOutlet weak var submitButton: UIButton!
-    
     
     var pageIndex: Int!
     
@@ -23,25 +21,15 @@ class PetProfileCreationContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.titleLabel.text = self.titleText
-        
-        if(self.pageIndex == 7){
-            self.infoField.hidden = true
-        }
-        else{
-            self.infoField.hidden = false
-        }
 
+        if let text = self.titleText {
+            self.titleLabel.text = text
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func submit(sender: AnyObject) {
-        
     }
     
     
