@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
         if(user != nil) {
             
         }
+        
         // Do any additional setup after loading the view.
     }
 
