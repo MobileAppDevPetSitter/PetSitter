@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController {
-
+    var user: NSManagedObject?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if(user != nil) {
+            
+        }
+        
         // Do any additional setup after loading the view.
     }
 
