@@ -42,15 +42,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fwb-tO-Bqu">
-                                <rect key="frame" x="175" y="223" width="250" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="iAQ-UM-ZNe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j10-tI-whw">
                                 <rect key="frame" x="175" y="323" width="250" height="30"/>
                                 <animations/>
@@ -103,6 +94,28 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eO8-OA-YmF">
+                                <rect key="frame" x="239" y="185" width="123" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Dismiss Keyboard">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissKeyboard:" destination="lMx-UR-3t6" eventType="touchUpInside" id="vJN-70-sh7"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fwb-tO-Bqu">
+                                <rect key="frame" x="175" y="223" width="250" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="iAQ-UM-ZNe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="lMx-UR-3t6" id="qdS-sZ-Tuc"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -111,6 +124,7 @@
                             <constraint firstItem="xyT-Zl-K3v" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="C3N-YX-gXC"/>
                             <constraint firstItem="2yE-oL-ve6" firstAttribute="centerX" secondItem="Fwb-tO-Bqu" secondAttribute="centerX" id="DOW-Gz-w5u"/>
                             <constraint firstItem="kzg-Sm-qVV" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="GUW-Wh-cxu"/>
+                            <constraint firstItem="eO8-OA-YmF" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="Lpi-tM-DhF"/>
                             <constraint firstItem="ysM-Up-AQF" firstAttribute="top" secondItem="aXy-pj-gj9" secondAttribute="bottom" constant="25" id="US0-ri-NHg"/>
                             <constraint firstItem="aXy-pj-gj9" firstAttribute="top" secondItem="xyT-Zl-K3v" secondAttribute="bottom" constant="20" id="Zyt-bO-KTO"/>
                             <constraint firstItem="j10-tI-whw" firstAttribute="centerX" secondItem="2yE-oL-ve6" secondAttribute="centerX" id="arc-Ye-W41"/>
@@ -120,6 +134,7 @@
                             <constraint firstItem="Fwb-tO-Bqu" firstAttribute="top" secondItem="kzg-Sm-qVV" secondAttribute="bottom" constant="43" id="iv8-B1-qKX"/>
                             <constraint firstItem="BKQ-DJ-F8w" firstAttribute="top" secondItem="0Gl-xW-MfS" secondAttribute="bottom" constant="30" id="kp2-Eg-HLr"/>
                             <constraint firstItem="aXy-pj-gj9" firstAttribute="centerX" secondItem="xyT-Zl-K3v" secondAttribute="centerX" id="okE-U1-9U3"/>
+                            <constraint firstItem="eO8-OA-YmF" firstAttribute="top" secondItem="kzg-Sm-qVV" secondAttribute="bottom" constant="5" id="pZu-no-ZXv"/>
                             <constraint firstItem="j10-tI-whw" firstAttribute="top" secondItem="2yE-oL-ve6" secondAttribute="bottom" constant="20" id="sb1-xf-uTF"/>
                             <constraint firstItem="BKQ-DJ-F8w" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="uXo-OE-3xL"/>
                             <constraint firstItem="Fwb-tO-Bqu" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="xec-UC-KGu"/>
@@ -131,11 +146,16 @@
                         <outlet property="errorLabel" destination="kzg-Sm-qVV" id="czz-bn-6hZ"/>
                         <outlet property="pVerificationInput" destination="j10-tI-whw" id="DC6-pA-uwf"/>
                         <outlet property="passwordInput" destination="2yE-oL-ve6" id="QKE-Ys-ylk"/>
+                        <outlet property="textFields" destination="j10-tI-whw" id="mih-Bg-018"/>
+                        <outletCollection property="textFields" destination="Fwb-tO-Bqu" collectionClass="NSMutableArray" id="WLk-wd-MD6"/>
+                        <outletCollection property="textFields" destination="2yE-oL-ve6" collectionClass="NSMutableArray" id="BqA-Ph-dRd"/>
+                        <outletCollection property="textFields" destination="j10-tI-whw" collectionClass="NSMutableArray" id="2LT-Se-q9F"/>
                         <segue destination="sDT-zq-5hz" kind="show" identifier="AccessView" id="JhI-HP-eAa"/>
                         <segue destination="ERl-Ug-VAl" kind="showDetail" identifier="HomeSegue" id="9bG-vp-myn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6M8-9H-sI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rHp-zb-UjK"/>
             </objects>
             <point key="canvasLocation" x="-1313" y="-816"/>
         </scene>

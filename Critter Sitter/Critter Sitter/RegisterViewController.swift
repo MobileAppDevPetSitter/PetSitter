@@ -9,17 +9,22 @@
 import UIKit
 import CoreData
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var pVerificationInput: UITextField!
+    @IBOutlet var textFields: [UITextField]!
+    var activeTextField: UITextField? = nil
+    
+    
     var user = [NSManagedObject]()
     var loggedIn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         
         // Red border for missing inputs
         let missingColor : UIColor = UIColor(red: 1, green: 0, blue:0, alpha: 1.0)
@@ -163,15 +168,24 @@ class RegisterViewController: UIViewController {
             return
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+   
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        activeTextField?.resignFirstResponder()
     }
-    */
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        activeTextField = nil
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        activeTextField?.resignFirstResponder()
+        
+        return true
+    }
 
 }
 
