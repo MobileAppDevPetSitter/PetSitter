@@ -95,6 +95,9 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

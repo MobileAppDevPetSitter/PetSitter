@@ -1127,6 +1127,9 @@
                             <constraint firstItem="5Cm-sW-I1S" firstAttribute="centerX" secondItem="lFS-1J-s6V" secondAttribute="centerX" id="qDm-7C-95D"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="ERl-Ug-VAl" kind="showDetail" identifier="HomeView" id="2li-N1-abp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8F-5Z-Jjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1191,6 +1194,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Op9-iC-k3V"/>
+        <segue reference="2li-N1-abp"/>
     </inferredMetricsTieBreakers>
 </document>
