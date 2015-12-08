@@ -12,9 +12,9 @@ import CoreData
 class AccessCodeViewController: UIViewController {
 
     @IBOutlet weak var input: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var accountLabel: UILabel!
     
+    @IBOutlet weak var errorLabel: UILabel!
     var user: NSManagedObject?
     
     override func viewDidLoad() {

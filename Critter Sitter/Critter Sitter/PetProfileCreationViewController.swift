@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 class PetProfileCreationViewController: UIViewController, UIPageViewControllerDataSource {
-    
+    var user: NSManagedObject?
     var pageViewController: UIPageViewController!
     var pageTitles: NSArray!
     var placeHolderText: NSArray!
@@ -29,20 +30,69 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
             self.dataString +=  self.pageTitles[i].lowercaseString + "="
             
             if let field = vc.infoField {
-                    if(field.text!.isEmpty == false) {
-                        self.dataString += field.text!
-                    } else {
-                        self.dataString += "None"
-                    }
+                if(field.text!.isEmpty == false) {
+                    self.dataString += field.text!
+                } else {
+                    self.dataString += "None"
+                }
             }
             else {
                 self.dataString += "None"
             }
         }
-    
+        
         print(dataString)
         
         // TODO: POST data then segue, DB needs update to hold all the data
+        var postString = "http://discworld-js1h704o.cloudapp.net/test/petCreate.php"
+        
+        // Create POST object
+        let poster = Poster()
+        
+        // Construct data string for the post
+        print(dataString)
+        
+        // Perform POST
+        poster.doPost(postString, dataString: dataString) {
+            (response, errorStr) -> Void in
+            if let errorString = errorStr {
+                // Check the POST was successful
+                
+                print("ERROR1");
+            } else {
+                if let status = response["status"] as? String {
+                    if (status == "ok") {
+                        // Create Core Data entity
+                        var ownerPostString = "http://discworld-js1h704o.cloudapp.net/test/addPetToOwner.php"
+                        var ownerDataString = "owner_id=" + (self.user!.valueForKey("user_id") as! String) + "&pet_id=" + (response["pet_id"] as! String)
+                        
+                        // Perform POST
+                        poster.doPost(ownerPostString, dataString: ownerDataString) {
+                            (ownerResponse, str) -> Void in
+                            if let status2 = ownerResponse["status"] as? String {
+                                if (status == "ok") {
+                                    // Segue to the Access Code verification
+                                    self.performSegueWithIdentifier("HomeView", sender:self)
+                                    
+                                }
+                            }
+                        }
+                        // Segue to the Access Code verification
+                    } else {
+                        // Check for error message
+                        if let errorMessage = response["message"] as? String {
+                            print(errorMessage)
+                        } else {
+                            // Unknown error occurred
+                        }
+                    }
+                } else {
+                    // Unknown error occurred"
+                }
+            }
+        }
+        
+        
     }
     
     override func viewDidLoad() {

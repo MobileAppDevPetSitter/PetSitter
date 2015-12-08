@@ -3,8 +3,9 @@
     <entity name="User" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="User" positionX="-54" positionY="-9" width="128" height="90"/>
     </elements>
 </model>
