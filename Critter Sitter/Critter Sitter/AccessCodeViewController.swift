@@ -28,7 +28,10 @@ class AccessCodeViewController: UIViewController, UITextFieldDelegate {
         self.input.layer.borderColor = missingColor.CGColor
         self.input.layer.borderWidth = 0
         self.errorLabel.text = ""
-        self.accountLabel.text = user!.valueForKey("email") as! String
+        
+        if (user != nil){
+            self.accountLabel.text = user!.valueForKey("email") as! String
+        }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
