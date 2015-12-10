@@ -30,6 +30,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.emailInput.layer.borderColor = missingColor.CGColor
         self.passwordInput.layer.borderColor = missingColor.CGColor
         self.errorLabel.text = ""
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -169,5 +172,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         activeTextField?.resignFirstResponder()
         
         return true
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

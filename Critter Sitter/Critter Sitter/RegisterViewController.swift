@@ -33,6 +33,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.passwordInput.layer.borderColor = missingColor.CGColor
         self.pVerificationInput.layer.borderColor = missingColor.CGColor
         self.errorLabel.text = ""
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -187,6 +190,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
 
 }
 

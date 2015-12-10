@@ -29,6 +29,9 @@ class AccessCodeViewController: UIViewController, UITextFieldDelegate {
         self.input.layer.borderWidth = 0
         self.errorLabel.text = ""
         self.accountLabel.text = user!.valueForKey("email") as! String
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,6 +128,11 @@ class AccessCodeViewController: UIViewController, UITextFieldDelegate {
         activeTextField?.resignFirstResponder()
         
         return true
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
 
