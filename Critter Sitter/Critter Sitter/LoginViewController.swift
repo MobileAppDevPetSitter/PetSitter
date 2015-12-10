@@ -10,17 +10,19 @@
 import UIKit
 import CoreData
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet var textFields: [UITextField]!
+    var activeTextField: UITextField? = nil
     
     var user = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
         // Do any additional setup after loading the view.
         // Red border for missing inputs
         let missingColor : UIColor = UIColor(red: 1, green: 0, blue:0, alpha: 1.0)
@@ -149,5 +151,23 @@ class LoginViewController: UIViewController {
         } catch _{
             return
         }
+    }
+    
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        activeTextField?.resignFirstResponder()
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        activeTextField = nil
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        activeTextField?.resignFirstResponder()
+        
+        return true
     }
 }

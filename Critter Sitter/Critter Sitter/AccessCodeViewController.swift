@@ -9,10 +9,12 @@
 import UIKit
 import CoreData
 
-class AccessCodeViewController: UIViewController {
+class AccessCodeViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var accountLabel: UILabel!
+    @IBOutlet var textFields: [UITextField]!
+    var activeTextField: UITextField? = nil
     
     @IBOutlet weak var errorLabel: UILabel!
     var user: NSManagedObject?
@@ -106,14 +108,24 @@ class AccessCodeViewController: UIViewController {
             }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        activeTextField?.resignFirstResponder()
     }
-    */
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        activeTextField = nil
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        activeTextField?.resignFirstResponder()
+        
+        return true
+    }
+
 
 }
