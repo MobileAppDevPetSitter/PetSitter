@@ -13,6 +13,7 @@ class AccessCodeViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var accountLabel: UILabel!
+    @IBOutlet weak var accessText: UITextField!
     @IBOutlet var textFields: [UITextField]!
     var activeTextField: UITextField? = nil
     
@@ -26,11 +27,13 @@ class AccessCodeViewController: UIViewController, UITextFieldDelegate {
         let missingColor : UIColor = UIColor(red: 1, green: 0, blue:0, alpha: 1.0)
         self.errorLabel.textColor = missingColor
         self.input.layer.borderColor = missingColor.CGColor
+        self.accessText.layer.borderColor = missingColor.CGColor
+        self.accessText.layer.borderWidth = 0
         self.input.layer.borderWidth = 0
         self.errorLabel.text = ""
         
         if (user != nil){
-            self.accountLabel.text = user!.valueForKey("email") as! String
+            self.input.text = user!.valueForKey("email") as! String
         }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -54,6 +57,11 @@ class AccessCodeViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        if(self.accessText.text?.isEmpty == true) {
+            self.errorLabel.text = "Missing input!"
+            self.accessText.layer.borderWidth = 2
+            return
+        }
         // Create POST object
         let poster = Poster()
         var dataString = ""
@@ -62,7 +70,7 @@ class AccessCodeViewController: UIViewController, UITextFieldDelegate {
         let managedContext = appDelegate.managedObjectContext
         
         // Construct data string for the post
-        dataString += "email=" + self.accountLabel.text! + "&code=" + self.input.text!
+        dataString += "email=" + self.input.text! + "&code=" + self.accessText.text!
         
         // Perform POST
         poster.doPost(postString, dataString: dataString) {
