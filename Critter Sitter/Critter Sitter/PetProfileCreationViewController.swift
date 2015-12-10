@@ -27,13 +27,20 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
                 self.dataString += "&"
             }
             
-            self.dataString +=  self.pageTitles[i].lowercaseString + "="
-            
-            if let field = vc.infoField {
-                if(field.text!.isEmpty == false) {
-                    self.dataString += field.text!
+            if(!(self.pageTitles[i] === "Owners")) {
+                if(self.pageTitles[i] === "Emergency Contact") {
+                    self.dataString +=  "emergency_contact=";
+
                 } else {
-                    self.dataString += "None"
+                    self.dataString +=  self.pageTitles[i].lowercaseString + "="
+                }
+            
+                if let field = vc.infoField {
+                    if(field.text!.isEmpty == false) {
+                        self.dataString += field.text!
+                    } else {
+                        self.dataString += "None"
+                    }
                 }
             }
             else {
@@ -64,8 +71,8 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
                     if (status == "ok") {
                         // Create Core Data entity
                         var ownerPostString = "http://discworld-js1h704o.cloudapp.net/test/addPetToOwner.php"
-                        var ownerDataString = "owner_id=" + (self.user!.valueForKey("user_id") as! String) + "&pet_id=" + (response["pet_id"] as! String)
-                        
+                        var ownerDataString = "owner_id=" + (self.user!.valueForKey("user_id") as! String) + "&pet_id=" + (response["id"] as! String)
+
                         // Perform POST
                         poster.doPost(ownerPostString, dataString: ownerDataString) {
                             (ownerResponse, str) -> Void in
@@ -73,7 +80,6 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
                                 if (status == "ok") {
                                     // Segue to the Access Code verification
                                     self.performSegueWithIdentifier("HomeView", sender:self)
-                                    
                                 }
                             }
                         }

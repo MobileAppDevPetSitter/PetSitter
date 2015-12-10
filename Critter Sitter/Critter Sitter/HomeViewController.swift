@@ -28,6 +28,15 @@ class HomeViewController: UIViewController {
     }
     
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destinationViewController = segue.destinationViewController
+        
+        if (segue.identifier == "petCreate") {
+            if let homeViewController = destinationViewController as? PetProfileCreationViewController {
+                homeViewController.user = user
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

@@ -291,7 +291,7 @@
                                 <animations/>
                                 <state key="normal" title="Pet Profile Creation"/>
                                 <connections>
-                                    <segue destination="H9b-7y-jUv" kind="show" id="ZwZ-Z0-G1Y"/>
+                                    <segue destination="H9b-7y-jUv" kind="show" identifier="petCreate" id="ZwZ-Z0-G1Y"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="My Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKw-RJ-hpy">
@@ -1222,7 +1222,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="2li-N1-abp"/>
         <segue reference="kUS-EC-ndb"/>
-        <segue reference="Op9-iC-k3V"/>
     </inferredMetricsTieBreakers>
 </document>

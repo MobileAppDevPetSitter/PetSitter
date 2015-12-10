@@ -24,8 +24,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         // Red border for missing inputs
         let missingColor : UIColor = UIColor(red: 1, green: 0, blue:0, alpha: 1.0)
         self.errorLabel.textColor = missingColor
@@ -44,7 +42,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         if(user.count == 1) {
             // User is logged in, check for status of account
             var status : String = user[0].valueForKey("status") as! String
-            print(status)
+            print(user[0].valueForKey("user_id") as! String)
+            
             if(status == "PENDING") {
                 self.performSegueWithIdentifier("AccessView", sender:self)
             } else {
@@ -107,9 +106,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                         let newUser = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
                         
                         newUser.setValue(self.emailInput.text!, forKey: "email")
+                        print((response["id"] as? String));
                         newUser.setValue((response["id"] as? String), forKey: "user_id")
                         newUser.setValue("PENDING", forKey: "status")
                         
+                        print(newUser.valueForKey("user_id"))
                         // Complete save and handle potential error
                         do {
                             try managedContext.save()
