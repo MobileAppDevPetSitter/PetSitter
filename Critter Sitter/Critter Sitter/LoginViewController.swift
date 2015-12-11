@@ -84,7 +84,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         let newUser = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
                         
                         newUser.setValue(self.emailInput.text!, forKey: "email")
-                        newUser.setValue((response["id"] as! String), forKey: "user_id")
+                        newUser.setValue((response["id"] as? String), forKey: "user_id")
                         newUser.setValue("LOGGEDIN", forKey: "status")
                         
                         // Complete save and handle potential error

@@ -21,11 +21,12 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
         // pet profile saving function
         var size = self.pageTitles.count
         
+        self.dataString = "user_id=" + (self.user!.valueForKey("user_id") as! String)
+        
         for var i = 0; i < size; i++ {
             var vc = self.viewControllerAtIndex(i)
-            if(self.dataString != "") {
-                self.dataString += "&"
-            }
+            
+            self.dataString += "&"
             
             if(!(self.pageTitles[i] === "Owners")) {
                 if(self.pageTitles[i] === "Emergency Contact") {
@@ -41,14 +42,11 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
                     } else {
                         self.dataString += "None"
                     }
+                } else {
+                self.dataString += "None"
                 }
             }
-            else {
-                self.dataString += "None"
-            }
         }
-        
-        print(dataString)
         
         // TODO: POST data then segue, DB needs update to hold all the data
         var postString = "http://discworld-js1h704o.cloudapp.net/test/petCreate.php"
@@ -56,34 +54,18 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
         // Create POST object
         let poster = Poster()
         
-        // Construct data string for the post
-        print(dataString)
-        
         // Perform POST
         poster.doPost(postString, dataString: dataString) {
             (response, errorStr) -> Void in
             if let errorString = errorStr {
                 // Check the POST was successful
                 
-                print("ERROR1");
+                print(errorStr);
             } else {
                 if let status = response["status"] as? String {
                     if (status == "ok") {
-                        // Create Core Data entity
-                        var ownerPostString = "http://discworld-js1h704o.cloudapp.net/test/addPetToOwner.php"
-                        var ownerDataString = "owner_id=" + (self.user!.valueForKey("user_id") as! String) + "&pet_id=" + (response["id"] as! String)
-
-                        // Perform POST
-                        poster.doPost(ownerPostString, dataString: ownerDataString) {
-                            (ownerResponse, str) -> Void in
-                            if let status2 = ownerResponse["status"] as? String {
-                                if (status == "ok") {
-                                    // Segue to the Access Code verification
-                                    self.performSegueWithIdentifier("HomeView", sender:self)
-                                }
-                            }
-                        }
                         // Segue to the Access Code verification
+                        self.performSegueWithIdentifier("HomeView", sender:self)
                     } else {
                         // Check for error message
                         if let errorMessage = response["message"] as? String {
@@ -97,8 +79,6 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
                 }
             }
         }
-        
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
