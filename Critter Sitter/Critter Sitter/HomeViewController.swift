@@ -12,6 +12,8 @@ import CoreData
 class HomeViewController: UIViewController {
     var user: NSManagedObject?
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
