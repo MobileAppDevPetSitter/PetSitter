@@ -8,10 +8,15 @@
 
 import UIKit
 
-class ActivityAddEventViewController: UIViewController {
+class ActivityAddEventViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var textViews: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textViews.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -19,6 +24,14 @@ class ActivityAddEventViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
     
 }
