@@ -1107,10 +1107,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Cm-sW-I1S">
-                                <rect key="frame" x="246" y="470" width="108" height="30"/>
+                                <rect key="frame" x="246" y="565" width="108" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Save Pet Profile">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="save:" destination="H9b-7y-jUv" eventType="touchUpInside" id="I4o-r6-zbZ"/>
@@ -1118,8 +1118,9 @@
                             </button>
                         </subviews>
                         <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="d8T-bN-hOs" firstAttribute="top" secondItem="5Cm-sW-I1S" secondAttribute="bottom" constant="100" id="9NT-5R-54n"/>
+                            <constraint firstItem="d8T-bN-hOs" firstAttribute="top" secondItem="5Cm-sW-I1S" secondAttribute="bottom" constant="5" id="4i1-ok-8rN"/>
                             <constraint firstItem="5Cm-sW-I1S" firstAttribute="centerX" secondItem="lFS-1J-s6V" secondAttribute="centerX" id="qDm-7C-95D"/>
                         </constraints>
                     </view>
