@@ -758,13 +758,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Koi-j0-YMh">
-                                <rect key="frame" x="180" y="121" width="240" height="120"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Koi-j0-YMh">
+                                <rect key="frame" x="100" y="171" width="400" height="120"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="POR-PQ-ayB"/>
-                                    <constraint firstAttribute="width" constant="240" id="Prd-qQ-91Z"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="Qkn-26-QKW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -776,7 +776,7 @@
                             <constraint firstItem="Koi-j0-YMh" firstAttribute="centerX" secondItem="AR9-dO-KVB" secondAttribute="centerX" id="2qA-yi-Ysa"/>
                             <constraint firstItem="bCL-JD-qco" firstAttribute="top" secondItem="DkR-uf-YU6" secondAttribute="bottom" constant="30" id="Elb-tg-jZl"/>
                             <constraint firstItem="bCL-JD-qco" firstAttribute="centerX" secondItem="AR9-dO-KVB" secondAttribute="centerX" id="InK-Fr-bLr"/>
-                            <constraint firstItem="Koi-j0-YMh" firstAttribute="top" secondItem="bCL-JD-qco" secondAttribute="bottom" constant="50" id="Ojt-rC-Cwm"/>
+                            <constraint firstItem="Koi-j0-YMh" firstAttribute="top" secondItem="bCL-JD-qco" secondAttribute="bottom" constant="100" id="Ojt-rC-Cwm"/>
                         </constraints>
                     </view>
                 </viewController>
