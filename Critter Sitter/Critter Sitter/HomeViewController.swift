@@ -17,8 +17,10 @@ struct Pet {
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var user: NSManagedObject?
     var titles: NSArray = []
-    var petSitting: NSMutableArray = []
-    var pets: NSMutableArray = []
+    var petSittingIds: NSMutableArray = []
+    var petSittingNames: NSMutableArray = []
+    var petsIds: NSMutableArray = []
+    var petsNames: NSMutableArray = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,17 +31,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self;
         tableView.dataSource = self;
         
-        self.petSitting = NSMutableArray()
-        self.pets = NSMutableArray()
+        self.petSittingIds = NSMutableArray()
+        self.petsIds = NSMutableArray()
+        self.petSittingNames = NSMutableArray()
+        self.petsNames = NSMutableArray()
         // Do any additional setup after loading the view.
+        
+        loadPets();
     }
     
     func loadPets() {
         let post = Poster()
         
-        var postString = "ttp://discworld-js1h704o.cloudapp.net/test/ownedPetsRetrieval.php"
+        var postString = "http://discworld-js1h704o.cloudapp.net/test/ownedPetsRetrieval.php"
         var dataString = "owner_id=" + (self.user!.valueForKey("user_id") as! String)
         
+        print(dataString)
         // Perform POST
         post.doPost(postString, dataString: dataString) {
             (response, errorStr) -> Void in
@@ -49,11 +56,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             } else {
                 if let status = response["status"] as? String {
                     if (status == "ok") {
+                        print(response)
                         if let sitting = response["pets"] as! NSArray? {
                             for instance in sitting  {
                                 var i: NSDictionary = instance as! NSDictionary
-                                var newPet: Pet = Pet(id: (i["pet_id"] as! String), name: (i["name"] as! String))
-                                self.pets.addObject(newPet as! AnyObject)
+                                self.petsIds.addObject(i["pet_id"]!)
+                                self.petsNames.addObject(i["name"]!)
                             }
                         }
                     }
@@ -61,14 +69,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     // Unknown error occurred
                 }
             }
+            self.tableView.reloadData()
         }
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.pets.removeAllObjects()
-        self.petSitting.removeAllObjects()
+        self.petsIds.removeAllObjects()
+        self.petSittingIds.removeAllObjects()
+        self.petsNames.removeAllObjects()
+        self.petSittingIds.removeAllObjects()
         
         loadPets()
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,16 +100,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
+        if(indexPath.section == 0) {
+            
+        } else {
+            
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
         if(indexPath.section == 0) {
-            cell.textLabel?.text = petSitting[indexPath.row].name
+            cell.textLabel?.text = petSittingNames[indexPath.row] as! String
         } else {
-            cell.textLabel?.text = pets[indexPath.row].name
+            cell.textLabel?.text = petsNames[indexPath.row] as! String
         }
         
         
@@ -110,9 +126,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == 0) {
-            return petSitting.count
+            return petSittingIds.count
         } else {
-            return pets.count
+            return petsIds.count
         }
     }
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
