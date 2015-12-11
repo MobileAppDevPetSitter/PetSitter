@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PetProfileCreationContentViewController: UIViewController {
+class PetProfileCreationContentViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoField: UITextView!
@@ -22,6 +22,8 @@ class PetProfileCreationContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        infoField.delegate = self
+        
         if let text = self.titleText {
             self.titleLabel.text = text
         }
@@ -32,15 +34,11 @@ class PetProfileCreationContentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
-    */
-    
 }
