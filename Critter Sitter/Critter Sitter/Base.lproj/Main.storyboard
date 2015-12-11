@@ -130,8 +130,8 @@
                             <constraint firstItem="2yE-oL-ve6" firstAttribute="top" secondItem="Fwb-tO-Bqu" secondAttribute="bottom" constant="20" id="hE6-MR-Pde"/>
                             <constraint firstItem="Fwb-tO-Bqu" firstAttribute="top" secondItem="BKQ-DJ-F8w" secondAttribute="bottom" constant="100" id="htn-N4-9d8"/>
                             <constraint firstItem="Fwb-tO-Bqu" firstAttribute="top" secondItem="kzg-Sm-qVV" secondAttribute="bottom" constant="43" id="iv8-B1-qKX"/>
-                            <constraint firstItem="BKQ-DJ-F8w" firstAttribute="top" secondItem="0Gl-xW-MfS" secondAttribute="bottom" constant="30" id="kp2-Eg-HLr"/>
                             <constraint firstItem="aXy-pj-gj9" firstAttribute="centerX" secondItem="xyT-Zl-K3v" secondAttribute="centerX" id="okE-U1-9U3"/>
+                            <constraint firstItem="BKQ-DJ-F8w" firstAttribute="top" secondItem="0Gl-xW-MfS" secondAttribute="bottom" constant="30" id="r73-Wk-q9N"/>
                             <constraint firstItem="j10-tI-whw" firstAttribute="top" secondItem="2yE-oL-ve6" secondAttribute="bottom" constant="20" id="sb1-xf-uTF"/>
                             <constraint firstItem="BKQ-DJ-F8w" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="uXo-OE-3xL"/>
                             <constraint firstItem="Fwb-tO-Bqu" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="xec-UC-KGu"/>
@@ -173,7 +173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFF-So-OM4">
-                                <rect key="frame" x="242" y="421" width="116" height="30"/>
+                                <rect key="frame" x="242" y="386" width="116" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Confirm Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,7 +190,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5L-5N-jg6">
-                                <rect key="frame" x="120" y="189" width="360" height="47"/>
+                                <rect key="frame" x="40" y="189" width="520" height="32"/>
                                 <animations/>
                                 <string key="text">You will receive an access code to the email address associated with your account. Please enter the access code to verify your account.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -205,7 +205,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Access Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ags-Sa-KmU">
-                                <rect key="frame" x="175" y="341" width="250" height="30"/>
+                                <rect key="frame" x="175" y="306" width="250" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Whg-9A-jVV"/>
@@ -217,7 +217,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RgX-yb-6MW">
-                                <rect key="frame" x="175" y="286" width="250" height="30"/>
+                                <rect key="frame" x="175" y="251" width="250" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="xFG-Sr-KdP"/>
@@ -233,14 +233,14 @@
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1Zz-Ba-Mkq" firstAttribute="top" secondItem="KE1-9n-qQy" secondAttribute="bottom" constant="30" id="1IX-QK-qyL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="w5L-5N-jg6" secondAttribute="trailing" constant="100" id="1Oq-wk-udR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w5L-5N-jg6" secondAttribute="trailing" constant="20" id="1Oq-wk-udR"/>
                             <constraint firstItem="ags-Sa-KmU" firstAttribute="centerX" secondItem="RgX-yb-6MW" secondAttribute="centerX" id="6HB-Xq-6tu"/>
                             <constraint firstItem="FFF-So-OM4" firstAttribute="centerX" secondItem="Sda-lr-MTq" secondAttribute="centerX" id="90g-6Q-7kf"/>
                             <constraint firstItem="w5L-5N-jg6" firstAttribute="top" secondItem="fYB-Pg-DXG" secondAttribute="bottom" constant="25" id="MdY-3f-3OP"/>
                             <constraint firstItem="FFF-So-OM4" firstAttribute="top" secondItem="ags-Sa-KmU" secondAttribute="bottom" constant="50" id="TpM-XF-H0a"/>
-                            <constraint firstItem="w5L-5N-jg6" firstAttribute="leading" secondItem="Sda-lr-MTq" secondAttribute="leadingMargin" constant="100" id="U7q-2f-gQ8"/>
+                            <constraint firstItem="w5L-5N-jg6" firstAttribute="leading" secondItem="Sda-lr-MTq" secondAttribute="leadingMargin" constant="20" id="U7q-2f-gQ8"/>
                             <constraint firstItem="RgX-yb-6MW" firstAttribute="centerX" secondItem="1Zz-Ba-Mkq" secondAttribute="centerX" id="Yba-0a-hUl"/>
-                            <constraint firstItem="RgX-yb-6MW" firstAttribute="top" secondItem="w5L-5N-jg6" secondAttribute="bottom" constant="50" id="bzd-Dk-HcL"/>
+                            <constraint firstItem="RgX-yb-6MW" firstAttribute="top" secondItem="w5L-5N-jg6" secondAttribute="bottom" constant="30" id="bzd-Dk-HcL"/>
                             <constraint firstItem="ags-Sa-KmU" firstAttribute="top" secondItem="RgX-yb-6MW" secondAttribute="bottom" constant="25" id="cGh-FR-MPf"/>
                             <constraint firstItem="RgX-yb-6MW" firstAttribute="leading" secondItem="1Zz-Ba-Mkq" secondAttribute="leading" id="maa-Bt-Cvd"/>
                             <constraint firstItem="fYB-Pg-DXG" firstAttribute="top" secondItem="1Zz-Ba-Mkq" secondAttribute="bottom" constant="20" id="qsU-bF-4So"/>
@@ -1161,7 +1161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8F-5Z-Jjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1121" y="749"/>
+            <point key="canvasLocation" x="-1211" y="726"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Kc0-G0-06H">
@@ -1169,7 +1169,7 @@
                 <pageViewController storyboardIdentifier="PetCreationPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="0DG-8a-jaV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxe-iv-A77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1121" y="1461"/>
+            <point key="canvasLocation" x="-1211" y="1379"/>
         </scene>
         <!--Pet Profile Creation Content View Controller-->
         <scene sceneID="qKu-Tx-a3c">
@@ -1218,7 +1218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRy-Aa-KkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1121" y="2145"/>
+            <point key="canvasLocation" x="-1211" y="2027"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
