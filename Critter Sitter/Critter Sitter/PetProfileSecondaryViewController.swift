@@ -9,7 +9,7 @@
 import UIKit
 
 class PetProfileSecondaryViewController: UIViewController {
-
+    var pet_sitting_id: String!
     override func viewDidLoad() {
         super.viewDidLoad()
 

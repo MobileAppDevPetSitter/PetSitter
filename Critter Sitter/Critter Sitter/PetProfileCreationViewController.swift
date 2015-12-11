@@ -82,7 +82,7 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        self.navigationController!.setNavigationBarHidden(true, animated: false)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

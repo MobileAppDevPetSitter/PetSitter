@@ -15,21 +15,27 @@ struct Pet {
 }
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var user: NSManagedObject?
+    var user = [NSManagedObject]()
     var titles: NSArray = []
     var petSittingIds: NSMutableArray = []
     var petSittingNames: NSMutableArray = []
     var petsIds: NSMutableArray = []
     var petsNames: NSMutableArray = []
+    var sendId = 0;
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadUser()
+        
         self.titles = NSArray(objects: "Pets Sitting", "My Pets")
         tableView.delegate = self;
         tableView.dataSource = self;
+        
+        var rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "addPet:")
+        self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem], animated: true)
         
         self.petSittingIds = NSMutableArray()
         self.petsIds = NSMutableArray()
@@ -40,11 +46,35 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         loadPets();
     }
     
+    func addPet(sender: UIButton) {
+        self.performSegueWithIdentifier("petCreate", sender:self)
+    }
+    // Load core data user
+    func loadUser() {
+        // Load saved user entities from core data
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName:"User")
+        
+        do {
+            let fetchedResults =
+            try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            if let results = fetchedResults {
+                self.user = results
+            } else {
+                print("Could not fetch user")
+            }
+        } catch _{
+            return
+        }
+    }
+    
     func loadPets() {
         let post = Poster()
         
         var postString = "http://discworld-js1h704o.cloudapp.net/test/ownedPetsRetrieval.php"
-        var dataString = "owner_id=" + (self.user!.valueForKey("user_id") as! String)
+        var dataString = "owner_id=" + (self.user[0].valueForKey("user_id") as! String)
         
         print(dataString)
         // Perform POST
@@ -91,19 +121,29 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destinationViewController = segue.destinationViewController
-        
+
         if (segue.identifier == "petCreate") {
-            if let homeViewController = destinationViewController as? PetProfileCreationViewController {
-                homeViewController.user = user
+            if let vc = destinationViewController as? PetProfileCreationViewController {
+                vc.user = user[0]
+            }
+        } else if (segue.identifier == "petProfile") {
+            if let vc = destinationViewController as? PetProfileEditViewController {
+                vc.pet_id = self.petsIds[self.sendId] as! String
+            }
+        } else if (segue.identifier == "petSitting") {
+            if let vc = destinationViewController as? PetProfileSecondaryViewController {
+                vc.pet_sitting_id = self.petSittingIds[self.sendId] as! String
             }
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.sendId = indexPath.row
         if(indexPath.section == 0) {
-            
+            // Segue to the Access Code verification
+            self.performSegueWithIdentifier("petSitting", sender:self)
         } else {
-            
+            self.performSegueWithIdentifier("petProfile", sender:self)
         }
     }
     

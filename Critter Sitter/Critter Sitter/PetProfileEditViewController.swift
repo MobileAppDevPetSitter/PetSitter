@@ -9,9 +9,9 @@
 import UIKit
 
 class PetProfileEditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    var pet_id: String?
     @IBOutlet weak var tableView: UITableView!
-    
+
     
     let controls = ["Photo", "Name", "Bio", "Food", "Exercise", "Bathroom"]
     override func viewDidLoad() {

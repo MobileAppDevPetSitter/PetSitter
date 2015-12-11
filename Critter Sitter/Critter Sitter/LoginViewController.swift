@@ -129,7 +129,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         if (segue.identifier == "HomeSegue") {
             if let homeViewController = destinationViewController as? HomeViewController {
-                homeViewController.user = user[0]
             }
         }
     }

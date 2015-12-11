@@ -118,7 +118,6 @@ class AccessCodeViewController: UIViewController, UITextFieldDelegate {
         
         if (segue.identifier == "HomeView") {
             if let homeViewController = destinationViewController as? HomeViewController {
-                homeViewController.user = user
             }
         }
     }
