@@ -351,12 +351,13 @@
                                 <rect key="frame" x="251" y="54" width="118" height="59"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="49"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="311" placeholderIntrinsicHeight="64" text="Text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0YI-c3-mpK">
                                 <rect key="frame" x="251" y="109" width="311" height="64"/>
                                 <animations/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -388,21 +389,27 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFU-DN-Wfa">
                                 <rect key="frame" x="259" y="505" width="83" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Edit Pet Info"/>
+                                <state key="normal" title="Edit Pet Info">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fje-Cj-sWl">
                                 <rect key="frame" x="230" y="535" width="140" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Share Pet with Sitter"/>
+                                <state key="normal" title="Share Pet with Sitter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gib-3i-qhb">
                                 <rect key="frame" x="265" y="565" width="71" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Delete Pet"/>
+                                <state key="normal" title="Delete Pet">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2LH-kQ-5n0" firstAttribute="top" secondItem="Fxl-Wu-eEA" secondAttribute="bottom" constant="10" id="Ehr-ft-hRv"/>
                             <constraint firstItem="gib-3i-qhb" firstAttribute="top" secondItem="Fje-Cj-sWl" secondAttribute="bottom" id="Ev6-Fz-6j0"/>
@@ -483,7 +490,7 @@
                             </textField>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.9367277812" green="0.94106559639999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hBL-yj-gd1" firstAttribute="centerX" secondItem="Dfo-qK-YB8" secondAttribute="centerX" id="1kQ-cZ-LKs"/>
                             <constraint firstAttribute="trailing" secondItem="fo4-xJ-EMU" secondAttribute="trailing" id="7Nu-6e-keN"/>
@@ -715,12 +722,12 @@
                                 <rect key="frame" x="254" y="89" width="92" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YJc-OH-byp" firstAttribute="leading" secondItem="4Wm-3U-Aci" secondAttribute="leadingMargin" id="FFw-xP-L8n"/>
                             <constraint firstItem="Uo9-0z-gV3" firstAttribute="top" secondItem="Uoc-Pe-pnP" secondAttribute="bottom" constant="25" id="In7-y3-m9C"/>
@@ -1072,14 +1079,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Cm-sW-I1S">
                                 <rect key="frame" x="246" y="565" width="108" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Save Pet Profile"/>
+                                <state key="normal" title="Save Pet Profile">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="save:" destination="H9b-7y-jUv" eventType="touchUpInside" id="I4o-r6-zbZ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="d8T-bN-hOs" firstAttribute="top" secondItem="5Cm-sW-I1S" secondAttribute="bottom" constant="5" id="9NT-5R-54n"/>
                             <constraint firstItem="5Cm-sW-I1S" firstAttribute="centerX" secondItem="lFS-1J-s6V" secondAttribute="centerX" id="qDm-7C-95D"/>
