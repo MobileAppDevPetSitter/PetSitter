@@ -8,11 +8,8 @@
 
 import UIKit
 
-class ActivityAddEventViewController: UIViewController, UITextFieldDelegate {
+class ActivityAddEventViewController: UIViewController {
 
-    @IBOutlet var textFields: [UITextField]!
-    var activeTextField: UITextField? = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,25 +21,4 @@ class ActivityAddEventViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dismissKeyboard(sender: AnyObject) {
-        activeTextField?.resignFirstResponder()
-    }
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        activeTextField = textField
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        activeTextField = nil
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        activeTextField?.resignFirstResponder()
-        
-        return true
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
 }

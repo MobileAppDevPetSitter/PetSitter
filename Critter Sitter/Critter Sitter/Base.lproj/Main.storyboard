@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X1S-wn-0n0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mxW-yX-cZQ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -766,42 +766,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Koi-j0-YMh">
-                                <rect key="frame" x="70" y="171" width="460" height="120"/>
+                                <rect key="frame" x="45" y="146" width="510" height="200"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="POR-PQ-ayB"/>
+                                    <constraint firstAttribute="height" constant="200" id="POR-PQ-ayB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="mxW-yX-cZQ" id="Eyq-ja-k6g"/>
-                                </connections>
                             </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Koi-j0-YMh" firstAttribute="centerX" secondItem="AR9-dO-KVB" secondAttribute="centerX" id="2qA-yi-Ysa"/>
                             <constraint firstItem="bCL-JD-qco" firstAttribute="top" secondItem="DkR-uf-YU6" secondAttribute="bottom" constant="30" id="Elb-tg-jZl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Koi-j0-YMh" secondAttribute="trailing" constant="50" id="Hcd-bq-qOh"/>
                             <constraint firstItem="bCL-JD-qco" firstAttribute="centerX" secondItem="AR9-dO-KVB" secondAttribute="centerX" id="InK-Fr-bLr"/>
-                            <constraint firstItem="Koi-j0-YMh" firstAttribute="top" secondItem="bCL-JD-qco" secondAttribute="bottom" constant="100" id="Ojt-rC-Cwm"/>
-                            <constraint firstItem="Koi-j0-YMh" firstAttribute="leading" secondItem="AR9-dO-KVB" secondAttribute="leadingMargin" constant="50" id="RmK-S5-As0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Koi-j0-YMh" secondAttribute="trailing" constant="25" id="Jqd-ye-WP3"/>
+                            <constraint firstItem="Koi-j0-YMh" firstAttribute="top" secondItem="bCL-JD-qco" secondAttribute="bottom" constant="75" id="Ojt-rC-Cwm"/>
+                            <constraint firstItem="Koi-j0-YMh" firstAttribute="leading" secondItem="AR9-dO-KVB" secondAttribute="leadingMargin" constant="25" id="cyF-nt-KpP"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="EWO-fq-Ogv" appends="YES" id="WAw-3b-noQ"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outletCollection property="textFields" destination="Koi-j0-YMh" collectionClass="NSMutableArray" id="vOK-KP-Yod"/>
+                        <outletCollection property="textViews" destination="Koi-j0-YMh" collectionClass="NSMutableArray" id="jcM-fa-tEF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="noq-h1-okF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="EWO-fq-Ogv">
+                <tapGestureRecognizer id="V5W-81-ZnZ">
                     <connections>
-                        <action selector="dismissKeyboard:" destination="mxW-yX-cZQ" id="Q1I-eC-Xpu"/>
+                        <action selector="dismissKeyboard:" destination="mxW-yX-cZQ" id="GRB-2c-Zdu"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1177,7 +1170,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9bG-vp-myn"/>
+        <segue reference="Op9-iC-k3V"/>
         <segue reference="kUS-EC-ndb"/>
     </inferredMetricsTieBreakers>
 </document>
