@@ -280,12 +280,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j4T-Na-A6K">
-                                <rect key="frame" x="0.0" y="56" width="600" height="225"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEJ-gA-Fbg">
                                 <rect key="frame" x="0.0" y="556" width="600" height="30"/>
                                 <animations/>
@@ -294,39 +288,22 @@
                                     <segue destination="H9b-7y-jUv" kind="show" identifier="petCreate" id="ZwZ-Z0-G1Y"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="My Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKw-RJ-hpy">
-                                <rect key="frame" x="0.0" y="293" width="600" height="21"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Other's Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vc-OC-Pef">
-                                <rect key="frame" x="0.0" y="35" width="600" height="21"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dha-zE-Yzm">
-                                <rect key="frame" x="0.0" y="314" width="600" height="233"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j4T-Na-A6K">
+                                <rect key="frame" x="0.0" y="56" width="600" height="225"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.9367277812" green="0.94106559639999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="bKw-RJ-hpy" firstAttribute="top" secondItem="j4T-Na-A6K" secondAttribute="bottom" constant="12" id="RwX-dq-aom"/>
-                            <constraint firstItem="2vc-OC-Pef" firstAttribute="top" secondItem="kNK-ol-JHU" secondAttribute="bottom" constant="10" id="TNn-6E-L1R"/>
-                            <constraint firstItem="MEJ-gA-Fbg" firstAttribute="top" secondItem="dha-zE-Yzm" secondAttribute="bottom" constant="10" id="WJx-sv-Tv9"/>
                             <constraint firstItem="MEJ-gA-Fbg" firstAttribute="centerX" secondItem="ged-XX-640" secondAttribute="centerX" id="hxO-Uf-pB8"/>
                             <constraint firstItem="MEJ-gA-Fbg" firstAttribute="centerY" secondItem="ged-XX-640" secondAttribute="centerY" id="rL8-IG-E9l"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="j4T-Na-A6K" id="J2k-2g-wlW"/>
                         <segue destination="Q9j-OW-lAM" kind="show" id="NYl-MY-Mnr"/>
                         <segue destination="xvD-1L-2Wk" kind="show" id="oBd-Bb-E28"/>
                         <segue destination="qx8-ld-w2B" kind="show" id="a8A-1E-AxG"/>
