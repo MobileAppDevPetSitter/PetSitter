@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X1S-wn-0n0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X1S-wn-0n0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -173,7 +173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFF-So-OM4">
-                                <rect key="frame" x="242" y="480" width="116" height="30"/>
+                                <rect key="frame" x="242" y="421" width="116" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Confirm Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,7 +190,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5L-5N-jg6">
-                                <rect key="frame" x="120" y="223" width="360" height="47"/>
+                                <rect key="frame" x="120" y="189" width="360" height="47"/>
                                 <animations/>
                                 <string key="text">You will receive an access code to the email address associated with your account. Please enter the access code to verify your account.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -198,14 +198,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYB-Pg-DXG">
-                                <rect key="frame" x="279" y="156" width="42" height="21"/>
+                                <rect key="frame" x="279" y="143" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Access Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ags-Sa-KmU">
-                                <rect key="frame" x="175" y="400" width="250" height="30"/>
+                                <rect key="frame" x="175" y="341" width="250" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Whg-9A-jVV"/>
@@ -217,7 +217,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RgX-yb-6MW">
-                                <rect key="frame" x="175" y="345" width="250" height="30"/>
+                                <rect key="frame" x="175" y="286" width="250" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="xFG-Sr-KdP"/>
@@ -236,14 +236,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="w5L-5N-jg6" secondAttribute="trailing" constant="100" id="1Oq-wk-udR"/>
                             <constraint firstItem="ags-Sa-KmU" firstAttribute="centerX" secondItem="RgX-yb-6MW" secondAttribute="centerX" id="6HB-Xq-6tu"/>
                             <constraint firstItem="FFF-So-OM4" firstAttribute="centerX" secondItem="Sda-lr-MTq" secondAttribute="centerX" id="90g-6Q-7kf"/>
+                            <constraint firstItem="w5L-5N-jg6" firstAttribute="top" secondItem="fYB-Pg-DXG" secondAttribute="bottom" constant="25" id="MdY-3f-3OP"/>
                             <constraint firstItem="FFF-So-OM4" firstAttribute="top" secondItem="ags-Sa-KmU" secondAttribute="bottom" constant="50" id="TpM-XF-H0a"/>
                             <constraint firstItem="w5L-5N-jg6" firstAttribute="leading" secondItem="Sda-lr-MTq" secondAttribute="leadingMargin" constant="100" id="U7q-2f-gQ8"/>
                             <constraint firstItem="RgX-yb-6MW" firstAttribute="centerX" secondItem="1Zz-Ba-Mkq" secondAttribute="centerX" id="Yba-0a-hUl"/>
-                            <constraint firstItem="RgX-yb-6MW" firstAttribute="top" secondItem="w5L-5N-jg6" secondAttribute="bottom" constant="75" id="bzd-Dk-HcL"/>
+                            <constraint firstItem="RgX-yb-6MW" firstAttribute="top" secondItem="w5L-5N-jg6" secondAttribute="bottom" constant="50" id="bzd-Dk-HcL"/>
                             <constraint firstItem="ags-Sa-KmU" firstAttribute="top" secondItem="RgX-yb-6MW" secondAttribute="bottom" constant="25" id="cGh-FR-MPf"/>
                             <constraint firstItem="RgX-yb-6MW" firstAttribute="leading" secondItem="1Zz-Ba-Mkq" secondAttribute="leading" id="maa-Bt-Cvd"/>
-                            <constraint firstItem="fYB-Pg-DXG" firstAttribute="top" secondItem="1Zz-Ba-Mkq" secondAttribute="bottom" constant="33" id="qsU-bF-4So"/>
-                            <constraint firstItem="w5L-5N-jg6" firstAttribute="top" secondItem="1Zz-Ba-Mkq" secondAttribute="bottom" constant="100" id="rBQ-3d-WDr"/>
+                            <constraint firstItem="fYB-Pg-DXG" firstAttribute="top" secondItem="1Zz-Ba-Mkq" secondAttribute="bottom" constant="20" id="qsU-bF-4So"/>
                             <constraint firstItem="RgX-yb-6MW" firstAttribute="trailing" secondItem="1Zz-Ba-Mkq" secondAttribute="trailing" id="rex-OS-3SG"/>
                             <constraint firstItem="1Zz-Ba-Mkq" firstAttribute="centerX" secondItem="Sda-lr-MTq" secondAttribute="centerX" id="xIx-iG-bkc"/>
                             <constraint firstItem="fYB-Pg-DXG" firstAttribute="centerX" secondItem="Sda-lr-MTq" secondAttribute="centerX" id="zG5-zB-p8Z"/>
@@ -1222,7 +1222,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2li-N1-abp"/>
         <segue reference="kUS-EC-ndb"/>
+        <segue reference="Op9-iC-k3V"/>
     </inferredMetricsTieBreakers>
 </document>
