@@ -105,8 +105,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                         let newUser = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
                         
                         newUser.setValue(self.emailInput.text!, forKey: "email")
-                        print((response["id"] as? String));
-                        newUser.setValue((response["id"] as? String), forKey: "user_id")
+                        print(response["id"]);
+                        newUser.setValue(String(format: "%d", (response["id"] as! Int)), forKey: "user_id")
                         newUser.setValue("PENDING", forKey: "status")
                         
                         // Complete save and handle potential error

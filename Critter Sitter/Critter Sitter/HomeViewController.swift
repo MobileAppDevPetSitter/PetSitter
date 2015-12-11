@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 struct Pet {
-    var id: Int
+    var id: String
     var name: String
 }
 
@@ -37,8 +37,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func loadPets() {
         let post = Poster()
         
-        var postString = ""
-        var dataString = "id=" + (self.user!.valueForKey("user_id") as! String)
+        var postString = "ttp://discworld-js1h704o.cloudapp.net/test/ownedPetsRetrieval.php"
+        var dataString = "owner_id=" + (self.user!.valueForKey("user_id") as! String)
         
         // Perform POST
         post.doPost(postString, dataString: dataString) {
@@ -49,15 +49,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             } else {
                 if let status = response["status"] as? String {
                     if (status == "ok") {
-                        if let sitting = response["pets_sitting"] as! NSArray? {
-                            for instance in sitting {
-                                var newPet: Pet = Pet(id: (instance as! Pet).id, name: (instance as! Pet).name)
-                                self.petSitting.addObject(newPet as! AnyObject)
-                            }
-                        }
                         if let sitting = response["pets"] as! NSArray? {
-                            for instance in sitting {
-                                var newPet: Pet = Pet(id: (instance as! Pet).id, name: (instance as! Pet).name)
+                            for instance in sitting  {
+                                var i: NSDictionary = instance as! NSDictionary
+                                var newPet: Pet = Pet(id: (i["pet_id"] as! String), name: (i["name"] as! String))
                                 self.pets.addObject(newPet as! AnyObject)
                             }
                         }
