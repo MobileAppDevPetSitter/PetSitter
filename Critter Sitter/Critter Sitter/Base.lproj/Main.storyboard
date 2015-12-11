@@ -312,7 +312,7 @@
                             </tableView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.9367277812" green="0.94106559639999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="j4T-Na-A6K" firstAttribute="width" secondItem="ged-XX-640" secondAttribute="width" id="2Cx-Lt-nGf"/>
                             <constraint firstItem="j4T-Na-A6K" firstAttribute="top" secondItem="kNK-ol-JHU" secondAttribute="bottom" constant="40" id="UGn-tL-gQS"/>
@@ -566,7 +566,7 @@
                             </tableView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <segue destination="Ooj-KZ-doe" kind="show" id="S74-vB-Scg"/>
@@ -595,7 +595,7 @@
                             </tableView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhU-rC-ck1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -625,12 +625,13 @@
                                 <rect key="frame" x="251" y="30" width="118" height="59"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="49"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="311" placeholderIntrinsicHeight="64" text="Text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MyT-88-iPZ">
                                 <rect key="frame" x="251" y="94" width="311" height="64"/>
                                 <animations/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -658,7 +659,7 @@
                             </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="huJ-Bb-cJR" firstAttribute="leading" secondItem="R67-L6-Z0y" secondAttribute="leadingMargin" constant="231" id="7ti-1o-6nY"/>
                             <constraint firstItem="caY-QH-boe" firstAttribute="top" secondItem="3QY-NU-ZLX" secondAttribute="bottom" constant="10" id="C6z-yE-fFe"/>
@@ -750,29 +751,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCL-JD-qco">
-                                <rect key="frame" x="261" y="94" width="78" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCL-JD-qco">
+                                <rect key="frame" x="261" y="50" width="78" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Un6-Qs-H0P">
-                                <rect key="frame" x="70" y="165" width="460" height="235"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Koi-j0-YMh">
+                                <rect key="frame" x="180" y="121" width="240" height="120"/>
                                 <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="POR-PQ-ayB"/>
+                                    <constraint firstAttribute="width" constant="240" id="Prd-qQ-91Z"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Un6-Qs-H0P" firstAttribute="top" secondItem="bCL-JD-qco" secondAttribute="bottom" constant="50" id="7fw-lh-xrX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Un6-Qs-H0P" secondAttribute="trailing" constant="50" id="CjH-QS-uVq"/>
+                            <constraint firstItem="Koi-j0-YMh" firstAttribute="centerX" secondItem="AR9-dO-KVB" secondAttribute="centerX" id="2qA-yi-Ysa"/>
                             <constraint firstItem="bCL-JD-qco" firstAttribute="top" secondItem="DkR-uf-YU6" secondAttribute="bottom" constant="30" id="Elb-tg-jZl"/>
-                            <constraint firstItem="s2y-di-vy2" firstAttribute="top" secondItem="Un6-Qs-H0P" secondAttribute="bottom" constant="200" id="FpF-5g-xlD"/>
                             <constraint firstItem="bCL-JD-qco" firstAttribute="centerX" secondItem="AR9-dO-KVB" secondAttribute="centerX" id="InK-Fr-bLr"/>
-                            <constraint firstItem="Un6-Qs-H0P" firstAttribute="leading" secondItem="AR9-dO-KVB" secondAttribute="leadingMargin" constant="50" id="cHa-9O-UzA"/>
+                            <constraint firstItem="Koi-j0-YMh" firstAttribute="top" secondItem="bCL-JD-qco" secondAttribute="bottom" constant="50" id="Ojt-rC-Cwm"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -796,12 +800,12 @@
                                 <rect key="frame" x="163" y="289" width="275" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jK7-be-fAX" firstAttribute="centerX" secondItem="SO1-Qj-7sw" secondAttribute="centerX" id="7TE-j7-wlb"/>
                             <constraint firstItem="jK7-be-fAX" firstAttribute="centerY" secondItem="SO1-Qj-7sw" secondAttribute="centerY" id="Sih-Eu-ZQV"/>
@@ -854,19 +858,19 @@
                                     <constraint firstAttribute="height" constant="21" id="gZx-od-x4f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="631-JD-GbZ">
                                 <rect key="frame" x="267" y="91" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="631-JD-GbZ" firstAttribute="centerX" secondItem="0zL-Gz-W62" secondAttribute="centerX" id="3pZ-oT-7s1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Hq-IZ-eHy" secondAttribute="trailing" id="EZw-yv-tJ2"/>
@@ -917,7 +921,7 @@
                                 <rect key="frame" x="247" y="89" width="99" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dGl-lV-g69">
@@ -945,7 +949,7 @@
                             </collectionView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YT1-07-NYe" firstAttribute="centerX" secondItem="7ti-NY-ana" secondAttribute="centerX" id="55Y-ZM-Itw"/>
                             <constraint firstItem="YT1-07-NYe" firstAttribute="top" secondItem="ypT-nz-dSy" secondAttribute="bottom" constant="25" id="Mmk-gL-CV2"/>
@@ -1148,7 +1152,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="2li-N1-abp"/>
         <segue reference="kUS-EC-ndb"/>
-        <segue reference="Op9-iC-k3V"/>
     </inferredMetricsTieBreakers>
 </document>
