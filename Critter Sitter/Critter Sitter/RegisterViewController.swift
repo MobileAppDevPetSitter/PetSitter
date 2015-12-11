@@ -42,9 +42,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         if(user.count == 1) {
             // User is logged in, check for status of account
             var status : String = user[0].valueForKey("status") as! String
-            var id : String = user[0].valueForKey("user_id") as! String
             
-            print(id)
             if(status == "PENDING") {
                 self.performSegueWithIdentifier("AccessView", sender:self)
             } else {
@@ -111,7 +109,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                         newUser.setValue((response["id"] as? String), forKey: "user_id")
                         newUser.setValue("PENDING", forKey: "status")
                         
-                        print(newUser.valueForKey("user_id"))
                         // Complete save and handle potential error
                         do {
                             try managedContext.save()
