@@ -9,7 +9,7 @@
 import UIKit
 
 class ActivityAddEventViewController: UIViewController, UITextViewDelegate {
-    var pet: Pet?
+    var petSitting: PetSitting?
     @IBOutlet weak var textViews: UITextView!
     
     

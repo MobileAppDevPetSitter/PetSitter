@@ -37,7 +37,7 @@ class SendPetViewController: UIViewController {
             } else {
                 if let status = response["status"] as? String {
                     if (status == "ok") {
-                        print(response)
+                        self.navigationController!.popViewControllerAnimated(true)
                     }
                 } else {
                     // Unknown error occurred

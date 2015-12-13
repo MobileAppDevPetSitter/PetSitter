@@ -54,6 +54,7 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
         // Create POST object
         let poster = Poster()
         
+        print(dataString)
         // Perform POST
         poster.doPost(postString, dataString: dataString) {
             (response, errorStr) -> Void in

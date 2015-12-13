@@ -272,7 +272,7 @@
                         <outlet property="input" destination="RgX-yb-6MW" id="rks-BG-lY2"/>
                         <outletCollection property="textFields" destination="RgX-yb-6MW" collectionClass="NSMutableArray" id="A9u-fk-Lx1"/>
                         <outletCollection property="textFields" destination="ags-Sa-KmU" collectionClass="NSMutableArray" id="xwu-Cg-MY4"/>
-                        <segue destination="LrS-uF-pta" kind="showDetail" id="K3e-Dw-Eh5"/>
+                        <segue destination="LrS-uF-pta" kind="showDetail" identifier="HomeView" id="K3e-Dw-Eh5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1Q-Pp-Rlb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -379,13 +379,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOa-Ts-5cp">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <navigationItem title="Title" id="jex-ct-4AK"/>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFU-DN-Wfa">
                                 <rect key="frame" x="259" y="505" width="83" height="30"/>
                                 <animations/>
@@ -451,6 +444,13 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOa-Ts-5cp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="jex-ct-4AK"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -709,7 +709,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xvD-1L-2Wk" kind="show" identifier="viewProfile" id="3TQ-Ut-gcO"/>
+                                    <segue destination="xvD-1L-2Wk" kind="show" identifier="petProfile" id="3TQ-Ut-gcO"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="195" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="7" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B9u-84-BrC">
@@ -736,7 +736,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7aJ-qj-wUP" kind="show" identifier="addActivity" id="dNf-G0-Uzv"/>
+                                    <segue destination="7aJ-qj-wUP" kind="show" identifier="viewActivities" id="KVp-8A-0ZR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -766,7 +766,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iy9-hZ-LkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="328" y="94"/>
+            <point key="canvasLocation" x="306" y="50"/>
         </scene>
         <!--Pet Sitting Add Activity View Controller-->
         <scene sceneID="lO0-Xf-Nrc">
@@ -817,13 +817,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="mxW-yX-cZQ" kind="show" id="rJ5-kc-4LD"/>
+                        <segue destination="mxW-yX-cZQ" kind="show" identifier="add" id="rJ5-kc-4LD"/>
                         <segue destination="Z6J-Gz-y3y" kind="show" id="CRR-aZ-6Bn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnF-KG-Vk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="-433"/>
+            <point key="canvasLocation" x="1324" y="-147"/>
         </scene>
         <!--Activity Add Event View Controller-->
         <scene sceneID="a6i-73-mVF">
@@ -1260,7 +1260,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="kUS-EC-ndb"/>
-        <segue reference="syO-Ra-dTc"/>
+        <segue reference="K3e-Dw-Eh5"/>
         <segue reference="2li-N1-abp"/>
         <segue reference="3TQ-Ut-gcO"/>
     </inferredMetricsTieBreakers>

@@ -11,14 +11,14 @@ import UIKit
 class PetProfileSecondaryViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    var pet: Pet!
+    var petSitting: PetSitting?
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       self.nameLabel.text = pet!.name
+       self.nameLabel.text = petSitting!.pet.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,13 +29,13 @@ class PetProfileSecondaryViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destinationViewController = segue.destinationViewController
         
-        if (segue.identifier == "viewProfile") {
+        if (segue.identifier == "petProfile") {
             if let vc = destinationViewController as? PetProfileViewController {
-                vc.pet = self.pet
+                vc.pet = self.petSitting!.pet
             }
-        } else if(segue.identifier == "addActivity") {
-            if let vc = destinationViewController as? ActivityAddEventViewController {
-                vc.pet = self.pet
+        } else if(segue.identifier == "viewActivities") {
+            if let vc = destinationViewController as? PetSittingAddActivityViewController {
+                vc.petSitting = self.petSitting
             }
         }
     }

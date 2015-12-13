@@ -142,9 +142,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
         if (segue.identifier == "AccessView") {
             if let accessViewController = destinationViewController as? AccessCodeViewController {
+                accessViewController.user = user[0]
             }
         } else if (segue.identifier == "HomeSegue") {
             if let homeViewController = destinationViewController as? HomeViewController {
+                
             }
         }
     }

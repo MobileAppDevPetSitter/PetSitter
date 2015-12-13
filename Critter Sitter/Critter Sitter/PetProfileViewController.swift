@@ -27,6 +27,10 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
             self.editButton.hidden = true
             self.sendButton.hidden = true
             self.deleteButton.hidden = true
+        } else {
+            self.editButton.hidden = false
+            self.sendButton.hidden = false
+            self.deleteButton.hidden = false
         }
         // Do any additional setup after loading the view.
         self.nameLabel.text = pet!.name

@@ -32,9 +32,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.petsSitting = NSMutableArray()
         self.pets = NSMutableArray()
-        // Do any additional setup after loading the view.
         
-        loadPets();
+        // Do any additional setup after loading the view.
     }
     
     func addPet(sender: UIButton) {
@@ -62,14 +61,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func loadPets() {
+        if(self.pets.count != 0 || self.petsSitting.count != 0) {
+            self.pets.removeAllObjects()
+            self.petsSitting.removeAllObjects()
+        }
         let post = Poster()
         
         var postString = "http://discworld-js1h704o.cloudapp.net/test/ownedPetsRetrieval.php"
         var dataString = "owner_id=" + (self.user[0].valueForKey("user_id") as! String)
         
-        print(dataString)
         // Perform POST
-        
         post.doPost(postString, dataString: dataString) {
             (response, errorStr) -> Void in
             if let errorString = errorStr {
@@ -78,66 +79,77 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             } else {
                 if let status = response["status"] as? String {
                     if (status == "ok") {
-                        print(response)
                         if let sitting = response["pets"] as! NSArray? {
                             for instance in sitting  {
                                 var i: NSDictionary = instance as! NSDictionary
                                 let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: "Loud" as! String, other: "None" as! String, owner: true)
-                                self.pets.addObject(newPet)
+                                    self.pets.addObject(newPet)
+                            }
+                        }
+                        
+                        postString = "http://discworld-js1h704o.cloudapp.net/test/petsSitting.php"
+                        print(dataString)
+                        post.doPost(postString, dataString: dataString) {
+                            (response, errorStr) -> Void in
+                            if let errorString = errorStr {
+                                // Check the POST was successful
+                                print(errorString)
+                            } else {
+                                if let status = response["status"] as? String {
+                                    if (status == "ok") {
+                                        if let sitting = response["pets"] as! NSArray? {
+                                            for instance in sitting  {
+                                                var doesOwn:BooleanType = false
+                                                var temp: Pet?
+                                                
+                                                var i: NSDictionary = instance as! NSDictionary
+                                                
+                                                var j = 0
+                                                for(j = 0; j < self.pets.count; j++) {
+                                                    if((self.pets[j] as! Pet).id == i["pet_id"]! as! String) {
+                                                        doesOwn = true
+                                                        temp = self.pets[j] as? Pet
+                                                        print("YES")
+                                                        break
+                                                    } else {
+                                                        print("NO")
+                                                    }
+                                                }
+                                                
+                                                if(doesOwn.boolValue == true) {
+                                                    let newSitting = PetSitting(pet: temp!, start_date: i["start_date"]! as! String, end_date: i["end_date"]! as! String, sitting_id: i["pet_sitting_id"]! as! String)
+                                                    
+                                                    self.petsSitting.addObject(newSitting)
+                                                } else {
+                                                    let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: "Loud" as! String, other: "None" as! String, owner: false)
+                                                    
+                                                    let newSitting = PetSitting(pet: newPet, start_date: i["start_date"]! as! String, end_date: i["end_date"]! as! String, sitting_id: i["pet_sitting_id"]! as! String)
+                                                    
+                                                    self.petsSitting.addObject(newSitting);
+                                                }
+                                                
+                                            }
+                                        }
+                                    }
+                                    self.tableView.reloadData()
+                                } else {
+                                    // Unknown error occurred
+                                }
                             }
                         }
                     }
                 } else {
                     // Unknown error occurred
                 }
-            }
-            self.tableView.reloadData()
-        }
-            postString = "http://discworld-js1h704o.cloudapp.net/test/petsSitting.php"
-        
-            post.doPost(postString, dataString: dataString) {
-                (response, errorStr) -> Void in
-                if let errorString = errorStr {
-                    // Check the POST was successful
-                    print(errorString)
-                } else {
-                    if let status = response["status"] as? String {
-                        if (status == "ok") {
-                            print(response)
-                            if let sitting = response["pets"] as! NSArray? {
-                                for instance in sitting  {
-                                    var doesOwn:BooleanType = false;
-                                    var i: NSDictionary = instance as! NSDictionary
-                                    
-                                    var j = 0
-                                    for(j = 0; j < self.pets.count; j++) {
-                                        if((self.pets[j] as! Pet).id == i["pet_id"]! as! String) {
-                                            doesOwn = true
-                                            break
-                                        }
-                                    }
-                                    
-                                    let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: "Loud" as! String, other: "None" as! String, owner: doesOwn.boolValue)
-                                    self.petsSitting.addObject(newPet)
-                                }
-                            }
-                        }
-                    } else {
-                        // Unknown error occurred
-                    }
-                }
+                
                 self.tableView.reloadData()
             }
-        
+        }
         self.tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.pets.removeAllObjects()
-        self.petsSitting.removeAllObjects()
-        
         loadPets()
-        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -159,7 +171,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         } else if (segue.identifier == "petSitting") {
             if let vc = destinationViewController as? PetProfileSecondaryViewController {
-                vc.pet = self.petsSitting[tableView.indexPathForSelectedRow!.row] as! Pet
+                vc.petSitting = self.petsSitting[tableView.indexPathForSelectedRow!.row] as! PetSitting
             }
         }
     }
@@ -178,7 +190,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
         if(indexPath.section == 0) {
-            cell.textLabel?.text = (petsSitting[indexPath.row] as! Pet).name
+            cell.textLabel?.text = (petsSitting[indexPath.row] as! PetSitting).pet.name
         } else {
             cell.textLabel?.text = (pets[indexPath.row] as! Pet).name
         }
