@@ -9,7 +9,7 @@
 import UIKit
 
 class PetProfileEditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var pet_id: String?
+    var pet: Pet?
     @IBOutlet weak var tableView: UITableView!
 
     

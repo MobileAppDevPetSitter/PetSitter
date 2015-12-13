@@ -9,20 +9,13 @@
 import UIKit
 import CoreData
 
-struct Pet {
-    var id: String
-    var name: String
-}
-
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var user = [NSManagedObject]()
     var titles: NSArray = []
-    var petSittingIds: NSMutableArray = []
-    var petSittingNames: NSMutableArray = []
-    var petsIds: NSMutableArray = []
-    var petsNames: NSMutableArray = []
+    var petsSitting: NSMutableArray = []
+    var pets: NSMutableArray = []
     var sendId = 0;
-    
+
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -31,16 +24,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         loadUser()
         
         self.titles = NSArray(objects: "Pets Sitting", "My Pets")
-        tableView.delegate = self;
-        tableView.dataSource = self;
+        tableView.delegate = self
+        tableView.dataSource = self
         
         var rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "addPet:")
         self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem], animated: true)
         
-        self.petSittingIds = NSMutableArray()
-        self.petsIds = NSMutableArray()
-        self.petSittingNames = NSMutableArray()
-        self.petsNames = NSMutableArray()
+        self.petsSitting = NSMutableArray()
+        self.pets = NSMutableArray()
         // Do any additional setup after loading the view.
         
         loadPets();
@@ -78,6 +69,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         print(dataString)
         // Perform POST
+        
         post.doPost(postString, dataString: dataString) {
             (response, errorStr) -> Void in
             if let errorString = errorStr {
@@ -90,8 +82,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                         if let sitting = response["pets"] as! NSArray? {
                             for instance in sitting  {
                                 var i: NSDictionary = instance as! NSDictionary
-                                self.petsIds.addObject(i["pet_id"]!)
-                                self.petsNames.addObject(i["name"]!)
+                                let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: "Loud" as! String, other: "None" as! String, owner: true)
+                                self.pets.addObject(newPet)
                             }
                         }
                     }
@@ -101,13 +93,48 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             self.tableView.reloadData()
         }
+            postString = "http://discworld-js1h704o.cloudapp.net/test/petsSitting.php"
+        
+            post.doPost(postString, dataString: dataString) {
+                (response, errorStr) -> Void in
+                if let errorString = errorStr {
+                    // Check the POST was successful
+                    print(errorString)
+                } else {
+                    if let status = response["status"] as? String {
+                        if (status == "ok") {
+                            print(response)
+                            if let sitting = response["pets"] as! NSArray? {
+                                for instance in sitting  {
+                                    var doesOwn:BooleanType = false;
+                                    var i: NSDictionary = instance as! NSDictionary
+                                    
+                                    var j = 0
+                                    for(j = 0; j < self.pets.count; j++) {
+                                        if((self.pets[j] as! Pet).id == i["pet_id"]! as! String) {
+                                            doesOwn = true
+                                            break
+                                        }
+                                    }
+                                    
+                                    let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: "Loud" as! String, other: "None" as! String, owner: doesOwn.boolValue)
+                                    self.petsSitting.addObject(newPet)
+                                }
+                            }
+                        }
+                    } else {
+                        // Unknown error occurred
+                    }
+                }
+                self.tableView.reloadData()
+            }
+        
+        self.tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.petsIds.removeAllObjects()
-        self.petSittingIds.removeAllObjects()
-        self.petsNames.removeAllObjects()
-        self.petSittingIds.removeAllObjects()
+        self.pets.removeAllObjects()
+        self.petsSitting.removeAllObjects()
         
         loadPets()
         self.tableView.reloadData()
@@ -121,18 +148,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destinationViewController = segue.destinationViewController
-
+        
         if (segue.identifier == "petCreate") {
             if let vc = destinationViewController as? PetProfileCreationViewController {
                 vc.user = user[0]
             }
         } else if (segue.identifier == "petProfile") {
-            if let vc = destinationViewController as? PetProfileEditViewController {
-                vc.pet_id = self.petsIds[self.sendId] as! String
+            if let vc = destinationViewController as? PetProfileViewController {
+                vc.pet = self.pets[tableView.indexPathForSelectedRow!.row] as! Pet
             }
         } else if (segue.identifier == "petSitting") {
             if let vc = destinationViewController as? PetProfileSecondaryViewController {
-                vc.pet_sitting_id = self.petSittingIds[self.sendId] as! String
+                vc.pet = self.petsSitting[tableView.indexPathForSelectedRow!.row] as! Pet
             }
         }
     }
@@ -151,9 +178,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
         if(indexPath.section == 0) {
-            cell.textLabel?.text = petSittingNames[indexPath.row] as! String
+            cell.textLabel?.text = (petsSitting[indexPath.row] as! Pet).name
         } else {
-            cell.textLabel?.text = petsNames[indexPath.row] as! String
+            cell.textLabel?.text = (pets[indexPath.row] as! Pet).name
         }
         
         
@@ -166,9 +193,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == 0) {
-            return petSittingIds.count
+            return petsSitting.count
         } else {
-            return petsIds.count
+            return pets.count
         }
     }
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

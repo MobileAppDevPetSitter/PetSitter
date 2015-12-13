@@ -30,6 +30,7 @@
 		64AC9C2B1BF2AD480049B64B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AC9C291BF2AD480049B64B /* LaunchScreen.storyboard */; };
 		674BB8381C05360E00D974A1 /* PetProfileCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BB8371C05360E00D974A1 /* PetProfileCreationViewController.swift */; };
 		674BB83A1C0538CE00D974A1 /* PetProfileCreationContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BB8391C0538CE00D974A1 /* PetProfileCreationContentViewController.swift */; };
+		8936D7761C1D14C0003B1460 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8936D7751C1D14C0003B1460 /* Pet.swift */; };
 		89EC0AD31C0CE1F50012FAAE /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC0AD21C0CE1F50012FAAE /* Poster.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		64AC9C2C1BF2AD480049B64B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		674BB8371C05360E00D974A1 /* PetProfileCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileCreationViewController.swift; sourceTree = "<group>"; };
 		674BB8391C0538CE00D974A1 /* PetProfileCreationContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileCreationContentViewController.swift; sourceTree = "<group>"; };
+		8936D7751C1D14C0003B1460 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		89EC0AD21C0CE1F50012FAAE /* Poster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 				5B2527651BF523AC00E15303 /* AccessCodeViewController.swift */,
 				5B2527631BF5235B00E15303 /* RegisterViewController.swift */,
 				64AC9C211BF2AD480049B64B /* Main.storyboard */,
+				8936D7751C1D14C0003B1460 /* Pet.swift */,
 				64AC9C271BF2AD480049B64B /* Assets.xcassets */,
 				64AC9C291BF2AD480049B64B /* LaunchScreen.storyboard */,
 				64AC9C2C1BF2AD480049B64B /* Info.plist */,
@@ -213,6 +216,7 @@
 				5B2527621BF522CF00E15303 /* LoginViewController.swift in Sources */,
 				5B2527701BF9575000E15303 /* NotificationsViewController.swift in Sources */,
 				5B25276C1BF956DC00E15303 /* PetProfileViewController.swift in Sources */,
+				8936D7761C1D14C0003B1460 /* Pet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

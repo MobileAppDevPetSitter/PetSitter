@@ -65,7 +65,7 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
                 if let status = response["status"] as? String {
                     if (status == "ok") {
                         // Segue to the Access Code verification
-                        self.dismissViewControllerAnimated(true, completion: {});
+                        self.navigationController!.popViewControllerAnimated(true)
                     } else {
                         // Check for error message
                         if let errorMessage = response["message"] as? String {
