@@ -21,7 +21,6 @@
 		5B2527921BF965F200E15303 /* ActivityAddPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527911BF965F200E15303 /* ActivityAddPictureViewController.swift */; };
 		5B2527941BF9661C00E15303 /* ActivityAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527931BF9661C00E15303 /* ActivityAddEventViewController.swift */; };
 		5B2527961BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527951BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift */; };
-		5B2527981BF96AB600E15303 /* PetSittingAcceptRejectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527971BF96AB600E15303 /* PetSittingAcceptRejectViewController.swift */; };
 		5B3D7E971BF40AA5000B292D /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */; };
 		64AC9C1E1BF2AD480049B64B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */; };
 		64AC9C231BF2AD480049B64B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AC9C211BF2AD480049B64B /* Main.storyboard */; };
@@ -50,7 +49,6 @@
 		5B2527911BF965F200E15303 /* ActivityAddPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityAddPictureViewController.swift; sourceTree = "<group>"; };
 		5B2527931BF9661C00E15303 /* ActivityAddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityAddEventViewController.swift; sourceTree = "<group>"; };
 		5B2527951BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingViewActivitySecondaryViewController.swift; sourceTree = "<group>"; };
-		5B2527971BF96AB600E15303 /* PetSittingAcceptRejectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingAcceptRejectViewController.swift; sourceTree = "<group>"; };
 		5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		64AC9C1A1BF2AD480049B64B /* Critter Sitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Critter Sitter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 				5B2527871BF95B8C00E15303 /* SendPetViewController.swift */,
 				5B25278B1BF95FB000E15303 /* PetProfileSecondaryViewController.swift */,
 				5B25276F1BF9575000E15303 /* NotificationsViewController.swift */,
-				5B2527971BF96AB600E15303 /* PetSittingAcceptRejectViewController.swift */,
 				5B25278D1BF9628D00E15303 /* PetSittingAddActivityViewController.swift */,
 				5B25278F1BF962AC00E15303 /* PetSittingViewActivityViewController.swift */,
 				5B2527951BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift */,
@@ -216,7 +213,6 @@
 				5B3D7E971BF40AA5000B292D /* RootTableViewController.swift in Sources */,
 				64AC9C1E1BF2AD480049B64B /* AppDelegate.swift in Sources */,
 				5B2527681BF9560C00E15303 /* HomeViewController.swift in Sources */,
-				5B2527981BF96AB600E15303 /* PetSittingAcceptRejectViewController.swift in Sources */,
 				5B2527621BF522CF00E15303 /* LoginViewController.swift in Sources */,
 				5B2527701BF9575000E15303 /* NotificationsViewController.swift in Sources */,
 				5B25276C1BF956DC00E15303 /* PetProfileViewController.swift in Sources */,

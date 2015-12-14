@@ -13,8 +13,8 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
     var titles: NSArray!
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
@@ -40,7 +40,9 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
         self.titles = NSArray(objects: "Name", "Bio", "Food", "Medicine", "Exercise", "Bathroom", "Veterinarian", "Other", "Emergency Contact")
         self.tableView.reloadData()
     }
-
+    override func viewWillAppear(animated: Bool) {
+        self.tableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,7 +74,7 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        return self.titles.count
     }
     
     /*

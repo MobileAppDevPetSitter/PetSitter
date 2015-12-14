@@ -10,6 +10,8 @@ import UIKit
 
 class NotificationsViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,8 +23,12 @@ class NotificationsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func accept(sender: AnyObject) {
+    }
+    @IBAction func decline(sender: AnyObject) {
+    }
 
-    /*
+        /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

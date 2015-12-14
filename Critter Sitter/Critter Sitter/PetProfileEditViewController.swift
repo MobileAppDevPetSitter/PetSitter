@@ -10,15 +10,15 @@ import UIKit
 
 class PetProfileEditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var pet: Pet?
-    @IBOutlet weak var tableView: UITableView!
+   
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var button: UIButton!
 
     
     let controls = ["Photo", "Name", "Bio", "Food", "Exercise", "Bathroom"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
     }
     
     
@@ -49,6 +49,9 @@ class PetProfileEditViewController: UIViewController, UITableViewDataSource, UIT
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func save(sender: AnyObject) {
     }
     
 

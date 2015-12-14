@@ -11,6 +11,8 @@ import UIKit
 class SendPetViewController: UIViewController {
     var pet: Pet?
     @IBOutlet weak var emailinput: UITextField!
+    @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var endDatePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
