@@ -8,43 +8,54 @@
 
 import UIKit
 
-class PetProfileEditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PetProfileEditViewController: UIViewController {
     var pet: Pet?
-   
+    var str: String?
+
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var button: UIButton!
-
     
-    let controls = ["Photo", "Name", "Bio", "Food", "Exercise", "Bathroom"]
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return controls.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("textCell", forIndexPath: indexPath) as UITableViewCell
         
-        let row = indexPath.row
-        cell.textLabel?.text = controls[row]
+        if(self.pet!.owner.boolValue == false) {
+            self.textView.editable = false
+            self.button.hidden = true
+        }
         
-        return cell
+        self.label.text = self.str!
+        
+        switch(self.str!) {
+            case "Name":
+                self.textView.text = pet!.name
+                break
+            case "Bio":
+                self.textView.text = pet!.bio
+                break
+            case "Food":
+                break
+            case "Medicine":
+                self.textView.text = pet!.medicine
+                break
+            case "Exercise":
+                self.textView.text = pet!.exercise
+                break
+            case "Bathroom":
+                self.textView.text = pet!.bathroom_instructions
+                break
+            case "Veterinarian":
+                break
+            case "Other":
+                self.textView.text = pet!.other
+                break
+            case "Emergency Contact":
+                break
+            default:
+                break
+        }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        let row = indexPath.row
-        print(controls[row])
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

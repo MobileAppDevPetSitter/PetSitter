@@ -10,7 +10,7 @@ import UIKit
 
 class PetProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var pet: Pet?
-    var titles: NSArray!
+    var titles: [String] = ["Name", "Bio", "Food", "Medicine", "Exercise", "Bathroom", "Veterinarian", "Other", "Emergency Contact"]
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -34,14 +34,12 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         // Do any additional setup after loading the view.
         self.nameLabel.text = pet!.name
-        self.tableView.dataSource = self
         self.tableView.delegate = self
-        
-        self.titles = NSArray(objects: "Name", "Bio", "Food", "Medicine", "Exercise", "Bathroom", "Veterinarian", "Other", "Emergency Contact")
+        self.tableView.dataSource = self
         self.tableView.reloadData()
     }
     override func viewWillAppear(animated: Bool) {
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,28 +53,34 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
             if let vc = destinationViewController as? SendPetViewController {
                 vc.pet = self.pet
             }
+        } else if(segue.identifier == "viewDesc") {
+            if let vc = destinationViewController as? PetProfileEditViewController {
+                vc.pet = self.pet
+                vc.str = self.titles[tableView.indexPathForSelectedRow!.row]
+            }
         }
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath)
         
-        cell.textLabel?.text = self.titles[indexPath.row] as! String
+        cell.textLabel!.text = self.titles[indexPath.row]
         
+        print(self.titles[indexPath.row])
         return cell
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.titles.count
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1;
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("viewDesc", sender: self)
+    }
     /*
     // MARK: - Navigation
 
