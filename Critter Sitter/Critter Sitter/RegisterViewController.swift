@@ -44,7 +44,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             var status : String = user[0].valueForKey("status") as! String
             
             if(status == "PENDING") {
-                self.performSegueWithIdentifier("AccessView", sender:self)
+                
             } else {
                 // Segue to home page
                 self.performSegueWithIdentifier("HomeSegue", sender:self)

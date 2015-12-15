@@ -8,17 +8,27 @@
 
 import UIKit
 
-class PetProfileSecondaryViewController: UIViewController {
+class PetProfileSecondaryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     var petSitting: PetSitting?
+    var activities = NSMutableArray()
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       self.nameLabel.text = petSitting!.pet.name
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.nameLabel.text = petSitting!.pet.name
+        loadImage()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        loadImage()
+        loadActivities()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,78 +43,111 @@ class PetProfileSecondaryViewController: UIViewController {
             if let vc = destinationViewController as? PetProfileViewController {
                 vc.pet = self.petSitting!.pet
             }
-        } else if(segue.identifier == "viewActivities") {
-            if let vc = destinationViewController as? PetSittingAddActivityViewController {
-                vc.petSitting = self.petSitting
+        } else if(segue.identifier == "addActivity") {
+            if let vc = destinationViewController as? PetSittingViewActivityViewController {
+                vc.sitting = self.petSitting
+                
+                if let id = tableView.indexPathForSelectedRow as! NSIndexPath? {
+                    vc.activity = (self.activities[tableView.indexPathForSelectedRow!.row] as! Activity)
+                }
             }
         }
     }
     
-func loadImage() {
-    let myUrl = NSURL(string: "http://discworld-js1h704o.cloudapp.net/test/fileUpload.php");
-    //let myUrl = NSURL(string: "http://www.boredwear.com/utils/postImage.php");
-    
-    let request = NSMutableURLRequest(URL:myUrl!);
-    request.HTTPMethod = "POST";
-    
-    let param = [
-        "id"  : "\(self.petSitting!.pet.id)",
-        "type"    : "pet"
-    ]
-    
-    let boundary = generateBoundaryString()
-    
-    request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-    
-    
-    let imageData = UIImageJPEGRepresentation(imageView.image!, 1)
-    
-    if(imageData==nil)  { return; }
-    
-    request.HTTPBody = createBodyWithParameters(param, filePathKey: "file", imageDataKey: imageData!, boundary: boundary)
-    
-    
-    let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-        data, response, error in
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell3", forIndexPath: indexPath)
         
-        if error != nil {
-            print("error=\(error)")
-            return
-        }
+        cell.textLabel?.text = (activities[indexPath.row] as! Activity).title
         
-        
-        dispatch_async(dispatch_get_main_queue(),{
-            self.imageView.image = UIImage(data: data!);
-        });
-        
-        
+        print((activities[indexPath.row] as! Activity).title)
+        return cell
     }
     
-    task.resume()
-    
-}
-
-func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
-    var body = NSMutableData();
-    
-    if parameters != nil {
-        for (key, value) in parameters! {
-            body.appendString("--\(boundary)\r\n")
-            body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
-            body.appendString("\(value)\r\n")
-        }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("addActivity", sender: self)
     }
     
-    return body
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(self.activities.count)
+        return self.activities.count
+    }
+    
+    func loadActivities() {
+        if(self.activities.count != 0) {
+            self.activities.removeAllObjects()
+        }
+        
+        let poster = Poster()
+        
+        var postString = "http://discworld-js1h704o.cloudapp.net/test/activitiesRetrieve.php"
+        var dataString = "pet_sitting_id=" + self.petSitting!.sitting_id
+        
+        // Perform POST
+        poster.doPost(postString, dataString: dataString) {
+            (response, errorStr) -> Void in
+            if let errorString = errorStr {
+                // Error
+                print(errorStr)
+            } else {
+                if let status = response["status"] as? String {
+                    if (status == "ok") {
+                        if let sitting = response["activities"] as! NSArray? {
+                            for instance in sitting  {
+                                var i: NSDictionary = instance as! NSDictionary
+                                let newAct = Activity(activity_id: i["activity_id"] as! String, title: i["title"] as! String, description: i["description"] as! String, completion_date: i["completion_date"] as! String, hasImage: i["hasImage"] as! String, status: "completed");
+                                self.activities.addObject(newAct)
+                                print(newAct.title)
+                            }
+                    } else {
+                        print("AGH")
+                        // Check for error message
+                        if let errorMessage = response["message"] as? String {
+                            print(errorMessage)
+                        } else {
+                            // Unknown error occurred
+                        }
+                    }
+                } else {
+                    // Unknown error occurred
+                   
+                }
+            }
+        self.tableView.reloadData()
+        }
+        
+    }
 }
+    func loadImage() {
+        let postString = "http://discworld-js1h704o.cloudapp.net/test/getImage.php";
+        let dataString = "id=" + self.petSitting!.pet.id + "&type=pet"
+        
+        let body = (dataString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        
+        if let url = NSURL(string: postString) {
+            let urlRequest = NSMutableURLRequest(URL: url)
+            urlRequest.HTTPMethod = "POST"
+            urlRequest.HTTPBody = body;
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithRequest(urlRequest, completionHandler: {
+                (data, response, error) -> Void in
+                if error != nil {
+                    
+                } else {
+                    let image = UIImage(data: data!)
+                    self.imageView.image = image
+                    self.imageView.image = image
 
+                }
+            })
+            task.resume()
+        } else {
 
+        }
+    }
 
-
-func generateBoundaryString() -> String {
-    return "Boundary-\(NSUUID().UUIDString)"
 }
-
-
-
-}
+    

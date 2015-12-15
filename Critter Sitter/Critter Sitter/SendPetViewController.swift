@@ -30,10 +30,12 @@ class SendPetViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func send(sender: AnyObject) {
         var postString = "http://discworld-js1h704o.cloudapp.net/test/sittingCreate.php"
-        var dataString = "pet_id=" + self.pet!.id + "&email=" + self.emailinput.text! + "&start_date=2010-10-02&end_date=2010-10-07"
+        var dataString = "pet_id=" + self.pet!.id + "&email=" + self.emailinput.text! + "&start_date=" + self.startDatePicker.date.description + "&end_date=" + self.endDatePicker.date.description
         
         let post = Poster()
         
+        print(self.endDatePicker.date.description)
+        print(self.startDatePicker.date.description)
         post.doPost(postString, dataString: dataString) {
             (response, errorStr) -> Void in
             if let errorString = errorStr {

@@ -29,6 +29,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         var rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "addPet:")
         self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem], animated: true)
+        var leftAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Log-out", style: UIBarButtonItemStyle.Plain, target: self, action: "logout:")
+        self.navigationItem.setLeftBarButtonItems([leftAddBarButtonItem], animated: true)
         
         self.petsSitting = NSMutableArray()
         self.pets = NSMutableArray()
@@ -36,6 +38,26 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
     }
     
+    func logout(sender: UIButton) {
+        // Load saved user entities from core data
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        do {
+            try managedContext.deleteObject(self.user[0])
+        } catch let error as NSError {
+            
+            }
+        // Complete save and handle potential error
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    
+        self.performSegueWithIdentifier("logout", sender:self)
+    }
+
     func addPet(sender: UIButton) {
         self.performSegueWithIdentifier("petCreate", sender:self)
     }
@@ -97,7 +119,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                     if((self.pets[j] as! Pet).id == p["pet_id"]! as! String) {
                                         temp = self.pets[j] as? Pet
                                     
-                                        let newSitting = PetSitting(pet: temp!, start_date: p["start"]! as! String, end_date: p["end"]! as! String, sitting_id: p["pet_sitting_id"]! as! String)
+                                        let newSitting = PetSitting(pet: temp!, start_date: p["start"]! as! String, end_date: p["end"]! as! String, sitting_id: p["pet_sitting_id"]! as! String, status: p["currentStatus"] as! String)
                                     
                                         self.petsSitting.addObject(newSitting)
                                         break
@@ -121,8 +143,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                                 var i: NSDictionary = instance as! NSDictionary
                                                 
                                                 let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: i["medicine"] as! String, food: i["food"] as! String!, veterinarian: i["vet"] as! String, other: i["other"] as! String, owner: false)
-                                                    
-                                                let newSitting = PetSitting(pet: newPet, start_date: i["start_date"]! as! String, end_date: i["end_date"]! as! String, sitting_id: i["pet_sitting_id"]! as! String)
+                                                
+                                                let newSitting = PetSitting(pet: newPet, start_date: i["start_date"]! as! String, end_date: i["end_date"]! as! String, sitting_id: i["pet_sitting_id"]! as! String, status: "pending")
                                                     
                                                 self.petsSitting.addObject(newSitting);
                                             }
@@ -175,13 +197,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     vc.petSitting = self.petsSitting[self.sendId] as! PetSitting
                 }
             }
+        } else if (segue.identifier == "notify") {
+            if let vc = destinationViewController as? NotificationsViewController {
+                vc.sitting = self.petsSitting[tableView.indexPathForSelectedRow!.row] as! PetSitting
+            }
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.section == 0) {
             // Segue to the Access Code verification
-            self.performSegueWithIdentifier("petSitting", sender:self)
+            if((self.petsSitting[tableView.indexPathForSelectedRow!.row] as! PetSitting).status == "pending") {
+                self.performSegueWithIdentifier("notify", sender: self)
+            } else {
+                self.performSegueWithIdentifier("petSitting", sender:self)
+            }
         } else {
             self.performSegueWithIdentifier("petProfile", sender:self)
         }

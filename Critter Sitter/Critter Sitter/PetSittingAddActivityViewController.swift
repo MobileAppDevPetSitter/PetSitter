@@ -21,7 +21,7 @@ class PetSittingAddActivityViewController: UIViewController, UITableViewDataSour
         if(petSitting!.pet.owner.boolValue == true) {
             var rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "addActivity:")
             self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem], animated: true)
-        }
+        } 
         // Do any additional setup after loading the view.
     }
     

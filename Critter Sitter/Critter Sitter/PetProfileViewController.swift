@@ -41,6 +41,7 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
         self.nameLabel.text = pet!.name
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.title = "Pet Profile"
         self.tableView.reloadData()
     }
     
@@ -68,7 +69,7 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
         
         let selectedImage = image
         imageView.image = selectedImage
-        dismissViewControllerAnimated(true, completion: uploadImage)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
