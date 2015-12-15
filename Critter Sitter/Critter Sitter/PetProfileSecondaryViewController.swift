@@ -26,6 +26,7 @@ class PetProfileSecondaryViewController: UIViewController, UITableViewDataSource
     }
     
     override func viewDidAppear(animated: Bool) {
+        self.imageView.image = self.imageView.image
         loadActivities()
         self.tableView.reloadData()
         loadImage()

@@ -44,7 +44,6 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
         self.tableView.dataSource = self
         self.title = "Pet Profile"
         self.tableView.reloadData()
-        
     }
     
     func loadImage() {
@@ -84,6 +83,7 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
     }
     
     override func viewWillAppear(animated: Bool) {
+        self.imageView.image = self.imageView.image
         tableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
