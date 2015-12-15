@@ -144,7 +144,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                                 
                                                 let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: i["medicine"] as! String, food: i["food"] as! String!, veterinarian: i["vet"] as! String, other: i["other"] as! String, owner: false)
                                                 
-                                                let newSitting = PetSitting(pet: newPet, start_date: i["start_date"]! as! String, end_date: i["end_date"]! as! String, sitting_id: i["pet_sitting_id"]! as! String, status: "pending")
+                                                let newSitting = PetSitting(pet: newPet, start_date: i["start_date"]! as! String, end_date: i["end_date"]! as! String, sitting_id: i["pet_sitting_id"]! as! String, status: i["currentStatus"] as! String)
                                                     
                                                 self.petsSitting.addObject(newSitting);
                                             }

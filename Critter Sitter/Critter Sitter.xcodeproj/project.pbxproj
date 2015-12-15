@@ -37,6 +37,7 @@
 		896EED111C1FC75800205AA0 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EED101C1FC75800205AA0 /* Activity.swift */; };
 		896EED131C1FF37400205AA0 /* hal.png in Resources */ = {isa = PBXBuildFile; fileRef = 896EED121C1FF37400205AA0 /* hal.png */; };
 		896EED151C1FFABA00205AA0 /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 896EED141C1FFABA00205AA0 /* cat.jpg */; };
+		896EED191C20692C00205AA0 /* missing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 896EED181C20692C00205AA0 /* missing.jpg */; };
 		89EC0AD31C0CE1F50012FAAE /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC0AD21C0CE1F50012FAAE /* Poster.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		896EED101C1FC75800205AA0 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		896EED121C1FF37400205AA0 /* hal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hal.png; sourceTree = "<group>"; };
 		896EED141C1FFABA00205AA0 /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = "<group>"; };
+		896EED181C20692C00205AA0 /* missing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = missing.jpg; sourceTree = "<group>"; };
 		89EC0AD21C0CE1F50012FAAE /* Poster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				5BF3EDFA1C1FEBBF00A45CC6 /* halle.jpg */,
 				896EED121C1FF37400205AA0 /* hal.png */,
 				896EED141C1FFABA00205AA0 /* cat.jpg */,
+				896EED181C20692C00205AA0 /* missing.jpg */,
 				64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */,
 				5B2527671BF9560C00E15303 /* HomeViewController.swift */,
 				5B25276B1BF956DC00E15303 /* PetProfileViewController.swift */,
@@ -209,6 +212,7 @@
 				5BBA16311C1FA0FF00700D66 /* Logo.png in Resources */,
 				5BF3EDFF1C1FEE4E00A45CC6 /* halle3.jpg in Resources */,
 				5BFACDC91C1FA67000ABBFD8 /* ostrich2.jpg in Resources */,
+				896EED191C20692C00205AA0 /* missing.jpg in Resources */,
 				64AC9C231BF2AD480049B64B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

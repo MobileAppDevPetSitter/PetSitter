@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X1S-wn-0n0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X1S-wn-0n0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -503,7 +503,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="114" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-Wu-eEA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="114" image="missing.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-Wu-eEA">
                                 <rect key="frame" x="20" y="40" width="115" height="115"/>
                                 <animations/>
                                 <constraints>
@@ -889,7 +889,7 @@
                                     <segue destination="xvD-1L-2Wk" kind="show" identifier="petProfile" id="3TQ-Ut-gcO"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="114" translatesAutoresizingMaskIntoConstraints="NO" id="caY-QH-boe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="114" image="missing.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="caY-QH-boe">
                                 <rect key="frame" x="20" y="28" width="115" height="115"/>
                                 <animations/>
                                 <constraints>
@@ -944,14 +944,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZQb-gG-Od5">
-                                <rect key="frame" x="35" y="40" width="150" height="150"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="iHD-fi-rzh"/>
-                                    <constraint firstAttribute="height" constant="150" id="jq1-qz-CgK"/>
-                                </constraints>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xug-ha-GOw">
                                 <rect key="frame" x="35" y="215" width="425" height="150"/>
                                 <animations/>
@@ -978,6 +970,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="missing.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZQb-gG-Od5">
+                                <rect key="frame" x="35" y="40" width="150" height="150"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="iHD-fi-rzh"/>
+                                    <constraint firstAttribute="height" constant="150" id="jq1-qz-CgK"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -1197,6 +1197,7 @@
     </scenes>
     <resources>
         <image name="Logo.png" width="857" height="774"/>
+        <image name="missing.jpg" width="185" height="121"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="K3e-Dw-Eh5"/>

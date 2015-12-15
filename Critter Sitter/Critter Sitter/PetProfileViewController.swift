@@ -23,6 +23,7 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadImage()
         if(pet!.owner.boolValue == false) {
             self.addPhoto.hidden = true
             self.sendButton.hidden = true
@@ -46,6 +47,34 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
         
     }
     
+    func loadImage() {
+        let postString = "http://discworld-js1h704o.cloudapp.net/test/getImage.php";
+        let dataString = "id=" + self.pet!.id + "&type=pet"
+        
+        let body = (dataString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        
+        if let url = NSURL(string: postString) {
+            let urlRequest = NSMutableURLRequest(URL: url)
+            urlRequest.HTTPMethod = "POST"
+            urlRequest.HTTPBody = body;
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithRequest(urlRequest, completionHandler: {
+                (data, response, error) -> Void in
+                if error != nil {
+                    
+                } else {
+                    let image = UIImage(data: data!)
+                    self.imageView.image = image
+                    self.imageView.image = image
+                    
+                }
+            })
+            task.resume()
+        } else {
+            
+        }
+    }
+
     func handleTap(sender: UITapGestureRecognizer) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .PhotoLibrary
