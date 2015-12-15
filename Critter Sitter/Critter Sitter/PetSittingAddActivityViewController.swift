@@ -11,6 +11,8 @@ import UIKit
 class PetSittingAddActivityViewController: UIViewController {
     var petSitting: PetSitting?
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

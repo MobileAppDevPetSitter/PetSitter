@@ -82,8 +82,9 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
         self.performSegueWithIdentifier("viewDesc", sender: self)
     }
     
-    @IBAction func addPhoto(sender: AnyObject) {
+    @IBAction func savePhoto(sender: AnyObject) {
     }
+    
     /*
     // MARK: - Navigation
 
