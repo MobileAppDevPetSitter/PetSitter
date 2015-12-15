@@ -21,6 +21,9 @@
 		5B2527961BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527951BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift */; };
 		5B3D7E971BF40AA5000B292D /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */; };
 		5BBA16311C1FA0FF00700D66 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBA16301C1FA0FF00700D66 /* Logo.png */; };
+		5BF3EDFB1C1FEBBF00A45CC6 /* halle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5BF3EDFA1C1FEBBF00A45CC6 /* halle.jpg */; };
+		5BF3EDFF1C1FEE4E00A45CC6 /* halle3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5BF3EDFE1C1FEE4E00A45CC6 /* halle3.jpg */; };
+		5BF3EE011C1FEE9300A45CC6 /* halle4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5BF3EE001C1FEE9300A45CC6 /* halle4.jpg */; };
 		5BFACDC91C1FA67000ABBFD8 /* ostrich2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5BFACDC81C1FA67000ABBFD8 /* ostrich2.jpg */; };
 		64AC9C1E1BF2AD480049B64B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */; };
 		64AC9C231BF2AD480049B64B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AC9C211BF2AD480049B64B /* Main.storyboard */; };
@@ -50,6 +53,9 @@
 		5B2527951BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingViewActivitySecondaryViewController.swift; sourceTree = "<group>"; };
 		5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		5BBA16301C1FA0FF00700D66 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		5BF3EDFA1C1FEBBF00A45CC6 /* halle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halle.jpg; sourceTree = "<group>"; };
+		5BF3EDFE1C1FEE4E00A45CC6 /* halle3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halle3.jpg; sourceTree = "<group>"; };
+		5BF3EE001C1FEE9300A45CC6 /* halle4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halle4.jpg; sourceTree = "<group>"; };
 		5BFACDC81C1FA67000ABBFD8 /* ostrich2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ostrich2.jpg; sourceTree = "<group>"; };
 		64AC9C1A1BF2AD480049B64B /* Critter Sitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Critter Sitter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,9 @@
 			children = (
 				5BBA16301C1FA0FF00700D66 /* Logo.png */,
 				5BFACDC81C1FA67000ABBFD8 /* ostrich2.jpg */,
+				5BF3EDFE1C1FEE4E00A45CC6 /* halle3.jpg */,
+				5BF3EE001C1FEE9300A45CC6 /* halle4.jpg */,
+				5BF3EDFA1C1FEBBF00A45CC6 /* halle.jpg */,
 				64AC9C1D1BF2AD480049B64B /* AppDelegate.swift */,
 				5B2527671BF9560C00E15303 /* HomeViewController.swift */,
 				5B25276B1BF956DC00E15303 /* PetProfileViewController.swift */,
@@ -187,7 +196,10 @@
 			files = (
 				64AC9C2B1BF2AD480049B64B /* LaunchScreen.storyboard in Resources */,
 				64AC9C281BF2AD480049B64B /* Assets.xcassets in Resources */,
+				5BF3EDFB1C1FEBBF00A45CC6 /* halle.jpg in Resources */,
+				5BF3EE011C1FEE9300A45CC6 /* halle4.jpg in Resources */,
 				5BBA16311C1FA0FF00700D66 /* Logo.png in Resources */,
+				5BF3EDFF1C1FEE4E00A45CC6 /* halle3.jpg in Resources */,
 				5BFACDC91C1FA67000ABBFD8 /* ostrich2.jpg in Resources */,
 				64AC9C231BF2AD480049B64B /* Main.storyboard in Resources */,
 			);
