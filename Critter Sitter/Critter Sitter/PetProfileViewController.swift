@@ -66,7 +66,7 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
-        let selectedImage = editingInfo![UIImagePickerControllerOriginalImage] as? UIImage
+        let selectedImage = image
         imageView.image = selectedImage
         dismissViewControllerAnimated(true, completion: uploadImage)
     }
