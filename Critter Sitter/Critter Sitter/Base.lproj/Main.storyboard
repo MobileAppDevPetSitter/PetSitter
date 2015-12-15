@@ -824,6 +824,24 @@
                                     <segue destination="OjE-0V-dvY" kind="show" identifier="addActivity" id="NPi-lg-j3M"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jd-wJ-sRk">
+                                <rect key="frame" x="322" y="145" width="81" height="30"/>
+                                <animations/>
+                                <state key="normal" title="View Profile">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xvD-1L-2Wk" kind="show" identifier="petProfile" id="3TQ-Ut-gcO"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="114" image="missing.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="caY-QH-boe">
+                                <rect key="frame" x="20" y="28" width="115" height="115"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="lnQ-Kv-cYa"/>
+                                    <constraint firstAttribute="width" constant="115" id="qQr-F5-slc"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YyA-Zr-tVF">
                                 <rect key="frame" x="0.0" y="185" width="600" height="415"/>
                                 <animations/>
@@ -879,24 +897,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jd-wJ-sRk">
-                                <rect key="frame" x="322" y="145" width="81" height="30"/>
-                                <animations/>
-                                <state key="normal" title="View Profile">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="xvD-1L-2Wk" kind="show" identifier="petProfile" id="3TQ-Ut-gcO"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="114" image="missing.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="caY-QH-boe">
-                                <rect key="frame" x="20" y="28" width="115" height="115"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="115" id="lnQ-Kv-cYa"/>
-                                    <constraint firstAttribute="width" constant="115" id="qQr-F5-slc"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>

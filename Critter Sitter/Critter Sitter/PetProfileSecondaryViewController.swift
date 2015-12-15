@@ -67,6 +67,7 @@ class PetProfileSecondaryViewController: UIViewController, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("HERE")
         self.performSegueWithIdentifier("addActivity", sender: self)
     }
     
