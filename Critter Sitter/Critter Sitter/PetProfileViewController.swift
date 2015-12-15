@@ -43,6 +43,7 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
         self.tableView.dataSource = self
         self.title = "Pet Profile"
         self.tableView.reloadData()
+        
     }
     
     func handleTap(sender: UITapGestureRecognizer) {
@@ -190,9 +191,10 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
         return "Boundary-\(NSUUID().UUIDString)"
     }
     
-    
+
     
 }
+
 
 
 

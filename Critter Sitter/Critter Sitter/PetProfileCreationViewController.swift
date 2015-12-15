@@ -113,6 +113,10 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
         self.view.addSubview(self.pageViewController.view)
         
         self.pageViewController.didMoveToParentViewController(self)
+        
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {
@@ -168,5 +172,8 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
         return 0
     }
     
-    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
 }

@@ -21,6 +21,9 @@ class SendPetViewController: UIViewController, UITextFieldDelegate {
         startDatePicker.backgroundColor = UIColor.whiteColor()
         
         endDatePicker.backgroundColor = UIColor.whiteColor()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,5 +55,11 @@ class SendPetViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
 
 }
