@@ -928,38 +928,6 @@
             </objects>
             <point key="canvasLocation" x="306" y="50"/>
         </scene>
-        <!--Activity Add Picture View Controller-->
-        <scene sceneID="mdy-EY-Sx1">
-            <objects>
-                <viewController id="Z6J-Gz-y3y" customClass="ActivityAddPictureViewController" customModule="Critter_Sitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1IV-7b-HaT"/>
-                        <viewControllerLayoutGuide type="bottom" id="ESO-7B-TOf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SO1-Qj-7sw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will copy from pet profile add photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK7-be-fAX">
-                                <rect key="frame" x="163" y="289" width="275" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="jK7-be-fAX" firstAttribute="centerX" secondItem="SO1-Qj-7sw" secondAttribute="centerX" id="7TE-j7-wlb"/>
-                            <constraint firstItem="jK7-be-fAX" firstAttribute="centerY" secondItem="SO1-Qj-7sw" secondAttribute="centerY" id="Sih-Eu-ZQV"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oAX-QT-Ero" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1575" y="-171"/>
-        </scene>
         <!--Pet Sitting View Activity View Controller-->
         <scene sceneID="1If-dO-1rl">
             <objects>
