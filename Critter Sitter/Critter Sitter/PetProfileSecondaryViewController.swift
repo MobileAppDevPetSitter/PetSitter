@@ -23,8 +23,6 @@ class PetProfileSecondaryViewController: UIViewController, UITableViewDataSource
         tableView.dataSource = self
         self.nameLabel.text = petSitting!.pet.name
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -150,11 +148,6 @@ class PetProfileSecondaryViewController: UIViewController, UITableViewDataSource
         } else {
 
         }
-    }
-    
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
     }
 
 }
