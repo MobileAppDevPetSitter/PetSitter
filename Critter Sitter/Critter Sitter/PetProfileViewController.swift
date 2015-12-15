@@ -16,7 +16,7 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var addPhoto: UIButton!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
@@ -24,11 +24,11 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         if(pet!.owner.boolValue == false) {
-            self.editButton.hidden = true
+            self.addPhoto.hidden = true
             self.sendButton.hidden = true
             self.deleteButton.hidden = true
         } else {
-            self.editButton.hidden = false
+            self.addPhoto.hidden = false
             self.sendButton.hidden = false
             self.deleteButton.hidden = false
         }
@@ -80,6 +80,9 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("viewDesc", sender: self)
+    }
+    
+    @IBAction func addPhoto(sender: AnyObject) {
     }
     /*
     // MARK: - Navigation
