@@ -29,7 +29,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         var rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "addPet:")
         self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem], animated: true)
-        var leftAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Log-out", style: UIBarButtonItemStyle.Plain, target: self, action: "logout:")
+        var leftAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.Plain, target: self, action: "logout:")
         self.navigationItem.setLeftBarButtonItems([leftAddBarButtonItem], animated: true)
         
         self.petsSitting = NSMutableArray()
