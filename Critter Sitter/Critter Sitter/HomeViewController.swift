@@ -218,23 +218,32 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
         if(indexPath.section == 0) {
-            cell.textLabel?.text = (petsSitting[indexPath.row] as! PetSitting).pet.name
-            
             if((petsSitting[indexPath.row] as! PetSitting).pet.owner.boolValue == true) {
+                let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+                cell.textLabel?.text = (petsSitting[indexPath.row] as! PetSitting).pet.name
                 var i = 0
                 for(i = 0; i < self.pets.count; i++) {
                     if((self.petsSitting[indexPath.row] as! PetSitting).pet.id == (pets[i] as! Pet).id) {
                         cell.accessoryType = .DetailDisclosureButton
-                        break
+                        return cell
                     }
                 }
+            } else {
+                let cell = tableView.dequeueReusableCellWithIdentifier("celldetail", forIndexPath: indexPath)
+                
+                cell.textLabel?.text = (petsSitting[indexPath.row] as! PetSitting).pet.name
+                if((petsSitting[indexPath.row] as! PetSitting).status != "PENDING") {
+                    cell.detailTextLabel?.text = (petsSitting[indexPath.row] as! PetSitting).start_date
+                } else {
+                    cell.detailTextLabel?.text = (petsSitting[indexPath.row] as! PetSitting).status
+                }
+                return cell
             }
-        } else {
-            cell.textLabel?.text = (pets[indexPath.row] as! Pet).name
         }
+            let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+            cell.textLabel?.text = (pets[indexPath.row] as! Pet).name
         
         
         return cell

@@ -22,16 +22,15 @@ class PetProfileSecondaryViewController: UIViewController, UITableViewDataSource
         tableView.delegate = self
         tableView.dataSource = self
         self.nameLabel.text = petSitting!.pet.name
-        loadImage()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
     }
     
     override func viewDidAppear(animated: Bool) {
-        loadImage()
         loadActivities()
         self.tableView.reloadData()
+        loadImage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,7 +60,7 @@ class PetProfileSecondaryViewController: UIViewController, UITableViewDataSource
         let cell = tableView.dequeueReusableCellWithIdentifier("cell3", forIndexPath: indexPath)
         
         cell.textLabel?.text = (activities[indexPath.row] as! Activity).title
-        
+        cell.userInteractionEnabled = true
         print((activities[indexPath.row] as! Activity).title)
         return cell
     }

@@ -298,6 +298,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="7aP-Gp-aNh">
+                                <rect key="frame" x="245" y="25" width="110" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="0qD-c0-phs"/>
+                                    <constraint firstAttribute="width" constant="110" id="wLi-dZ-k9l"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j4T-Na-A6K">
                                 <rect key="frame" x="0.0" y="120" width="600" height="480"/>
                                 <animations/>
@@ -354,14 +362,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="7aP-Gp-aNh">
-                                <rect key="frame" x="245" y="25" width="110" height="100"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="0qD-c0-phs"/>
-                                    <constraint firstAttribute="width" constant="110" id="wLi-dZ-k9l"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -1200,10 +1200,10 @@
         <image name="missing.jpg" width="185" height="121"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K3e-Dw-Eh5"/>
-        <segue reference="kUS-EC-ndb"/>
-        <segue reference="gpu-fF-QcX"/>
         <segue reference="3oa-xI-BqT"/>
+        <segue reference="gpu-fF-QcX"/>
+        <segue reference="kUS-EC-ndb"/>
+        <segue reference="K3e-Dw-Eh5"/>
         <segue reference="3TQ-Ut-gcO"/>
     </inferredMetricsTieBreakers>
 </document>
