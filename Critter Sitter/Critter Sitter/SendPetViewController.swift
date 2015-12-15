@@ -17,6 +17,10 @@ class SendPetViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startDatePicker.backgroundColor = UIColor.whiteColor()
+        
+        endDatePicker.backgroundColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
