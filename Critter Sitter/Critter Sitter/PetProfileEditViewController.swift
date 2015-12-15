@@ -34,6 +34,7 @@ class PetProfileEditViewController: UIViewController {
                 self.textView.text = pet!.bio
                 break
             case "Food":
+                self.textView.text = pet!.food
                 break
             case "Medicine":
                 self.textView.text = pet!.medicine
@@ -45,6 +46,7 @@ class PetProfileEditViewController: UIViewController {
                 self.textView.text = pet!.bathroom_instructions
                 break
             case "Veterinarian":
+                self.textView.text = pet!.veterinarian
                 break
             case "Other":
                 self.textView.text = pet!.other

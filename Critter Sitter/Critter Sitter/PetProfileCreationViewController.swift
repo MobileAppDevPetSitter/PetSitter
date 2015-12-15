@@ -26,10 +26,10 @@ class PetProfileCreationViewController: UIViewController, UIPageViewControllerDa
         for var i = 0; i < size; i++ {
             var vc = self.viewControllerAtIndex(i)
             
-            self.dataString += "&"
-            
-            if(!(self.pageTitles[i] === "Owners")) {
-                if(self.pageTitles[i] === "Emergency Contact") {
+            if(self.pageTitles[i] as! String != "Owners") {
+                self.dataString += "&"
+                
+                if(self.pageTitles[i] as! String == "Emergency Contact") {
                     self.dataString +=  "emergency_contact=";
 
                 } else {

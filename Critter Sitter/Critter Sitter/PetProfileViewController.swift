@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PetProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate,UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
     var pet: Pet?
     var titles: [String] = ["Name", "Bio", "Food", "Medicine", "Exercise", "Bathroom", "Veterinarian", "Other", "Emergency Contact"]
     
@@ -31,6 +31,11 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
             self.addPhoto.hidden = false
             self.sendButton.hidden = false
             self.deleteButton.hidden = false
+            
+            let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+            tap.delegate = self
+            self.imageView.userInteractionEnabled = true
+            imageView.addGestureRecognizer(tap)
         }
         // Do any additional setup after loading the view.
         self.nameLabel.text = pet!.name
@@ -38,12 +43,32 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
         self.tableView.dataSource = self
         self.tableView.reloadData()
     }
+    
+    func handleTap(sender: UITapGestureRecognizer) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .PhotoLibrary
+        imagePickerController.delegate = self
+        
+        presentViewController(imagePickerController, animated: true, completion: nil)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         tableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        let selectedImage = editingInfo![UIImagePickerControllerOriginalImage] as? UIImage
+        imageView.image = selectedImage
+        dismissViewControllerAnimated(true, completion: uploadImage)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -83,8 +108,101 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func savePhoto(sender: AnyObject) {
+        uploadImage()
     }
     
+    func uploadImage() {
+        let myUrl = NSURL(string: "http://discworld-js1h704o.cloudapp.net/test/fileUpload.php");
+        //let myUrl = NSURL(string: "http://www.boredwear.com/utils/postImage.php");
+        
+        let request = NSMutableURLRequest(URL:myUrl!);
+        request.HTTPMethod = "POST";
+        
+        let param = [
+            "id"  : "\(self.pet!.id)",
+            "type"    : "pet"
+        ]
+        
+        let boundary = generateBoundaryString()
+        
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        
+        let imageData = UIImageJPEGRepresentation(imageView.image!, 1)
+        
+        if(imageData==nil)  { return; }
+        
+        request.HTTPBody = createBodyWithParameters(param, filePathKey: "file", imageDataKey: imageData!, boundary: boundary)
+        
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            // You can print out response object
+            print("******* response = \(response)")
+            
+            // Print out reponse body
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("****** response data = \(responseString)")
+            
+        }
+        
+        task.resume()
+        
+    }
+    
+    func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
+        var body = NSMutableData();
+        
+        if parameters != nil {
+            for (key, value) in parameters! {
+                body.appendString("--\(boundary)\r\n")
+                body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                body.appendString("\(value)\r\n")
+            }
+        }
+        
+        let filename = "user-profile.jpg"
+        
+        let mimetype = "image/jpg"
+        
+        body.appendString("--\(boundary)\r\n")
+        body.appendString("Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
+        body.appendString("Content-Type: \(mimetype)\r\n\r\n")
+        body.appendData(imageDataKey)
+        body.appendString("\r\n")
+        
+        body.appendString("--\(boundary)--\r\n")
+        
+        return body
+    }
+    
+    
+    
+    
+    func generateBoundaryString() -> String {
+        return "Boundary-\(NSUUID().UUIDString)"
+    }
+    
+    
+    
+}
+
+
+
+extension NSMutableData {
+    
+    func appendString(string: String) {
+        let data = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        appendData(data!)
+    }
+}
+
     /*
     // MARK: - Navigation
 
@@ -94,5 +212,3 @@ class PetProfileViewController: UIViewController, UITableViewDelegate, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
-
-}

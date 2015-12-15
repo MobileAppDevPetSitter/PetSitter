@@ -14,8 +14,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var titles: NSArray = []
     var petsSitting: NSMutableArray = []
     var pets: NSMutableArray = []
-    var sendId = 0;
-
+    var sendId = -1
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -82,11 +82,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                         if let sitting = response["pets"] as! NSArray? {
                             for instance in sitting  {
                                 var i: NSDictionary = instance as! NSDictionary
-                                let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: "Loud" as! String, other: "None" as! String, owner: true)
+                                let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: i["medicine"] as! String, food: i["food"] as! String, veterinarian: i["vet"] as! String, other: i["other"] as! String, owner: true)
                                     self.pets.addObject(newPet)
                             }
                         }
-                        
+                        if let mine_sitting = response["mine_sitting"] as! NSArray? {
+                            var temp: Pet?
+                            
+                            for instance in mine_sitting  {
+                                let p: NSDictionary = instance as! NSDictionary
+                            
+                                var j = 0
+                                for(j = 0; j < self.pets.count; j++) {
+                                    if((self.pets[j] as! Pet).id == p["pet_id"]! as! String) {
+                                        temp = self.pets[j] as? Pet
+                                    
+                                        let newSitting = PetSitting(pet: temp!, start_date: p["start"]! as! String, end_date: p["end"]! as! String, sitting_id: p["pet_sitting_id"]! as! String)
+                                    
+                                        self.petsSitting.addObject(newSitting)
+                                        break
+                                    }
+                                }
+                            }
+                        }
+                    
                         postString = "http://discworld-js1h704o.cloudapp.net/test/petsSitting.php"
                         print(dataString)
                         post.doPost(postString, dataString: dataString) {
@@ -99,35 +118,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                     if (status == "ok") {
                                         if let sitting = response["pets"] as! NSArray? {
                                             for instance in sitting  {
-                                                var doesOwn:BooleanType = false
-                                                var temp: Pet?
-                                                
                                                 var i: NSDictionary = instance as! NSDictionary
                                                 
-                                                var j = 0
-                                                for(j = 0; j < self.pets.count; j++) {
-                                                    if((self.pets[j] as! Pet).id == i["pet_id"]! as! String) {
-                                                        doesOwn = true
-                                                        temp = self.pets[j] as? Pet
-                                                        print("YES")
-                                                        break
-                                                    } else {
-                                                        print("NO")
-                                                    }
-                                                }
-                                                
-                                                if(doesOwn.boolValue == true) {
-                                                    let newSitting = PetSitting(pet: temp!, start_date: i["start_date"]! as! String, end_date: i["end_date"]! as! String, sitting_id: i["pet_sitting_id"]! as! String)
+                                                let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: i["medicine"] as! String, food: i["food"] as! String!, veterinarian: i["vet"] as! String, other: i["other"] as! String, owner: false)
                                                     
-                                                    self.petsSitting.addObject(newSitting)
-                                                } else {
-                                                    let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: "Loud" as! String, other: "None" as! String, owner: false)
+                                                let newSitting = PetSitting(pet: newPet, start_date: i["start_date"]! as! String, end_date: i["end_date"]! as! String, sitting_id: i["pet_sitting_id"]! as! String)
                                                     
-                                                    let newSitting = PetSitting(pet: newPet, start_date: i["start_date"]! as! String, end_date: i["end_date"]! as! String, sitting_id: i["pet_sitting_id"]! as! String)
-                                                    
-                                                    self.petsSitting.addObject(newSitting);
-                                                }
-                                                
+                                                self.petsSitting.addObject(newSitting);
                                             }
                                         }
                                     }
@@ -150,6 +147,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(animated: Bool) {
         loadPets()
+        sendId = -1
     }
     
     override func didReceiveMemoryWarning() {
@@ -171,13 +169,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         } else if (segue.identifier == "petSitting") {
             if let vc = destinationViewController as? PetProfileSecondaryViewController {
-                vc.petSitting = self.petsSitting[tableView.indexPathForSelectedRow!.row] as! PetSitting
+                if(self.sendId == -1) {
+                    vc.petSitting = self.petsSitting[tableView.indexPathForSelectedRow!.row] as! PetSitting
+                } else {
+                    vc.petSitting = self.petsSitting[self.sendId] as! PetSitting
+                }
             }
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.sendId = indexPath.row
         if(indexPath.section == 0) {
             // Segue to the Access Code verification
             self.performSegueWithIdentifier("petSitting", sender:self)
@@ -191,12 +192,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if(indexPath.section == 0) {
             cell.textLabel?.text = (petsSitting[indexPath.row] as! PetSitting).pet.name
+            
+            if((petsSitting[indexPath.row] as! PetSitting).pet.owner.boolValue == true) {
+                var i = 0
+                for(i = 0; i < self.pets.count; i++) {
+                    if((self.petsSitting[indexPath.row] as! PetSitting).pet.id == (pets[i] as! Pet).id) {
+                        cell.accessoryType = .DetailDisclosureButton
+                        break
+                    }
+                }
+            }
         } else {
             cell.textLabel?.text = (pets[indexPath.row] as! Pet).name
         }
         
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        sendId = indexPath.row
+        self.performSegueWithIdentifier("petSitting", sender: self);
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

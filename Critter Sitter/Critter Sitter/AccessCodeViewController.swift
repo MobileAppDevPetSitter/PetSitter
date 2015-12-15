@@ -114,12 +114,6 @@ class AccessCodeViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationViewController = segue.destinationViewController
-        
-        if (segue.identifier == "HomeView") {
-            if let homeViewController = destinationViewController as? HomeViewController {
-            }
-        }
     }
     
     @IBAction func dismissKeyboard(sender: AnyObject) {

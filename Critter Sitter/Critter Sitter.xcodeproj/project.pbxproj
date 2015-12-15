@@ -31,6 +31,7 @@
 		674BB83A1C0538CE00D974A1 /* PetProfileCreationContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BB8391C0538CE00D974A1 /* PetProfileCreationContentViewController.swift */; };
 		8936D7761C1D14C0003B1460 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8936D7751C1D14C0003B1460 /* Pet.swift */; };
 		8936D7781C1D4DF9003B1460 /* PetSitting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8936D7771C1D4DF9003B1460 /* PetSitting.swift */; };
+		896EED111C1FC75800205AA0 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EED101C1FC75800205AA0 /* Activity.swift */; };
 		89EC0AD31C0CE1F50012FAAE /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC0AD21C0CE1F50012FAAE /* Poster.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		674BB8391C0538CE00D974A1 /* PetProfileCreationContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileCreationContentViewController.swift; sourceTree = "<group>"; };
 		8936D7751C1D14C0003B1460 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		8936D7771C1D4DF9003B1460 /* PetSitting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSitting.swift; sourceTree = "<group>"; };
+		896EED101C1FC75800205AA0 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		89EC0AD21C0CE1F50012FAAE /* Poster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				64AC9C2C1BF2AD480049B64B /* Info.plist */,
 				64AC9C241BF2AD480049B64B /* Critter_Sitter.xcdatamodeld */,
 				89EC0AD21C0CE1F50012FAAE /* Poster.swift */,
+				896EED101C1FC75800205AA0 /* Activity.swift */,
 			);
 			path = "Critter Sitter";
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				5B2527701BF9575000E15303 /* NotificationsViewController.swift in Sources */,
 				5B25276C1BF956DC00E15303 /* PetProfileViewController.swift in Sources */,
 				8936D7761C1D14C0003B1460 /* Pet.swift in Sources */,
+				896EED111C1FC75800205AA0 /* Activity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
