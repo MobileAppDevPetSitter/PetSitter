@@ -963,7 +963,6 @@
         <!--Pet Sitting View Activity View Controller-->
         <scene sceneID="1If-dO-1rl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yVG-zn-VBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="OjE-0V-dvY" customClass="PetSittingViewActivityViewController" customModule="Critter_Sitter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ypT-nz-dSy"/>
@@ -973,24 +972,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YT1-07-NYe">
-                                <rect key="frame" x="279" y="35" width="42" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZQb-gG-Od5">
+                                <rect key="frame" x="35" y="40" width="200" height="200"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="iHD-fi-rzh"/>
+                                    <constraint firstAttribute="height" constant="200" id="jq1-qz-CgK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuC-2u-paa">
+                                <rect key="frame" x="364" y="219" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xug-ha-GOw">
+                                <rect key="frame" x="35" y="265" width="475" height="150"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="6F6-M7-Cc7"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Activity Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dvz-BH-Iwh">
+                                <rect key="frame" x="260" y="125" width="250" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="zlm-zW-DV0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="YT1-07-NYe" firstAttribute="centerX" secondItem="7ti-NY-ana" secondAttribute="centerX" id="55Y-ZM-Itw"/>
-                            <constraint firstItem="YT1-07-NYe" firstAttribute="top" secondItem="ypT-nz-dSy" secondAttribute="bottom" constant="15" id="Mmk-gL-CV2"/>
+                            <constraint firstItem="ZQb-gG-Od5" firstAttribute="leading" secondItem="7ti-NY-ana" secondAttribute="leadingMargin" constant="15" id="22u-5o-jRN"/>
+                            <constraint firstItem="Dvz-BH-Iwh" firstAttribute="leading" secondItem="ZQb-gG-Od5" secondAttribute="trailing" constant="25" id="CiQ-3x-t9w"/>
+                            <constraint firstItem="ZuC-2u-paa" firstAttribute="bottom" secondItem="ZQb-gG-Od5" secondAttribute="bottom" id="KUG-Wt-fJb"/>
+                            <constraint firstItem="Xug-ha-GOw" firstAttribute="trailing" secondItem="Dvz-BH-Iwh" secondAttribute="trailing" id="Lql-eR-7NU"/>
+                            <constraint firstItem="Xug-ha-GOw" firstAttribute="leading" secondItem="ZQb-gG-Od5" secondAttribute="leading" id="UZp-gi-d1H"/>
+                            <constraint firstItem="Xug-ha-GOw" firstAttribute="centerX" secondItem="7ti-NY-ana" secondAttribute="centerX" id="f8a-Lg-ygT"/>
+                            <constraint firstItem="ZQb-gG-Od5" firstAttribute="top" secondItem="ypT-nz-dSy" secondAttribute="bottom" constant="20" id="mHt-zG-9AV"/>
+                            <constraint firstItem="ZuC-2u-paa" firstAttribute="centerX" secondItem="Dvz-BH-Iwh" secondAttribute="centerX" id="oUh-eF-bab"/>
+                            <constraint firstItem="Xug-ha-GOw" firstAttribute="top" secondItem="ZQb-gG-Od5" secondAttribute="bottom" constant="25" id="pdd-Q8-bQa"/>
+                            <constraint firstItem="ZuC-2u-paa" firstAttribute="top" secondItem="Dvz-BH-Iwh" secondAttribute="bottom" constant="10" id="uLK-Dv-Dj8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityDescription" destination="Xug-ha-GOw" id="bvH-LR-sKQ"/>
+                        <outlet property="activityTitle" destination="Dvz-BH-Iwh" id="gtX-Q1-iKN"/>
+                        <outlet property="completionDate" destination="ZuC-2u-paa" id="P5p-w7-u3I"/>
+                        <outlet property="picture" destination="ZQb-gG-Od5" id="4sS-qS-7cc"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yVG-zn-VBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1575" y="555"/>
+            <point key="canvasLocation" x="1581" y="531"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="HWd-OD-TBr">

@@ -9,7 +9,12 @@
 import UIKit
 
 class PetSittingViewActivityViewController: UIViewController {
-
+    
+    @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var activityTitle: UITextField!
+    @IBOutlet weak var completionDate: UILabel!
+    @IBOutlet weak var activityDescription: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
