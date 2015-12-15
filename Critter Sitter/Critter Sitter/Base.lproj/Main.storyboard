@@ -398,7 +398,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="114" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-Wu-eEA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="114" image="ostrich2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-Wu-eEA">
                                 <rect key="frame" x="20" y="50" width="115" height="115"/>
                                 <animations/>
                                 <constraints>
@@ -407,7 +407,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqS-Y5-r5w">
-                                <rect key="frame" x="143" y="59" width="457" height="40"/>
+                                <rect key="frame" x="143" y="74" width="457" height="40"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -437,7 +437,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKt-tf-xTu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKt-tf-xTu">
                                 <rect key="frame" x="78" y="-30" width="0.0" height="0.0"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -458,8 +458,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JaF-MR-YLD">
-                                <rect key="frame" x="0.0" y="178" width="600" height="319"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JaF-MR-YLD">
+                                <rect key="frame" x="0.0" y="178" width="600" height="322"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -517,21 +517,22 @@
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="JaF-MR-YLD" firstAttribute="width" secondItem="mLj-fa-gZT" secondAttribute="width" id="3xx-Z9-nAW"/>
+                            <constraint firstItem="lKt-tf-xTu" firstAttribute="centerX" secondItem="Fxl-Wu-eEA" secondAttribute="centerX" id="4qb-CP-yHf"/>
                             <constraint firstItem="gib-3i-qhb" firstAttribute="top" secondItem="Fje-Cj-sWl" secondAttribute="bottom" id="Ev6-Fz-6j0"/>
                             <constraint firstItem="IOa-Ts-5cp" firstAttribute="top" secondItem="mLj-fa-gZT" secondAttribute="top" id="GHn-xV-kog"/>
-                            <constraint firstItem="JqS-Y5-r5w" firstAttribute="top" secondItem="IOa-Ts-5cp" secondAttribute="bottom" constant="15" id="GJc-Mn-Rn3"/>
+                            <constraint firstItem="JqS-Y5-r5w" firstAttribute="top" secondItem="IOa-Ts-5cp" secondAttribute="bottom" constant="30" id="GJc-Mn-Rn3"/>
                             <constraint firstItem="0YI-c3-mpK" firstAttribute="leading" secondItem="Fxl-Wu-eEA" secondAttribute="trailing" constant="8" id="GTV-3R-JoW"/>
                             <constraint firstItem="Fje-Cj-sWl" firstAttribute="centerX" secondItem="mLj-fa-gZT" secondAttribute="centerX" id="I68-43-acc"/>
-                            <constraint firstItem="JaF-MR-YLD" firstAttribute="centerX" secondItem="mLj-fa-gZT" secondAttribute="centerX" id="ID4-9t-q0Z"/>
                             <constraint firstItem="Fxl-Wu-eEA" firstAttribute="leading" secondItem="mLj-fa-gZT" secondAttribute="leadingMargin" id="IZg-kT-zfe"/>
                             <constraint firstAttribute="trailing" secondItem="0YI-c3-mpK" secondAttribute="trailing" constant="38" id="JSe-dL-vtn"/>
-                            <constraint firstItem="iFU-DN-Wfa" firstAttribute="top" secondItem="JaF-MR-YLD" secondAttribute="bottom" constant="8" id="QEv-xd-jyz"/>
+                            <constraint firstItem="lKt-tf-xTu" firstAttribute="top" secondItem="mLj-fa-gZT" secondAttribute="topMargin" constant="-30" id="Lm7-fr-gw5"/>
                             <constraint firstItem="iFU-DN-Wfa" firstAttribute="centerX" secondItem="mLj-fa-gZT" secondAttribute="centerX" id="Vy1-cz-JvE"/>
                             <constraint firstItem="IOa-Ts-5cp" firstAttribute="leading" secondItem="mLj-fa-gZT" secondAttribute="leading" id="Yvw-Mc-Kbq"/>
                             <constraint firstItem="0YI-c3-mpK" firstAttribute="top" secondItem="IOa-Ts-5cp" secondAttribute="bottom" constant="65" id="bBh-sP-Qw0"/>
+                            <constraint firstItem="JaF-MR-YLD" firstAttribute="top" secondItem="0YI-c3-mpK" secondAttribute="bottom" constant="5" id="bsi-VL-90R"/>
                             <constraint firstAttribute="trailing" secondItem="IOa-Ts-5cp" secondAttribute="trailing" id="cTS-6E-8zH"/>
-                            <constraint firstItem="JaF-MR-YLD" firstAttribute="top" secondItem="0YI-c3-mpK" secondAttribute="bottom" constant="5" id="cfi-cb-8D1"/>
+                            <constraint firstItem="JaF-MR-YLD" firstAttribute="centerX" secondItem="mLj-fa-gZT" secondAttribute="centerX" id="diQ-FT-EMA"/>
+                            <constraint firstItem="JaF-MR-YLD" firstAttribute="width" secondItem="mLj-fa-gZT" secondAttribute="width" id="dsi-Tg-BBn"/>
                             <constraint firstAttribute="trailing" secondItem="JqS-Y5-r5w" secondAttribute="trailing" id="fne-Ea-QXn"/>
                             <constraint firstItem="gib-3i-qhb" firstAttribute="centerX" secondItem="mLj-fa-gZT" secondAttribute="centerX" id="hRY-Vz-Ngr"/>
                             <constraint firstItem="Fxl-Wu-eEA" firstAttribute="top" secondItem="b40-Hh-DZL" secondAttribute="bottom" constant="30" id="iZa-6L-eim"/>
@@ -541,8 +542,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addPhoto" destination="iFU-DN-Wfa" id="aOF-8M-294"/>
                         <outlet property="deleteButton" destination="gib-3i-qhb" id="EYe-Ek-vgw"/>
-                        <outlet property="editButton" destination="iFU-DN-Wfa" id="V8a-al-Cjj"/>
                         <outlet property="imageView" destination="Fxl-Wu-eEA" id="kXE-M9-40O"/>
                         <outlet property="nameLabel" destination="JqS-Y5-r5w" id="pbG-rE-R1n"/>
                         <outlet property="sendButton" destination="Fje-Cj-sWl" id="xpV-7a-XOB"/>
@@ -811,7 +812,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="114" translatesAutoresizingMaskIntoConstraints="NO" id="caY-QH-boe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="186" placeholderIntrinsicHeight="114" image="ostrich2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="caY-QH-boe">
                                 <rect key="frame" x="20" y="30" width="115" height="115"/>
                                 <animations/>
                                 <constraints>
@@ -1326,6 +1327,7 @@
     </scenes>
     <resources>
         <image name="Logo.png" width="857" height="774"/>
+        <image name="ostrich2.jpg" width="585" height="585"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2li-N1-abp"/>
