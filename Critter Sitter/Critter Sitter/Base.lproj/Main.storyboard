@@ -64,18 +64,8 @@
                                     <outlet property="delegate" destination="lMx-UR-3t6" id="nUK-uv-EkZ"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyT-Zl-K3v">
-                                <rect key="frame" x="247" y="485" width="107" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Create Account">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="createAccount:" destination="lMx-UR-3t6" eventType="touchUpInside" id="1Ab-8A-Nj7"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXy-pj-gj9">
-                                <rect key="frame" x="281" y="535" width="38" height="30"/>
+                                <rect key="frame" x="281" y="520" width="38" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,7 +106,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjd-Ht-nrT">
-                                <rect key="frame" x="250" y="585" width="101" height="30"/>
+                                <rect key="frame" x="250" y="555" width="101" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Verify Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -133,19 +123,29 @@
                                     <constraint firstAttribute="width" constant="200" id="t4P-57-7jo"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyT-Zl-K3v">
+                                <rect key="frame" x="247" y="485" width="107" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createAccount:" destination="lMx-UR-3t6" eventType="touchUpInside" id="1Ab-8A-Nj7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117647058822" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2Ll-hU-NBG" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="1g7-fP-GBA"/>
-                            <constraint firstItem="Gjd-Ht-nrT" firstAttribute="top" secondItem="aXy-pj-gj9" secondAttribute="bottom" constant="20" id="8L9-eM-S8y"/>
+                            <constraint firstItem="Gjd-Ht-nrT" firstAttribute="top" secondItem="aXy-pj-gj9" secondAttribute="bottom" constant="5" id="8L9-eM-S8y"/>
                             <constraint firstItem="xyT-Zl-K3v" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="C3N-YX-gXC"/>
                             <constraint firstItem="2yE-oL-ve6" firstAttribute="centerX" secondItem="Fwb-tO-Bqu" secondAttribute="centerX" id="DOW-Gz-w5u"/>
                             <constraint firstItem="kzg-Sm-qVV" firstAttribute="centerX" secondItem="IpO-HD-tgy" secondAttribute="centerX" id="GUW-Wh-cxu"/>
                             <constraint firstItem="Gjd-Ht-nrT" firstAttribute="centerX" secondItem="aXy-pj-gj9" secondAttribute="centerX" id="Hgx-0t-SeA"/>
                             <constraint firstItem="kzg-Sm-qVV" firstAttribute="top" secondItem="2Ll-hU-NBG" secondAttribute="bottom" constant="10" id="IvT-KP-aXw"/>
                             <constraint firstItem="2Ll-hU-NBG" firstAttribute="top" secondItem="0Gl-xW-MfS" secondAttribute="bottom" id="JLv-qf-hv4"/>
-                            <constraint firstItem="aXy-pj-gj9" firstAttribute="top" secondItem="xyT-Zl-K3v" secondAttribute="bottom" constant="20" id="Zyt-bO-KTO"/>
+                            <constraint firstItem="aXy-pj-gj9" firstAttribute="top" secondItem="xyT-Zl-K3v" secondAttribute="bottom" constant="5" id="Zyt-bO-KTO"/>
                             <constraint firstItem="j10-tI-whw" firstAttribute="centerX" secondItem="2yE-oL-ve6" secondAttribute="centerX" id="arc-Ye-W41"/>
                             <constraint firstItem="xyT-Zl-K3v" firstAttribute="top" secondItem="j10-tI-whw" secondAttribute="bottom" constant="50" id="euz-kp-U99"/>
                             <constraint firstItem="2yE-oL-ve6" firstAttribute="top" secondItem="Fwb-tO-Bqu" secondAttribute="bottom" constant="20" id="hE6-MR-Pde"/>
@@ -248,7 +248,7 @@
                             </textField>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1Zz-Ba-Mkq" firstAttribute="top" secondItem="KE1-9n-qQy" secondAttribute="bottom" constant="30" id="1IX-QK-qyL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="w5L-5N-jg6" secondAttribute="trailing" constant="20" id="1Oq-wk-udR"/>
@@ -364,7 +364,7 @@
                             </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="j4T-Na-A6K" firstAttribute="width" secondItem="ged-XX-640" secondAttribute="width" id="2Cx-Lt-nGf"/>
                             <constraint firstItem="7aP-Gp-aNh" firstAttribute="top" secondItem="kNK-ol-JHU" secondAttribute="bottom" constant="5" id="WxD-NR-BKI"/>
@@ -512,7 +512,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lKt-tf-xTu" firstAttribute="centerX" secondItem="Fxl-Wu-eEA" secondAttribute="centerX" id="4qb-CP-yHf"/>
                             <constraint firstItem="IOa-Ts-5cp" firstAttribute="top" secondItem="mLj-fa-gZT" secondAttribute="top" id="GHn-xV-kog"/>
@@ -634,7 +634,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="t95-M6-F1V" firstAttribute="top" secondItem="tka-Al-bgU" secondAttribute="bottom" constant="10" id="5P2-Mo-lCT"/>
                             <constraint firstItem="t95-M6-F1V" firstAttribute="centerX" secondItem="Dfo-qK-YB8" secondAttribute="centerX" id="7Up-E2-WBk"/>
@@ -706,7 +706,7 @@
                             </textView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="77g-Ud-Ll7" firstAttribute="top" secondItem="wh6-56-up7" secondAttribute="bottom" constant="50" id="2qe-yQ-9rX"/>
                             <constraint firstItem="n6D-Ed-1c8" firstAttribute="centerX" secondItem="77g-Ud-Ll7" secondAttribute="centerX" id="NG3-Hd-V4o"/>
@@ -768,7 +768,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PaI-cm-IFI" firstAttribute="centerX" secondItem="Osq-W8-P53" secondAttribute="centerX" id="CwB-fL-Ygj"/>
                             <constraint firstItem="i2i-nJ-4HL" firstAttribute="centerX" secondItem="Osq-W8-P53" secondAttribute="centerX" id="IAQ-lM-65w"/>
@@ -897,7 +897,7 @@
                             </tableView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="huJ-Bb-cJR" secondAttribute="trailing" id="0jR-2u-1k7"/>
                             <constraint firstItem="YyA-Zr-tVF" firstAttribute="top" secondItem="0jd-wJ-sRk" secondAttribute="bottom" constant="35" id="1rW-Pp-6S3"/>
@@ -965,7 +965,7 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YJc-OH-byp" firstAttribute="leading" secondItem="4Wm-3U-Aci" secondAttribute="leadingMargin" id="FFw-xP-L8n"/>
                             <constraint firstItem="Uo9-0z-gV3" firstAttribute="top" secondItem="Uoc-Pe-pnP" secondAttribute="bottom" constant="25" id="In7-y3-m9C"/>
@@ -1023,7 +1023,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Koi-j0-YMh" firstAttribute="centerX" secondItem="AR9-dO-KVB" secondAttribute="centerX" id="2qA-yi-Ysa"/>
                             <constraint firstItem="dfG-Eh-HH8" firstAttribute="top" secondItem="Koi-j0-YMh" secondAttribute="bottom" constant="5" id="6kO-2b-a4o"/>
@@ -1070,7 +1070,7 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jK7-be-fAX" firstAttribute="centerX" secondItem="SO1-Qj-7sw" secondAttribute="centerX" id="7TE-j7-wlb"/>
                             <constraint firstItem="jK7-be-fAX" firstAttribute="centerY" secondItem="SO1-Qj-7sw" secondAttribute="centerY" id="Sih-Eu-ZQV"/>
@@ -1125,7 +1125,7 @@
                             </collectionView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YT1-07-NYe" firstAttribute="centerX" secondItem="7ti-NY-ana" secondAttribute="centerX" id="55Y-ZM-Itw"/>
                             <constraint firstItem="YT1-07-NYe" firstAttribute="top" secondItem="ypT-nz-dSy" secondAttribute="bottom" constant="25" id="Mmk-gL-CV2"/>
@@ -1198,7 +1198,7 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="tum-Wu-4tH" firstAttribute="top" secondItem="5PY-Tu-YqG" secondAttribute="bottom" constant="20" id="7cg-9D-fav"/>
                             <constraint firstItem="5PY-Tu-YqG" firstAttribute="centerX" secondItem="beB-nk-mvi" secondAttribute="centerX" id="EDo-Lf-GJ3"/>
@@ -1308,7 +1308,7 @@
                             </textView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.082352941176470587" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Xdt-za-OKx" firstAttribute="centerX" secondItem="Zf6-g9-PRi" secondAttribute="centerX" id="RIn-Fr-uBC"/>
                             <constraint firstItem="1W6-Pe-ptD" firstAttribute="top" secondItem="2pF-CZ-YET" secondAttribute="bottom" constant="20" id="i1g-8O-v69"/>
@@ -1331,9 +1331,9 @@
         <image name="ostrich2.jpg" width="585" height="585"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oBd-Bb-E28"/>
         <segue reference="2li-N1-abp"/>
-        <segue reference="ByN-Mr-22d"/>
+        <segue reference="oBd-Bb-E28"/>
         <segue reference="kUS-EC-ndb"/>
+        <segue reference="syO-Ra-dTc"/>
     </inferredMetricsTieBreakers>
 </document>
