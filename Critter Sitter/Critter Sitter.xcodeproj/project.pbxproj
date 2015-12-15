@@ -18,8 +18,6 @@
 		5B25278C1BF95FB000E15303 /* PetProfileSecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25278B1BF95FB000E15303 /* PetProfileSecondaryViewController.swift */; };
 		5B25278E1BF9628D00E15303 /* PetSittingAddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25278D1BF9628D00E15303 /* PetSittingAddActivityViewController.swift */; };
 		5B2527901BF962AC00E15303 /* PetSittingViewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25278F1BF962AC00E15303 /* PetSittingViewActivityViewController.swift */; };
-		5B2527921BF965F200E15303 /* ActivityAddPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527911BF965F200E15303 /* ActivityAddPictureViewController.swift */; };
-		5B2527941BF9661C00E15303 /* ActivityAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527931BF9661C00E15303 /* ActivityAddEventViewController.swift */; };
 		5B2527961BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2527951BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift */; };
 		5B3D7E971BF40AA5000B292D /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */; };
 		5BBA16311C1FA0FF00700D66 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBA16301C1FA0FF00700D66 /* Logo.png */; };
@@ -48,8 +46,6 @@
 		5B25278B1BF95FB000E15303 /* PetProfileSecondaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileSecondaryViewController.swift; sourceTree = "<group>"; };
 		5B25278D1BF9628D00E15303 /* PetSittingAddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingAddActivityViewController.swift; sourceTree = "<group>"; };
 		5B25278F1BF962AC00E15303 /* PetSittingViewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingViewActivityViewController.swift; sourceTree = "<group>"; };
-		5B2527911BF965F200E15303 /* ActivityAddPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityAddPictureViewController.swift; sourceTree = "<group>"; };
-		5B2527931BF9661C00E15303 /* ActivityAddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityAddEventViewController.swift; sourceTree = "<group>"; };
 		5B2527951BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSittingViewActivitySecondaryViewController.swift; sourceTree = "<group>"; };
 		5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		5BBA16301C1FA0FF00700D66 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
@@ -112,8 +108,6 @@
 				5B25278D1BF9628D00E15303 /* PetSittingAddActivityViewController.swift */,
 				5B25278F1BF962AC00E15303 /* PetSittingViewActivityViewController.swift */,
 				5B2527951BF9684500E15303 /* PetSittingViewActivitySecondaryViewController.swift */,
-				5B2527911BF965F200E15303 /* ActivityAddPictureViewController.swift */,
-				5B2527931BF9661C00E15303 /* ActivityAddEventViewController.swift */,
 				5B2527611BF522CF00E15303 /* LoginViewController.swift */,
 				5B3D7E961BF40AA5000B292D /* RootTableViewController.swift */,
 				5B2527651BF523AC00E15303 /* AccessCodeViewController.swift */,
@@ -206,10 +200,8 @@
 				8936D7781C1D4DF9003B1460 /* PetSitting.swift in Sources */,
 				5B25278C1BF95FB000E15303 /* PetProfileSecondaryViewController.swift in Sources */,
 				5B2527901BF962AC00E15303 /* PetSittingViewActivityViewController.swift in Sources */,
-				5B2527941BF9661C00E15303 /* ActivityAddEventViewController.swift in Sources */,
 				5B25278E1BF9628D00E15303 /* PetSittingAddActivityViewController.swift in Sources */,
 				64AC9C261BF2AD480049B64B /* Critter_Sitter.xcdatamodeld in Sources */,
-				5B2527921BF965F200E15303 /* ActivityAddPictureViewController.swift in Sources */,
 				5B2527861BF95B5200E15303 /* PetProfileEditViewController.swift in Sources */,
 				5B2527661BF523AC00E15303 /* AccessCodeViewController.swift in Sources */,
 				5B2527641BF5235B00E15303 /* RegisterViewController.swift in Sources */,
