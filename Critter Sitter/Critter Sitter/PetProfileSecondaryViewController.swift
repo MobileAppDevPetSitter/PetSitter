@@ -22,13 +22,15 @@ class PetProfileSecondaryViewController: UIViewController, UITableViewDataSource
         tableView.delegate = self
         tableView.dataSource = self
         self.nameLabel.text = petSitting!.pet.name
-        
     }
     
     override func viewDidAppear(animated: Bool) {
+        // Reset the image
         self.imageView.image = self.imageView.image
+        // Get
         loadActivities()
         self.tableView.reloadData()
+        // Check for new image
         loadImage()
     }
 

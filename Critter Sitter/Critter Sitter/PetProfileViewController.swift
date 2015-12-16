@@ -31,7 +31,7 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
         } else {
             self.addPhoto.hidden = false
             self.sendButton.hidden = false
-            self.deleteButton.hidden = false
+            self.deleteButton.hidden = true
             
             let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
             tap.delegate = self
@@ -74,6 +74,7 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
         }
     }
 
+    @IBOutlet weak var delete: UIButton!
     func handleTap(sender: UITapGestureRecognizer) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .PhotoLibrary
@@ -95,6 +96,35 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // Delete pet
+    @IBAction func deletePet(sender: AnyObject) {
+        var poster = Poster()
+        var postString = "http://discworld-js1h704o.cloudapp.net/test/petDeletion.php"
+        // Construct data string for the post
+        var dataString = "pet_id=" + self.pet!.id
+        
+        // Perform POST
+        poster.doPost(postString, dataString: dataString) {
+            (response, errorStr) -> Void in
+            if let errorString = errorStr {
+                // Check the POST was successful
+                print("Error")
+            } else {
+                if let status = response["status"] as? String {
+                    if (status == "ok") {
+                        self.navigationController!.popViewControllerAnimated(true)
+                    } else {
+                        // Check for error message
+                        print("Error")
+                    }
+                } else {
+                    // Unknown error occurred
+                    print("Error")
+                }
+            }
+        }
+    }
+
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
         let selectedImage = image
@@ -154,32 +184,32 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
             "type"    : "pet"
         ]
         
+        // Get boundary string
         let boundary = generateBoundaryString()
         
+        // Create header
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
-        
+        // Assume JPEG
         let imageData = UIImageJPEGRepresentation(imageView.image!, 1)
         
-        if(imageData==nil)  { return; }
-        
+        // Add Image to body
         request.HTTPBody = createBodyWithParameters(param, filePathKey: "file", imageDataKey: imageData!, boundary: boundary)
         
         
+        // Start Async
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             data, response, error in
             
+            // Check for error
             if error != nil {
                 print("error=\(error)")
                 return
             }
             
-            // You can print out response object
-            print("******* response = \(response)")
-            
             // Print out reponse body
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("****** response data = \(responseString)")
+            print((responseString))
             
         }
         
@@ -187,6 +217,7 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
         
     }
     
+    // Set up HTTP Body
     func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
         var body = NSMutableData();
         
@@ -214,8 +245,6 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
     }
     
     
-    
-    
     func generateBoundaryString() -> String {
         return "Boundary-\(NSUUID().UUIDString)"
     }
@@ -223,9 +252,6 @@ class PetProfileViewController: UIViewController, UIGestureRecognizerDelegate, U
 
     
 }
-
-
-
 
 extension NSMutableData {
     

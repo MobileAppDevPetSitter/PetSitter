@@ -84,13 +84,15 @@ class AccessCodeViewController: UIViewController, UITextFieldDelegate {
                     if (status == "ok") {
                         // Account activiated so update status and go to home page
                         // Segue to the Home Page
-                        self.user!.setValue("LOGGEDIN", forKey: "status")
+                        if(self.user != nil) {
+                            self.user!.setValue("LOGGEDIN", forKey: "status")
                         
-                        // Complete save and handle potential error
-                        do {
-                            try managedContext.save()
-                        } catch let error as NSError {
-                            print("Could not save \(error), \(error.userInfo)")
+                            // Complete save and handle potential error
+                            do {
+                                try managedContext.save()
+                            } catch let error as NSError {
+                                print("Could not save \(error), \(error.userInfo)")
+                            }
                         }
                         
                         self.navigationController!.viewControllers = []

@@ -30,12 +30,14 @@ class PetSittingViewActivityViewController: UIViewController {
         }
         
         if(activity != nil) {
+            // Prevent from editing activity
             self.activityTitle.userInteractionEnabled = false
             self.activityTitle.text = activity!.title
             self.activityDescription.text = activity!.description
             self.completionDate.text = "Date:" + activity!.completion_date
             self.activityDescription.editable = false
         } else if(self.sitting!.pet.owner.boolValue != true) {
+            // Allow saving
             var rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "add:")
             self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem], animated: true)
             self.completionDate.hidden = true
@@ -50,6 +52,8 @@ class PetSittingViewActivityViewController: UIViewController {
 
     func add(sender: UIButton) {
         var post = Poster()
+        
+        // Set up vars
         var postString = "http://discworld-js1h704o.cloudapp.net/test/activityCreate.php"
         var dataString = "pet_sitting_id=" + sitting!.sitting_id + "&title=" + self.activityTitle!.text! + "&description=" + self.activityDescription.text! + "&status=completed"
         
@@ -66,6 +70,7 @@ class PetSittingViewActivityViewController: UIViewController {
                     }
                 } else {
                     // Unknown error occurred
+                    print("Error")
                 }
             }
         }

@@ -381,12 +381,12 @@
                         <segue destination="xvD-1L-2Wk" kind="show" identifier="petProfile" id="oBd-Bb-E28"/>
                         <segue destination="qx8-ld-w2B" kind="show" identifier="petSitting" id="a8A-1E-AxG"/>
                         <segue destination="H9b-7y-jUv" kind="show" identifier="petCreate" id="Ssk-ca-nza"/>
-                        <segue destination="lMx-UR-3t6" kind="show" identifier="logout" id="gpu-fF-QcX"/>
+                        <segue destination="lMx-UR-3t6" kind="showDetail" identifier="logout" action="showViewController:sender:" id="gpu-fF-QcX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Cp-Yy-2aP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-536" y="-9"/>
+            <point key="canvasLocation" x="-536" y="23"/>
         </scene>
         <!--Pet Profile View Controller-->
         <scene sceneID="DpZ-Fx-SXr">
@@ -551,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kg8-6I-QMV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="957"/>
+            <point key="canvasLocation" x="-39" y="861"/>
         </scene>
         <!--Send Pet View Controller-->
         <scene sceneID="8I8-hO-WJs">
@@ -740,13 +740,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idq-MB-kuo">
-                                <rect key="frame" x="279" y="30" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2i-nJ-4HL">
                                 <rect key="frame" x="276" y="285" width="49" height="30"/>
                                 <animations/>
@@ -773,14 +766,11 @@
                         <constraints>
                             <constraint firstItem="PaI-cm-IFI" firstAttribute="centerX" secondItem="Osq-W8-P53" secondAttribute="centerX" id="CwB-fL-Ygj"/>
                             <constraint firstItem="i2i-nJ-4HL" firstAttribute="centerX" secondItem="Osq-W8-P53" secondAttribute="centerX" id="IAQ-lM-65w"/>
-                            <constraint firstItem="Idq-MB-kuo" firstAttribute="centerX" secondItem="Osq-W8-P53" secondAttribute="centerX" id="KFV-4E-BLZ"/>
                             <constraint firstItem="i2i-nJ-4HL" firstAttribute="centerY" secondItem="Osq-W8-P53" secondAttribute="centerY" id="Mv8-Qg-jqT"/>
-                            <constraint firstItem="Idq-MB-kuo" firstAttribute="top" secondItem="5fU-XE-vd5" secondAttribute="bottom" constant="10" id="fqB-wA-Rcq"/>
                             <constraint firstItem="PaI-cm-IFI" firstAttribute="top" secondItem="i2i-nJ-4HL" secondAttribute="bottom" constant="10" id="zTh-Fm-tg4"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="label" destination="Idq-MB-kuo" id="WjO-g6-yOY"/>
                         <segue destination="ERl-Ug-VAl" kind="show" identifier="home" id="3oa-xI-BqT"/>
                     </connections>
                 </viewController>
@@ -1201,9 +1191,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3oa-xI-BqT"/>
+        <segue reference="oBd-Bb-E28"/>
         <segue reference="gpu-fF-QcX"/>
         <segue reference="kUS-EC-ndb"/>
         <segue reference="K3e-Dw-Eh5"/>
-        <segue reference="3TQ-Ut-gcO"/>
     </inferredMetricsTieBreakers>
 </document>

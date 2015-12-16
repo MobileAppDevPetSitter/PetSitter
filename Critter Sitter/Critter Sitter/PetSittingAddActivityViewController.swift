@@ -17,7 +17,7 @@ class PetSittingAddActivityViewController: UIViewController, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // Prevent owners from adding
         if(petSitting!.pet.owner.boolValue == true) {
             var rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "addActivity:")
             self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem], animated: true)
@@ -33,11 +33,7 @@ class PetSittingAddActivityViewController: UIViewController, UITableViewDataSour
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationViewController = segue.destinationViewController
         
-        if (segue.identifier == "add") {
-
-        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

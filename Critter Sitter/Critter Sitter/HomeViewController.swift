@@ -55,6 +55,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             print("Could not save \(error), \(error.userInfo)")
         }
     
+        self.navigationController!.viewControllers = []
         self.performSegueWithIdentifier("logout", sender:self)
     }
 
@@ -104,8 +105,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                         if let sitting = response["pets"] as! NSArray? {
                             for instance in sitting  {
                                 var i: NSDictionary = instance as! NSDictionary
+                                
                                 let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: i["medicine"] as! String, food: i["food"] as! String, veterinarian: i["vet"] as! String, other: i["other"] as! String, owner: true)
                                     self.pets.addObject(newPet)
+        
                             }
                         }
                         if let mine_sitting = response["mine_sitting"] as! NSArray? {
@@ -140,16 +143,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                     if (status == "ok") {
                                         if let sitting = response["pets"] as! NSArray? {
                                             for instance in sitting  {
+                                                // Status is ok, assume safe
                                                 var i: NSDictionary = instance as! NSDictionary
                                                 
+                                                // Create new pet
                                                 let newPet = Pet(name: i["name"]! as! String, id: i["pet_id"]! as! String, bathroom_instructions: i["bathroom"]! as! String, exercise: i["exercise"]! as! String, bio: i["bio"]! as! String, medicine: i["medicine"] as! String, food: i["food"] as! String!, veterinarian: i["vet"] as! String, other: i["other"] as! String, owner: false)
                                                 
+                                                // Create new pet sitting
                                                 let newSitting = PetSitting(pet: newPet, start_date: i["start_date"]! as! String, end_date: i["end_date"]! as! String, sitting_id: i["pet_sitting_id"]! as! String, status: i["currentStatus"] as! String)
                                                     
                                                 self.petsSitting.addObject(newSitting);
                                             }
                                         }
                                     }
+                                    
                                     self.tableView.reloadData()
                                 } else {
                                     // Unknown error occurred
@@ -208,7 +215,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if(indexPath.section == 0) {
             // Segue to the Access Code verification
             if((self.petsSitting[tableView.indexPathForSelectedRow!.row] as! PetSitting).status == "pending") {
-                self.performSegueWithIdentifier("notify", sender: self)
+                if((self.petsSitting[tableView.indexPathForSelectedRow!.row] as! PetSitting).pet.owner.boolValue != true) {
+                    self.performSegueWithIdentifier("notify", sender: self)
+                } else {
+                    self.performSegueWithIdentifier("petSitting", sender:self)
+                }
             } else {
                 self.performSegueWithIdentifier("petSitting", sender:self)
             }
@@ -223,6 +234,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             if((petsSitting[indexPath.row] as! PetSitting).pet.owner.boolValue == true) {
                 let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
                 cell.textLabel?.text = (petsSitting[indexPath.row] as! PetSitting).pet.name
+                
                 var i = 0
                 for(i = 0; i < self.pets.count; i++) {
                     if((self.petsSitting[indexPath.row] as! PetSitting).pet.id == (pets[i] as! Pet).id) {
@@ -234,7 +246,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let cell = tableView.dequeueReusableCellWithIdentifier("celldetail", forIndexPath: indexPath)
                 
                 cell.textLabel?.text = (petsSitting[indexPath.row] as! PetSitting).pet.name
-                if((petsSitting[indexPath.row] as! PetSitting).status != "PENDING") {
+                if((petsSitting[indexPath.row] as! PetSitting).status != "pending") {
                     cell.detailTextLabel?.text = (petsSitting[indexPath.row] as! PetSitting).start_date
                 } else {
                     cell.detailTextLabel?.text = (petsSitting[indexPath.row] as! PetSitting).status

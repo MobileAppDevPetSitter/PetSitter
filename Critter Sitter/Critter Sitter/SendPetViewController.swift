@@ -31,6 +31,7 @@ class SendPetViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // Create send instance
     @IBAction func send(sender: AnyObject) {
         var postString = "http://discworld-js1h704o.cloudapp.net/test/sittingCreate.php"
         var dataString = "pet_id=" + self.pet!.id + "&email=" + self.emailinput.text! + "&start_date=" + self.startDatePicker.date.description + "&end_date=" + self.endDatePicker.date.description
